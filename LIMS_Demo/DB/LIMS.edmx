@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LIMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patinet_ID" Type="int" Nullable="false" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="total" Type="float" />
+          <Property Name="discount" Type="float" />
+          <Property Name="Invoice_Date" Type="date" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="invoice_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Invoice_ID" Type="int" Nullable="false" />
+          <Property Name="result_id" Type="int" />
+          <Property Name="result_value" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Test_Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="price" Type="float" />
+          <Property Name="Ray_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ray_image" Type="image" />
+        </EntityType>
+        <EntityType Name="LogFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_Employee_ID" Type="int" Nullable="false" />
+          <Property Name="Opreation_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogDate" Type="datetime" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Login_Logout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_Employee_ID" Type="int" Nullable="false" />
+          <Property Name="Login" Type="datetime" />
+          <Property Name="logout" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Date_Entry" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rays">
+          <Key>
+            <PropertyRef Name="Ray_ID" />
+          </Key>
+          <Property Name="Ray_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ray_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Ray_Code" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_ID" />
+          </Key>
+          <Property Name="Result_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" />
+          <Property Name="Test_Cat_ID" Type="int" />
+          <Property Name="Test_ID" Type="int" />
+          <Property Name="Result_Value" Type="float" />
+          <Property Name="User_ID" Type="int" />
+          <Property Name="Sample_Type_ID" Type="int" />
+          <Property Name="Rays_ID" Type="int" />
+          <Property Name="Notes" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Samples">
+          <Key>
+            <PropertyRef Name="Sample_ID" />
+          </Key>
+          <Property Name="Sample_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sample_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Test_Cat">
+          <Key>
+            <PropertyRef Name="Cat_ID" />
+          </Key>
+          <Property Name="Cat_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cat_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tests">
+          <Key>
+            <PropertyRef Name="Test_ID" />
+          </Key>
+          <Property Name="Test_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cat_ID" Type="int" Nullable="false" />
+          <Property Name="Unit_ID" Type="int" Nullable="false" />
+          <Property Name="Sample_Type_ID" Type="int" Nullable="false" />
+          <Property Name="TestName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TestCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="smpleAvalible" Type="nvarchar" MaxLength="50" />
+          <Property Name="RangeFORman" Type="nvarchar" MaxLength="50" />
+          <Property Name="RangeFORwomen" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Unit_ID" />
+          </Key>
+          <Property Name="Unit_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unit_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PatientFrm" Type="char" MaxLength="10" />
+          <Property Name="TestFrm" Type="char" MaxLength="10" />
+          <Property Name="ReportFrm" Type="char" MaxLength="10" />
+          <Property Name="RaysFrm" Type="char" MaxLength="10" />
+          <Property Name="InvoiceFrm" Type="char" MaxLength="10" />
+          <Property Name="SettingsFrm" Type="char" MaxLength="10" />
+          <Property Name="DisCountPer" Type="char" MaxLength="10" />
+          <Property Name="ResultFrm" Type="char" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_invoice_details_Invoice">
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="invoice_details" Type="Self.invoice_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Invoice_ID" />
+            </Principal>
+            <Dependent Role="invoice_details">
+              <PropertyRef Name="Invoice_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Invoice">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="Patinet_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogFile_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="LogFile" Type="Self.LogFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="LogFile">
+              <PropertyRef Name="FK_Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Login_Logout_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Login_Logout" Type="Self.Login_Logout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Login_Logout">
+              <PropertyRef Name="FK_Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Rays">
+          <End Role="Rays" Type="Self.Rays" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rays">
+              <PropertyRef Name="Ray_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Rays_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Samples">
+          <End Role="Samples" Type="Self.Samples" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="Sample_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Sample_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Test_Cat">
+          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test_Cat">
+              <PropertyRef Name="Cat_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Test_Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Tests">
+          <End Role="Tests" Type="Self.Tests" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Test_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Test_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Category">
+          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test_Cat">
+              <PropertyRef Name="Cat_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Sample">
+          <End Role="Samples" Type="Self.Samples" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="Sample_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Sample_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Unit">
+          <End Role="Units" Type="Self.Units" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Unit_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Unit_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LIMSModelStoreContainer">
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoice_details" EntityType="Self.invoice_details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogFile" EntityType="Self.LogFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login_Logout" EntityType="Self.Login_Logout" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rays" EntityType="Self.Rays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Samples" EntityType="Self.Samples" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Test_Cat" EntityType="Self.Test_Cat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tests" EntityType="Self.Tests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Units" EntityType="Self.Units" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_invoice_details_Invoice" Association="Self.FK_invoice_details_Invoice">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="invoice_details" EntitySet="invoice_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Invoice" Association="Self.FK_Invoice_Invoice">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogFile_Users" Association="Self.FK_LogFile_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LogFile" EntitySet="LogFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Login_Logout_Users" Association="Self.FK_Login_Logout_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Login_Logout" EntitySet="Login_Logout" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Patient" Association="Self.FK_Result_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Rays" Association="Self.FK_Result_Rays">
+            <End Role="Rays" EntitySet="Rays" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Samples" Association="Self.FK_Result_Samples">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Test_Cat" Association="Self.FK_Result_Test_Cat">
+            <End Role="Test_Cat" EntitySet="Test_Cat" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Tests" Association="Self.FK_Result_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Users" Association="Self.FK_Result_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Category" Association="Self.FK_Tests_Category">
+            <End Role="Test_Cat" EntitySet="Test_Cat" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Sample" Association="Self.FK_Tests_Sample">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Unit" Association="Self.FK_Tests_Unit">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LIMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patinet_ID" Type="Int32" Nullable="false" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <Property Name="discount" Type="Double" />
+          <Property Name="Invoice_Date" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="invoice_details" Relationship="Self.FK_invoice_details_Invoice" FromRole="Invoice" ToRole="invoice_details" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Invoice_Invoice" FromRole="Invoice" ToRole="Patient" />
+        </EntityType>
+        <EntityType Name="invoice_details">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Invoice_ID" Type="Int32" Nullable="false" />
+          <Property Name="result_id" Type="Int32" />
+          <Property Name="result_value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Test_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="Ray_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ray_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK_invoice_details_Invoice" FromRole="invoice_details" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="LogFile">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_Employee_ID" Type="Int32" Nullable="false" />
+          <Property Name="Opreation_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LogDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_LogFile_Users" FromRole="LogFile" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Date_Entry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Invoice" FromRole="Patient" ToRole="Invoice" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Patient" FromRole="Patient" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="Rays">
+          <Key>
+            <PropertyRef Name="Ray_ID" />
+          </Key>
+          <Property Name="Ray_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ray_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ray_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Rays" FromRole="Rays" ToRole="Result" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="Result_ID" />
+          </Key>
+          <Property Name="Result_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" />
+          <Property Name="Test_Cat_ID" Type="Int32" />
+          <Property Name="Test_ID" Type="Int32" />
+          <Property Name="Result_Value" Type="Double" />
+          <Property Name="User_ID" Type="Int32" />
+          <Property Name="Sample_Type_ID" Type="Int32" />
+          <Property Name="Rays_ID" Type="Int32" />
+          <Property Name="Notes" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Result_Patient" FromRole="Result" ToRole="Patient" />
+          <NavigationProperty Name="Rays" Relationship="Self.FK_Result_Rays" FromRole="Result" ToRole="Rays" />
+          <NavigationProperty Name="Samples" Relationship="Self.FK_Result_Samples" FromRole="Result" ToRole="Samples" />
+          <NavigationProperty Name="Test_Cat" Relationship="Self.FK_Result_Test_Cat" FromRole="Result" ToRole="Test_Cat" />
+          <NavigationProperty Name="Tests" Relationship="Self.FK_Result_Tests" FromRole="Result" ToRole="Tests" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Result_Users" FromRole="Result" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Samples">
+          <Key>
+            <PropertyRef Name="Sample_ID" />
+          </Key>
+          <Property Name="Sample_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sample_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Samples" FromRole="Samples" ToRole="Result" />
+          <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Sample" FromRole="Samples" ToRole="Tests" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Test_Cat">
+          <Key>
+            <PropertyRef Name="Cat_ID" />
+          </Key>
+          <Property Name="Cat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Test_Cat" FromRole="Test_Cat" ToRole="Result" />
+          <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Category" FromRole="Test_Cat" ToRole="Tests" />
+        </EntityType>
+        <EntityType Name="Tests">
+          <Key>
+            <PropertyRef Name="Test_ID" />
+          </Key>
+          <Property Name="Test_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cat_ID" Type="Int32" Nullable="false" />
+          <Property Name="Unit_ID" Type="Int32" Nullable="false" />
+          <Property Name="Sample_Type_ID" Type="Int32" Nullable="false" />
+          <Property Name="TestName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TestCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="smpleAvalible" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RangeFORman" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RangeFORwomen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Tests" FromRole="Tests" ToRole="Result" />
+          <NavigationProperty Name="Samples" Relationship="Self.FK_Tests_Sample" FromRole="Tests" ToRole="Samples" />
+          <NavigationProperty Name="Test_Cat" Relationship="Self.FK_Tests_Category" FromRole="Tests" ToRole="Test_Cat" />
+          <NavigationProperty Name="Units" Relationship="Self.FK_Tests_Unit" FromRole="Tests" ToRole="Units" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="Unit_ID" />
+          </Key>
+          <Property Name="Unit_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unit_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Unit" FromRole="Units" ToRole="Tests" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PatientFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="TestFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ReportFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="RaysFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="InvoiceFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="SettingsFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="DisCountPer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="LogFile" Relationship="Self.FK_LogFile_Users" FromRole="Users" ToRole="LogFile" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Users" FromRole="Users" ToRole="Result" />
+          <NavigationProperty Name="Login_Logout" Relationship="LIMSModel.FK_Login_Logout_Users" FromRole="Users" ToRole="Login_Logout" />
+          <Property Name="ResultFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_invoice_details_Invoice">
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="invoice_details" Type="Self.invoice_details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="Invoice_ID" />
+            </Principal>
+            <Dependent Role="invoice_details">
+              <PropertyRef Name="Invoice_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Invoice">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="Patinet_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogFile_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="LogFile" Type="Self.LogFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="LogFile">
+              <PropertyRef Name="FK_Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Rays">
+          <End Role="Rays" Type="Self.Rays" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rays">
+              <PropertyRef Name="Ray_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Rays_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Samples">
+          <End Role="Samples" Type="Self.Samples" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="Sample_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Sample_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Test_Cat">
+          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test_Cat">
+              <PropertyRef Name="Cat_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Test_Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Tests">
+          <End Role="Tests" Type="Self.Tests" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tests">
+              <PropertyRef Name="Test_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="Test_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Result_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Result" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Result">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Sample">
+          <End Role="Samples" Type="Self.Samples" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Samples">
+              <PropertyRef Name="Sample_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Sample_Type_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Category">
+          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Test_Cat">
+              <PropertyRef Name="Cat_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Cat_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tests_Unit">
+          <End Role="Units" Type="Self.Units" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Tests" Type="Self.Tests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="Unit_ID" />
+            </Principal>
+            <Dependent Role="Tests">
+              <PropertyRef Name="Unit_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LIMS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Invoice" EntityType="Self.Invoice" />
+          <EntitySet Name="invoice_details" EntityType="Self.invoice_details" />
+          <EntitySet Name="LogFile" EntityType="Self.LogFile" />
+          <EntitySet Name="Patient" EntityType="Self.Patient" />
+          <EntitySet Name="Rays" EntityType="Self.Rays" />
+          <EntitySet Name="Result" EntityType="Self.Result" />
+          <EntitySet Name="Samples" EntityType="Self.Samples" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Test_Cat" EntityType="Self.Test_Cat" />
+          <EntitySet Name="Tests" EntityType="Self.Tests" />
+          <EntitySet Name="Units" EntityType="Self.Units" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_invoice_details_Invoice" Association="Self.FK_invoice_details_Invoice">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="invoice_details" EntitySet="invoice_details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Invoice" Association="Self.FK_Invoice_Invoice">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogFile_Users" Association="Self.FK_LogFile_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="LogFile" EntitySet="LogFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Patient" Association="Self.FK_Result_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Rays" Association="Self.FK_Result_Rays">
+            <End Role="Rays" EntitySet="Rays" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Samples" Association="Self.FK_Result_Samples">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Test_Cat" Association="Self.FK_Result_Test_Cat">
+            <End Role="Test_Cat" EntitySet="Test_Cat" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Tests" Association="Self.FK_Result_Tests">
+            <End Role="Tests" EntitySet="Tests" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Result_Users" Association="Self.FK_Result_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Result" EntitySet="Result" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Sample" Association="Self.FK_Tests_Sample">
+            <End Role="Samples" EntitySet="Samples" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Category" Association="Self.FK_Tests_Category">
+            <End Role="Test_Cat" EntitySet="Test_Cat" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tests_Unit" Association="Self.FK_Tests_Unit">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Tests" EntitySet="Tests" />
+          </AssociationSet>
+          <EntitySet Name="Login_Logout" EntityType="LIMSModel.Login_Logout" />
+          <AssociationSet Name="FK_Login_Logout_Users" Association="LIMSModel.FK_Login_Logout_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Login_Logout" EntitySet="Login_Logout" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Login_Logout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_Employee_ID" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="DateTime" Precision="3" />
+          <Property Name="logout" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="LIMSModel.FK_Login_Logout_Users" FromRole="Login_Logout" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_Login_Logout_Users">
+          <End Type="LIMSModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="LIMSModel.Login_Logout" Role="Login_Logout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Login_Logout">
+              <PropertyRef Name="FK_Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LIMSModelStoreContainer" CdmEntityContainer="LIMS">
+          <EntitySetMapping Name="Invoice">
+            <EntityTypeMapping TypeName="LIMSModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="Patinet_ID" ColumnName="Patinet_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="Invoice_Date" ColumnName="Invoice_Date" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoice_details">
+            <EntityTypeMapping TypeName="LIMSModel.invoice_details">
+              <MappingFragment StoreEntitySet="invoice_details">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="result_id" ColumnName="result_id" />
+                <ScalarProperty Name="result_value" ColumnName="result_value" />
+                <ScalarProperty Name="Test_name" ColumnName="Test_name" />
+                <ScalarProperty Name="Test_Category" ColumnName="Test_Category" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="Ray_name" ColumnName="Ray_name" />
+                <ScalarProperty Name="ray_image" ColumnName="ray_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogFile">
+            <EntityTypeMapping TypeName="LIMSModel.LogFile">
+              <MappingFragment StoreEntitySet="LogFile">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_Employee_ID" ColumnName="FK_Employee_ID" />
+                <ScalarProperty Name="Opreation_name" ColumnName="Opreation_name" />
+                <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patient">
+            <EntityTypeMapping TypeName="LIMSModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Date_Entry" ColumnName="Date_Entry" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rays">
+            <EntityTypeMapping TypeName="LIMSModel.Rays">
+              <MappingFragment StoreEntitySet="Rays">
+                <ScalarProperty Name="Ray_ID" ColumnName="Ray_ID" />
+                <ScalarProperty Name="Ray_Name" ColumnName="Ray_Name" />
+                <ScalarProperty Name="Ray_Code" ColumnName="Ray_Code" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Result">
+            <EntityTypeMapping TypeName="LIMSModel.Result">
+              <MappingFragment StoreEntitySet="Result">
+                <ScalarProperty Name="Result_ID" ColumnName="Result_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Test_Cat_ID" ColumnName="Test_Cat_ID" />
+                <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+                <ScalarProperty Name="Result_Value" ColumnName="Result_Value" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Sample_Type_ID" ColumnName="Sample_Type_ID" />
+                <ScalarProperty Name="Rays_ID" ColumnName="Rays_ID" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Samples">
+            <EntityTypeMapping TypeName="LIMSModel.Samples">
+              <MappingFragment StoreEntitySet="Samples">
+                <ScalarProperty Name="Sample_ID" ColumnName="Sample_ID" />
+                <ScalarProperty Name="Sample_Name" ColumnName="Sample_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LIMSModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Test_Cat">
+            <EntityTypeMapping TypeName="LIMSModel.Test_Cat">
+              <MappingFragment StoreEntitySet="Test_Cat">
+                <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+                <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tests">
+            <EntityTypeMapping TypeName="LIMSModel.Tests">
+              <MappingFragment StoreEntitySet="Tests">
+                <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
+                <ScalarProperty Name="Cat_ID" ColumnName="Cat_ID" />
+                <ScalarProperty Name="Unit_ID" ColumnName="Unit_ID" />
+                <ScalarProperty Name="Sample_Type_ID" ColumnName="Sample_Type_ID" />
+                <ScalarProperty Name="TestName" ColumnName="TestName" />
+                <ScalarProperty Name="TestCode" ColumnName="TestCode" />
+                <ScalarProperty Name="smpleAvalible" ColumnName="smpleAvalible" />
+                <ScalarProperty Name="RangeFORman" ColumnName="RangeFORman" />
+                <ScalarProperty Name="RangeFORwomen" ColumnName="RangeFORwomen" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="LIMSModel.Units">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="Unit_ID" ColumnName="Unit_ID" />
+                <ScalarProperty Name="Unit_Name" ColumnName="Unit_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LIMSModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ResultFrm" ColumnName="ResultFrm" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PatientFrm" ColumnName="PatientFrm" />
+                <ScalarProperty Name="TestFrm" ColumnName="TestFrm" />
+                <ScalarProperty Name="ReportFrm" ColumnName="ReportFrm" />
+                <ScalarProperty Name="RaysFrm" ColumnName="RaysFrm" />
+                <ScalarProperty Name="InvoiceFrm" ColumnName="InvoiceFrm" />
+                <ScalarProperty Name="SettingsFrm" ColumnName="SettingsFrm" />
+                <ScalarProperty Name="DisCountPer" ColumnName="DisCountPer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Logout">
+            <EntityTypeMapping TypeName="LIMSModel.Login_Logout">
+              <MappingFragment StoreEntitySet="Login_Logout">
+                <ScalarProperty Name="logout" ColumnName="logout" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="FK_Employee_ID" ColumnName="FK_Employee_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

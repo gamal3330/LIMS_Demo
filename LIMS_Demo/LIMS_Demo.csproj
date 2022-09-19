@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93E43FB4-1199-4BDF-998C-4C72199226C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LIMS_Demo</RootNamespace>
+    <AssemblyName>LIMS_Demo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>blood-test.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Docs.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Barcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Barcode.Designer.cs">
+      <DependentUpon>Barcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Invoice.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\invoice_details.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LIMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LIMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LIMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LIMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LIMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\LogFile.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Login_Logout.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Patient.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Rays.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Result.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Samples.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sysdiagrams.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Tests.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Test_Cat.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Units.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Users.cs">
+      <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LIMSDataSet.cs">
+      <DependentUpon>LIMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LIMSDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LIMSDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LogFile.cs" />
+    <Compile Include="Login_Logout.cs" />
+    <Compile Include="View\Add_Cat_Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Cat_Test.Designer.cs">
+      <DependentUpon>Add_Cat_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Rays_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Rays_Frm.Designer.cs">
+      <DependentUpon>Add_Rays_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Add_Tests_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Add_Tests_Frm.Designer.cs">
+      <DependentUpon>Add_Tests_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DashBoardFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DashBoardFrm.Designer.cs">
+      <DependentUpon>DashBoardFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InvoiceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InvoiceFrm.Designer.cs">
+      <DependentUpon>InvoiceFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LogFrm.Designer.cs">
+      <DependentUpon>LogFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login_LogoutFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Login_LogoutFrm.Designer.cs">
+      <DependentUpon>Login_LogoutFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\PatientsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PatientsFrm.Designer.cs">
+      <DependentUpon>PatientsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Permision.cs" />
+    <Compile Include="View\RaysFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RaysFrm.Designer.cs">
+      <DependentUpon>RaysFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReportsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReportsFrm.Designer.cs">
+      <DependentUpon>ReportsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Result_TestFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Result_TestFrm.Designer.cs">
+      <DependentUpon>Result_TestFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SelectPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SelectPatient.Designer.cs">
+      <DependentUpon>SelectPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SettingsFrm.Designer.cs">
+      <DependentUpon>SettingsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TestsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TestsFrm.Designer.cs">
+      <DependentUpon>TestsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UsersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UsersFrm.Designer.cs">
+      <DependentUpon>UsersFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Barcode.resx">
+      <DependentUpon>Barcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Cat_Test.resx">
+      <DependentUpon>Add_Cat_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Rays_Frm.resx">
+      <DependentUpon>Add_Rays_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Add_Tests_Frm.resx">
+      <DependentUpon>Add_Tests_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DashBoardFrm.resx">
+      <DependentUpon>DashBoardFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InvoiceFrm.resx">
+      <DependentUpon>InvoiceFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LogFrm.resx">
+      <DependentUpon>LogFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Login_LogoutFrm.resx">
+      <DependentUpon>Login_LogoutFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\PatientsFrm.resx">
+      <DependentUpon>PatientsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RaysFrm.resx">
+      <DependentUpon>RaysFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReportsFrm.resx">
+      <DependentUpon>ReportsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Result_TestFrm.resx">
+      <DependentUpon>Result_TestFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SelectPatient.resx">
+      <DependentUpon>SelectPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SettingsFrm.resx">
+      <DependentUpon>SettingsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TestsFrm.resx">
+      <DependentUpon>TestsFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UsersFrm.resx">
+      <DependentUpon>UsersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DB\LIMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LIMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\LIMS.edmx.diagram">
+      <DependentUpon>LIMS.edmx</DependentUpon>
+    </None>
+    <None Include="LIMSDataSet.xsc">
+      <DependentUpon>LIMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LIMSDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LIMSDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LIMSDataSet.xss">
+      <DependentUpon>LIMSDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blood-test.ico" />
+    <Content Include="DB\LIMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LIMS.edmx</DependentUpon>
+      <LastGenOutput>LIMS.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB\LIMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LIMS.edmx</DependentUpon>
+      <LastGenOutput>LIMS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
