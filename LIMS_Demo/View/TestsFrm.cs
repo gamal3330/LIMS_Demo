@@ -404,6 +404,11 @@ namespace LIMS_Demo.View
                 pregnant = "";
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
         private void checkEdit3_CheckedChanged(object sender, EventArgs e)
         {
