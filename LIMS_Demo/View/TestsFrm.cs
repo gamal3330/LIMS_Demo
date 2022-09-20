@@ -244,6 +244,8 @@ namespace LIMS_Demo.View
         private void singleBarcodeBtn_Click(object sender, EventArgs e)
         {
             int userid = View.Permision.userID;
+
+            Methods.Enquiry enquiry = new Methods.Enquiry();
             
             List<Barcode> barcodes = new List<Barcode>();
             //string selectedSmpAvalible;
@@ -290,7 +292,9 @@ namespace LIMS_Demo.View
                 }
                 smpl();
                 db.SaveChanges();
+                enquiry.enquriyMethod(int.Parse(patientId) , true , false , false);
                 barcodepnl.Visible = false;
+
                 MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ClearFields();

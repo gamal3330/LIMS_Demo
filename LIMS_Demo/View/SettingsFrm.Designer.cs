@@ -33,11 +33,12 @@ namespace LIMS_Demo.View
             this.SettingsPan = new System.Windows.Forms.Panel();
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.rjButton6 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjButton6 = new CustomControls.RJControls.RJButton();
+            this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.SettingsPan.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +47,7 @@ namespace LIMS_Demo.View
             this.SettingsPan.Controls.Add(this.rjButton4);
             this.SettingsPan.Controls.Add(this.rjButton2);
             this.SettingsPan.Controls.Add(this.rjButton6);
+            this.SettingsPan.Controls.Add(this.rjButton7);
             this.SettingsPan.Controls.Add(this.rjButton5);
             this.SettingsPan.Controls.Add(this.rjButton3);
             this.SettingsPan.Controls.Add(this.rjButton1);
@@ -69,7 +71,7 @@ namespace LIMS_Demo.View
             this.rjButton4.ForeColor = System.Drawing.Color.White;
             this.rjButton4.Image = ((System.Drawing.Image)(resources.GetObject("rjButton4.Image")));
             this.rjButton4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton4.Location = new System.Drawing.Point(101, 333);
+            this.rjButton4.Location = new System.Drawing.Point(101, 272);
             this.rjButton4.Name = "rjButton4";
             this.rjButton4.Size = new System.Drawing.Size(235, 117);
             this.rjButton4.TabIndex = 34;
@@ -102,6 +104,29 @@ namespace LIMS_Demo.View
             this.rjButton2.UseVisualStyleBackColor = false;
             this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
             // 
+            // rjButton6
+            // 
+            this.rjButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton6.BorderRadius = 20;
+            this.rjButton6.BorderSize = 0;
+            this.rjButton6.FlatAppearance.BorderSize = 0;
+            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton6.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton6.ForeColor = System.Drawing.Color.White;
+            this.rjButton6.Image = ((System.Drawing.Image)(resources.GetObject("rjButton6.Image")));
+            this.rjButton6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton6.Location = new System.Drawing.Point(101, 421);
+            this.rjButton6.Name = "rjButton6";
+            this.rjButton6.Size = new System.Drawing.Size(235, 117);
+            this.rjButton6.TabIndex = 33;
+            this.rjButton6.Text = "حركة المستخدمين";
+            this.rjButton6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rjButton6.TextColor = System.Drawing.Color.White;
+            this.rjButton6.UseVisualStyleBackColor = false;
+            this.rjButton6.Click += new System.EventHandler(this.rjButton5_Click);
+            // 
             // rjButton5
             // 
             this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -115,7 +140,7 @@ namespace LIMS_Demo.View
             this.rjButton5.ForeColor = System.Drawing.Color.White;
             this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
             this.rjButton5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton5.Location = new System.Drawing.Point(609, 526);
+            this.rjButton5.Location = new System.Drawing.Point(609, 421);
             this.rjButton5.Name = "rjButton5";
             this.rjButton5.Size = new System.Drawing.Size(235, 117);
             this.rjButton5.TabIndex = 33;
@@ -138,7 +163,7 @@ namespace LIMS_Demo.View
             this.rjButton3.ForeColor = System.Drawing.Color.White;
             this.rjButton3.Image = ((System.Drawing.Image)(resources.GetObject("rjButton3.Image")));
             this.rjButton3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton3.Location = new System.Drawing.Point(609, 333);
+            this.rjButton3.Location = new System.Drawing.Point(609, 272);
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(235, 117);
             this.rjButton3.TabIndex = 33;
@@ -181,28 +206,27 @@ namespace LIMS_Demo.View
             this.label1.TabIndex = 32;
             this.label1.Text = "الإعدادات";
             // 
-            // rjButton6
+            // rjButton7
             // 
-            this.rjButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton6.BorderRadius = 20;
-            this.rjButton6.BorderSize = 0;
-            this.rjButton6.FlatAppearance.BorderSize = 0;
-            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton6.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.Image = ((System.Drawing.Image)(resources.GetObject("rjButton6.Image")));
-            this.rjButton6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton6.Location = new System.Drawing.Point(101, 526);
-            this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(235, 117);
-            this.rjButton6.TabIndex = 33;
-            this.rjButton6.Text = "حركة المستخدمين";
-            this.rjButton6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rjButton6.TextColor = System.Drawing.Color.White;
-            this.rjButton6.UseVisualStyleBackColor = false;
-            this.rjButton6.Click += new System.EventHandler(this.rjButton5_Click);
+            this.rjButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton7.BorderRadius = 20;
+            this.rjButton7.BorderSize = 0;
+            this.rjButton7.FlatAppearance.BorderSize = 0;
+            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton7.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton7.ForeColor = System.Drawing.Color.White;
+            this.rjButton7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton7.Location = new System.Drawing.Point(618, 610);
+            this.rjButton7.Name = "rjButton7";
+            this.rjButton7.Size = new System.Drawing.Size(235, 117);
+            this.rjButton7.TabIndex = 33;
+            this.rjButton7.Text = "استعلام";
+            this.rjButton7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rjButton7.TextColor = System.Drawing.Color.White;
+            this.rjButton7.UseVisualStyleBackColor = false;
+            this.rjButton7.Click += new System.EventHandler(this.rjButton5_Click);
             // 
             // SettingsFrm
             // 
@@ -229,5 +253,6 @@ namespace LIMS_Demo.View
         public System.Windows.Forms.Panel SettingsPan;
         private CustomControls.RJControls.RJButton rjButton5;
         private CustomControls.RJControls.RJButton rjButton6;
+        private CustomControls.RJControls.RJButton rjButton7;
     }
 }

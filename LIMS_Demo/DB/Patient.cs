@@ -17,6 +17,7 @@ namespace LIMS_Demo.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Patient()
         {
+            this.Enquirys = new HashSet<Enquirys>();
             this.Invoice = new HashSet<Invoice>();
             this.Result = new HashSet<Result>();
         }
@@ -30,6 +31,8 @@ namespace LIMS_Demo.DB
         public string Date_Entry { get; set; }
         public string Notes { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Enquirys> Enquirys { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoice { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

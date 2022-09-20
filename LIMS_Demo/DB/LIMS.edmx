@@ -4,7 +4,17 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="LIMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="LIMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Enquirys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="isDrawed" Type="char" MaxLength="10" />
+          <Property Name="isEntered" Type="char" MaxLength="10" />
+          <Property Name="isReceived" Type="char" MaxLength="10" />
+        </EntityType>
         <EntityType Name="Invoice">
           <Key>
             <PropertyRef Name="Invoice_ID" />
@@ -152,6 +162,20 @@
           <Property Name="DisCountPer" Type="char" MaxLength="10" />
           <Property Name="ResultFrm" Type="char" MaxLength="10" />
         </EntityType>
+        <Association Name="FK_Enquirys_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enquirys" Type="Self.Enquirys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Enquirys">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_invoice_details_Invoice">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -319,6 +343,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LIMSModelStoreContainer">
+          <EntitySet Name="Enquirys" EntityType="Self.Enquirys" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="invoice_details" EntityType="Self.invoice_details" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LogFile" EntityType="Self.LogFile" Schema="dbo" store:Type="Tables" />
@@ -332,6 +357,10 @@
           <EntitySet Name="Tests" EntityType="Self.Tests" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Units" EntityType="Self.Units" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Enquirys_Patient" Association="Self.FK_Enquirys_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Enquirys" EntitySet="Enquirys" />
+          </AssociationSet>
           <AssociationSet Name="FK_invoice_details_Invoice" Association="Self.FK_invoice_details_Invoice">
             <End Role="Invoice" EntitySet="Invoice" />
             <End Role="invoice_details" EntitySet="invoice_details" />
@@ -385,10 +414,22 @@
             <End Role="Tests" EntitySet="Tests" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LIMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Enquirys">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" />
+          <Property Name="isDrawed" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="isEntered" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="isReceived" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK_Enquirys_Patient" FromRole="Enquirys" ToRole="Patient" />
+        </EntityType>
         <EntityType Name="Invoice">
           <Key>
             <PropertyRef Name="Invoice_ID" />
@@ -429,6 +470,16 @@
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Users" Relationship="Self.FK_LogFile_Users" FromRole="LogFile" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Login_Logout">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_Employee_ID" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="DateTime" Precision="3" />
+          <Property Name="logout" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Login_Logout_Users" FromRole="Login_Logout" ToRole="Users" />
+        </EntityType>
         <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="Patient_ID" />
@@ -441,6 +492,7 @@
           <Property Name="Gender" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Date_Entry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Enquirys" Relationship="Self.FK_Enquirys_Patient" FromRole="Patient" ToRole="Enquirys" />
           <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Invoice" FromRole="Patient" ToRole="Invoice" />
           <NavigationProperty Name="Result" Relationship="Self.FK_Result_Patient" FromRole="Patient" ToRole="Result" />
         </EntityType>
@@ -547,11 +599,25 @@
           <Property Name="InvoiceFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="SettingsFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="DisCountPer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="LogFile" Relationship="Self.FK_LogFile_Users" FromRole="Users" ToRole="LogFile" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Users" FromRole="Users" ToRole="Result" />
-          <NavigationProperty Name="Login_Logout" Relationship="LIMSModel.FK_Login_Logout_Users" FromRole="Users" ToRole="Login_Logout" />
           <Property Name="ResultFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="LogFile" Relationship="Self.FK_LogFile_Users" FromRole="Users" ToRole="LogFile" />
+          <NavigationProperty Name="Login_Logout" Relationship="Self.FK_Login_Logout_Users" FromRole="Users" ToRole="Login_Logout" />
+          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Users" FromRole="Users" ToRole="Result" />
         </EntityType>
+        <Association Name="FK_Enquirys_Patient">
+          <End Role="Patient" Type="Self.Patient" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Enquirys" Type="Self.Enquirys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patient">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Enquirys">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_invoice_details_Invoice">
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -586,6 +652,18 @@
               <PropertyRef Name="User_ID" />
             </Principal>
             <Dependent Role="LogFile">
+              <PropertyRef Name="FK_Employee_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Login_Logout_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Login_Logout" Type="Self.Login_Logout" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Login_Logout">
               <PropertyRef Name="FK_Employee_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -707,9 +785,11 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="LIMS" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Enquirys" EntityType="Self.Enquirys" />
           <EntitySet Name="Invoice" EntityType="Self.Invoice" />
           <EntitySet Name="invoice_details" EntityType="Self.invoice_details" />
           <EntitySet Name="LogFile" EntityType="Self.LogFile" />
+          <EntitySet Name="Login_Logout" EntityType="Self.Login_Logout" />
           <EntitySet Name="Patient" EntityType="Self.Patient" />
           <EntitySet Name="Rays" EntityType="Self.Rays" />
           <EntitySet Name="Result" EntityType="Self.Result" />
@@ -719,6 +799,10 @@
           <EntitySet Name="Tests" EntityType="Self.Tests" />
           <EntitySet Name="Units" EntityType="Self.Units" />
           <EntitySet Name="Users" EntityType="Self.Users" />
+          <AssociationSet Name="FK_Enquirys_Patient" Association="Self.FK_Enquirys_Patient">
+            <End Role="Patient" EntitySet="Patient" />
+            <End Role="Enquirys" EntitySet="Enquirys" />
+          </AssociationSet>
           <AssociationSet Name="FK_invoice_details_Invoice" Association="Self.FK_invoice_details_Invoice">
             <End Role="Invoice" EntitySet="Invoice" />
             <End Role="invoice_details" EntitySet="invoice_details" />
@@ -730,6 +814,10 @@
           <AssociationSet Name="FK_LogFile_Users" Association="Self.FK_LogFile_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="LogFile" EntitySet="LogFile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Login_Logout_Users" Association="Self.FK_Login_Logout_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Login_Logout" EntitySet="Login_Logout" />
           </AssociationSet>
           <AssociationSet Name="FK_Result_Patient" Association="Self.FK_Result_Patient">
             <End Role="Patient" EntitySet="Patient" />
@@ -767,40 +855,24 @@
             <End Role="Units" EntitySet="Units" />
             <End Role="Tests" EntitySet="Tests" />
           </AssociationSet>
-          <EntitySet Name="Login_Logout" EntityType="LIMSModel.Login_Logout" />
-          <AssociationSet Name="FK_Login_Logout_Users" Association="LIMSModel.FK_Login_Logout_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Login_Logout" EntitySet="Login_Logout" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Login_Logout">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FK_Employee_ID" Type="Int32" Nullable="false" />
-          <Property Name="Login" Type="DateTime" Precision="3" />
-          <Property Name="logout" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Users" Relationship="LIMSModel.FK_Login_Logout_Users" FromRole="Login_Logout" ToRole="Users" />
-        </EntityType>
-        <Association Name="FK_Login_Logout_Users">
-          <End Type="LIMSModel.Users" Role="Users" Multiplicity="1" />
-          <End Type="LIMSModel.Login_Logout" Role="Login_Logout" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="User_ID" />
-            </Principal>
-            <Dependent Role="Login_Logout">
-              <PropertyRef Name="FK_Employee_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LIMSModelStoreContainer" CdmEntityContainer="LIMS">
+          <EntitySetMapping Name="Enquirys">
+            <EntityTypeMapping TypeName="LIMSModel.Enquirys">
+              <MappingFragment StoreEntitySet="Enquirys">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="isDrawed" ColumnName="isDrawed" />
+                <ScalarProperty Name="isEntered" ColumnName="isEntered" />
+                <ScalarProperty Name="isReceived" ColumnName="isReceived" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Invoice">
             <EntityTypeMapping TypeName="LIMSModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
@@ -837,6 +909,16 @@
                 <ScalarProperty Name="Opreation_name" ColumnName="Opreation_name" />
                 <ScalarProperty Name="LogDate" ColumnName="LogDate" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Login_Logout">
+            <EntityTypeMapping TypeName="LIMSModel.Login_Logout">
+              <MappingFragment StoreEntitySet="Login_Logout">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FK_Employee_ID" ColumnName="FK_Employee_ID" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="logout" ColumnName="logout" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -935,7 +1017,6 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="LIMSModel.Users">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="ResultFrm" ColumnName="ResultFrm" />
                 <ScalarProperty Name="User_ID" ColumnName="User_ID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -948,16 +1029,7 @@
                 <ScalarProperty Name="InvoiceFrm" ColumnName="InvoiceFrm" />
                 <ScalarProperty Name="SettingsFrm" ColumnName="SettingsFrm" />
                 <ScalarProperty Name="DisCountPer" ColumnName="DisCountPer" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Login_Logout">
-            <EntityTypeMapping TypeName="LIMSModel.Login_Logout">
-              <MappingFragment StoreEntitySet="Login_Logout">
-                <ScalarProperty Name="logout" ColumnName="logout" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="FK_Employee_ID" ColumnName="FK_Employee_ID" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResultFrm" ColumnName="ResultFrm" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

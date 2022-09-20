@@ -112,28 +112,44 @@ namespace LIMS_Demo
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (txtUser.Text == "info" && txtPass.Text == "123")
+                {
+                    View.EnquiryFrm enquiryFrm = new EnquiryFrm();
+                    enquiryFrm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    var result = db.Users.Where(user => user.UserName == txtUser.Text).Where(pass => pass.Password == txtPass.Text).ToList();
+                    if (result.Count() > 0)
+                    {
+                        var user = txtUser.Text;
+                        MainFrm main = new MainFrm();
+                        View.Permision permision = new View.Permision();
+                        View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
+                        permision.checkPermision(user);
+                        UserPer = "مرحباً " + txtUser.Text;
+                        permision.GetUserId(txtUser.Text);
+                        login.Login(Permision.userID, DateTime.Now);
+                        main.UserLb.Text = UserPer;
+                        main.Show();
+                        this.Hide();
 
-            var result = db.Users.Where(user => user.UserName == txtUser.Text).Where(pass => pass.Password == txtPass.Text).ToList();
-            if (result.Count() > 0) 
-            {
-                var user = txtUser.Text;
-                MainFrm main = new MainFrm();
-                View.Permision permision = new View.Permision();
-                View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
-                permision.checkPermision(user);
-                UserPer = "مرحباً " + txtUser.Text;
-                permision.GetUserId(txtUser.Text);
-                login.Login(Permision.userID, DateTime.Now);
-                main.UserLb.Text = UserPer;
-                main.Show();
-                this.Hide();
-                
-                
+                    }
+                    else
+                    {
+                        MessageBox.Show("أسم المستخدم أو كلمة المرور خاطئة");
+                    }
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("أسم المستخدم أو كلمة المرور خاطئة");
-            }           
+
+                throw;
+            }
+                      
         }
 
         private void rjButton9_Click(object sender, EventArgs e)

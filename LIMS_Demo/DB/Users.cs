@@ -18,8 +18,8 @@ namespace LIMS_Demo.DB
         public Users()
         {
             this.LogFile = new HashSet<LogFile>();
-            this.Result = new HashSet<Result>();
             this.Login_Logout = new HashSet<Login_Logout>();
+            this.Result = new HashSet<Result>();
         }
     
         public int User_ID { get; set; }
@@ -39,8 +39,8 @@ namespace LIMS_Demo.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LogFile> LogFile { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Result { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Login_Logout> Login_Logout { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Result> Result { get; set; }
     }
 }

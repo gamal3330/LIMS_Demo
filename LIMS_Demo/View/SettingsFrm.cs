@@ -38,8 +38,8 @@ namespace LIMS_Demo.View
 
         private void rjButton5_Click(object sender, EventArgs e)
         {
-            View.LogFrm login = new LogFrm();
-            login.ShowDialog();
+            View.EnquiryFrm enquiryFrm = new EnquiryFrm();
+            enquiryFrm.ShowDialog();
         }
     }
 }

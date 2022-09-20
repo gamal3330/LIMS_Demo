@@ -25,9 +25,11 @@ namespace LIMS_Demo.DB
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Enquirys> Enquirys { get; set; }
         public virtual DbSet<Invoice> Invoice { get; set; }
         public virtual DbSet<invoice_details> invoice_details { get; set; }
         public virtual DbSet<LogFile> LogFile { get; set; }
+        public virtual DbSet<Login_Logout> Login_Logout { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<Rays> Rays { get; set; }
         public virtual DbSet<Result> Result { get; set; }
@@ -37,6 +39,5 @@ namespace LIMS_Demo.DB
         public virtual DbSet<Tests> Tests { get; set; }
         public virtual DbSet<Units> Units { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-        public virtual DbSet<Login_Logout> Login_Logout { get; set; }
     }
 }
