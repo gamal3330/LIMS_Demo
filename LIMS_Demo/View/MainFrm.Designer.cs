@@ -213,7 +213,7 @@ namespace LIMS_Demo
             this.InvoiceBtn.ForeColor = System.Drawing.Color.White;
             this.InvoiceBtn.Image = ((System.Drawing.Image)(resources.GetObject("InvoiceBtn.Image")));
             this.InvoiceBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.InvoiceBtn.Location = new System.Drawing.Point(729, 305);
+            this.InvoiceBtn.Location = new System.Drawing.Point(735, 305);
             this.InvoiceBtn.Name = "InvoiceBtn";
             this.InvoiceBtn.Size = new System.Drawing.Size(200, 115);
             this.InvoiceBtn.TabIndex = 24;
@@ -237,7 +237,7 @@ namespace LIMS_Demo
             this.SettingsBtn.ForeColor = System.Drawing.Color.White;
             this.SettingsBtn.Image = ((System.Drawing.Image)(resources.GetObject("SettingsBtn.Image")));
             this.SettingsBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.SettingsBtn.Location = new System.Drawing.Point(486, 305);
+            this.SettingsBtn.Location = new System.Drawing.Point(494, 305);
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.Size = new System.Drawing.Size(200, 115);
             this.SettingsBtn.TabIndex = 23;
@@ -309,7 +309,7 @@ namespace LIMS_Demo
             this.Testbtn.ForeColor = System.Drawing.Color.White;
             this.Testbtn.Image = ((System.Drawing.Image)(resources.GetObject("Testbtn.Image")));
             this.Testbtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Testbtn.Location = new System.Drawing.Point(729, 150);
+            this.Testbtn.Location = new System.Drawing.Point(735, 150);
             this.Testbtn.Name = "Testbtn";
             this.Testbtn.Size = new System.Drawing.Size(200, 115);
             this.Testbtn.TabIndex = 21;

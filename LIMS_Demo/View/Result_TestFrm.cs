@@ -10,11 +10,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
+using USB_Barcode_Scanner;
+using LIMS_Demo.Methods;
 
 namespace LIMS_Demo.View
 {
     public partial class Result_TestFrm : Form
     {
+
         string patientId = "";
         string patientName = "";
         int rowIndex;
@@ -26,7 +30,14 @@ namespace LIMS_Demo.View
         LIMS db = new LIMS();
         public Result_TestFrm()
         {
+
+            
+
             InitializeComponent();
+
+            BarcodeScanner barcodeScanner = new BarcodeScanner(resulttxt);
+            
+            barcodeScanner.BarcodeScanned += BarcodeScanner_BarcodeScanned;
 
             table.Columns.Add("المجموعة");
             table.Columns.Add("التحليل");
@@ -34,63 +45,116 @@ namespace LIMS_Demo.View
 
             dvgResult.DataSource = table;
 
+            resulttxt.Focus();
+
 
 
         }
 
+        private void BarcodeScanner_BarcodeScanned(object sender, BarcodeScannerEventArgs e)
+        {
+            resulttxt.Text = e.Barcode;
+        }
+
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            table.Clear();
-            int ptId;
-            int parsedValue;
-            if (txtBarcode.Text == "")
+            try
             {
-                MessageBox.Show("يرجى تعبئة الحقول");
-                return;
-            }
-            if (!int.TryParse(txtBarcode.Text, out parsedValue))
-            {
-                MessageBox.Show("يرجى إدخال قيمة عددية فقط");
-                return;
-            }else
-            {
-                barcode = int.Parse(txtBarcode.Text);
-                patientId = db.Invoice.Where(x => x.Invoice_ID == barcode).Select(x => x.Patinet_ID).FirstOrDefault().ToString();
-                ptId = int.Parse(patientId);
-                patientName = db.Patient.Where(x=>x.Patient_ID == ptId).Select(x=>x.FullName).FirstOrDefault().ToString();
-                nametxt.Text = patientName;
-                phonetxt.Text = db.Patient.Where(x => x.Patient_ID == ptId).Select(x => x.Phone).FirstOrDefault().ToString();
-                
-                var selectedTests = db.invoice_details.Where(x => x.Invoice_ID == barcode);
-
-                foreach (var item in selectedTests)
+                List<int> invoiceId = new List<int>();
+                invoiceId = db.Invoice.Select(x => x.Invoice_ID).ToList();
+                table.Clear();
+                int ptId;
+                int parsedValue;
+                if (txtBarcode.Text == "")
                 {
-                    DataRow row = table.NewRow();
-                    row[0] = item.Test_Category;
-                    row[1] = item.Test_name;
-                    table.Rows.Add(row);
+                    MessageBox.Show("يرجى تعبئة الحقول");
+                    return;
+                }
+                if (!int.TryParse(txtBarcode.Text, out parsedValue))
+                {
+                    MessageBox.Show("يرجى إدخال قيمة عددية فقط");
+                    return;
+                }
+
+
+
+                else
+                {
+
+
+                    if (invoiceId.Contains(int.Parse(txtBarcode.Text)))
+                    {
+                        barcode = int.Parse(txtBarcode.Text);
+                        patientId = db.Invoice.Where(x => x.Invoice_ID == barcode).Select(x => x.Patinet_ID).FirstOrDefault().ToString();
+                        ptId = int.Parse(patientId);
+                        patientName = db.Patient.Where(x => x.Patient_ID == ptId).Select(x => x.FullName).FirstOrDefault().ToString();
+                        nametxt.Text = patientName;
+                        phonetxt.Text = db.Patient.Where(x => x.Patient_ID == ptId).Select(x => x.Phone).FirstOrDefault().ToString();
+
+                        var selectedTests = db.invoice_details.Where(x => x.Invoice_ID == barcode);
+
+                        foreach (var itemT in selectedTests)
+                        {
+                            DataRow row = table.NewRow();
+                            row[0] = itemT.Test_Category;
+                            row[1] = itemT.Test_name;
+                            row[2] = itemT.result_value;
+                            table.Rows.Add(row);
+
+                        }
+
+                        rowIndex = dvgResult.CurrentRow.Index;
+                    }
+                    else
+                    {
+                        MessageBox.Show("عذراً , لا يوجد هذا الفحص !");
+                    }
 
                 }
-               
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(resulttxt.Text == "")
+
+            try
             {
-                MessageBox.Show("يرجى إدخال نتيجة", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
-            {
-                dvgResult.Rows[rowIndex].Cells[2].Value = resulttxt.Text;
-                resulttxt.Text = string.Empty;
-                resulttxt.Focus();
-                int currrentrow = dvgResult.CurrentRow.Index;
-                currrentrow += 1;
-                dvgResult.Rows[dvgResult.CurrentRow.Index].Selected = false;
-                dvgResult.Rows[currrentrow].Selected = true;
-                rowIndex += 1;
+                if (resulttxt.Text == "")
+                {
+                    MessageBox.Show("يرجى إدخال نتيجة", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    
+                    dvgResult.Rows[rowIndex].Cells[2].Value = resulttxt.Text;
+                    resulttxt.Text = string.Empty;
+                    resulttxt.Focus();
+                    int currrentrow = dvgResult.CurrentRow.Index;
+                    if (dvgResult.Rows.Count <= 1)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        currrentrow += 1;
+                    }
+                    dvgResult.Rows[dvgResult.CurrentRow.Index].Selected = false;
+                    dvgResult.Rows[currrentrow].Selected = true;
+                    rowIndex += 1;
+                    
+                }
             }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+            }
+            
 
 
         }
@@ -114,8 +178,16 @@ namespace LIMS_Demo.View
                     var selected = db.invoice_details.Where(x => x.id == id).FirstOrDefault();
                     selected.result_value = dvgResult.Rows[i].Cells[2].Value.ToString();
                     db.SaveChanges();
-                    
                 }
+                var iD = int.Parse(patientId);
+                foreach(var item in Enquiry.ID)
+                {
+                    var r = db.Enquirys.Where(x => x.Patient_ID == iD).Where(x => x.id == item).Select(x => x.isEntered).FirstOrDefault();
+                    r = true;
+                    db.SaveChanges();
+                }
+                
+                
                 MessageBox.Show("تم الحفظ");
             }
         }

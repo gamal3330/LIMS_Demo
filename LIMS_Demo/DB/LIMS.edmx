@@ -11,9 +11,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Patient_ID" Type="int" Nullable="false" />
-          <Property Name="isDrawed" Type="char" MaxLength="10" />
-          <Property Name="isEntered" Type="char" MaxLength="10" />
-          <Property Name="isReceived" Type="char" MaxLength="10" />
+          <Property Name="isDrawed" Type="bit" />
+          <Property Name="isEntered" Type="bit" />
+          <Property Name="isReceived" Type="bit" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -425,9 +425,9 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Patient_ID" Type="Int32" Nullable="false" />
-          <Property Name="isDrawed" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="isEntered" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="isReceived" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="isDrawed" Type="Boolean" />
+          <Property Name="isEntered" Type="Boolean" />
+          <Property Name="isReceived" Type="Boolean" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Enquirys_Patient" FromRole="Enquirys" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Invoice">

@@ -12,14 +12,20 @@ namespace LIMS_Demo.Methods
     {
         LIMS db = new LIMS();
         Enquirys enquirys = new Enquirys();
+
+        public static List<int> ID = new List<int>();
+
         public void enquriyMethod (int patientId,bool isDrawed , bool isEntered, bool isReceived)
         {
             enquirys.Patient_ID = patientId;
-            enquirys.isDrawed   = isDrawed.ToString();
-            enquirys.isEntered  = isEntered.ToString();
-            enquirys.isReceived = isReceived.ToString();
+            enquirys.isDrawed   = isDrawed;
+            enquirys.isEntered  = isEntered;
+            enquirys.isReceived = isReceived;
             db.Enquirys.Add(enquirys);
+            
+            ID = db.Enquirys.Select(x=>x.id).ToList();
             db.SaveChanges();
+            
         }
 
     }

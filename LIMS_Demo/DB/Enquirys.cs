@@ -16,9 +16,9 @@ namespace LIMS_Demo.DB
     {
         public int id { get; set; }
         public int Patient_ID { get; set; }
-        public string isDrawed { get; set; }
-        public string isEntered { get; set; }
-        public string isReceived { get; set; }
+        public Nullable<bool> isDrawed { get; set; }
+        public Nullable<bool> isEntered { get; set; }
+        public Nullable<bool> isReceived { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

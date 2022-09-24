@@ -60,7 +60,7 @@ namespace LIMS_Demo
             // 
             // TestName
             // 
-            this.TestName.LocationFloat = new DevExpress.Utils.PointFloat(278.6458F, 46.08334F);
+            this.TestName.LocationFloat = new DevExpress.Utils.PointFloat(46.97913F, 46.08334F);
             this.TestName.Multiline = true;
             this.TestName.Name = "TestName";
             this.TestName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -73,7 +73,7 @@ namespace LIMS_Demo
             // date
             // 
             this.date.Font = new System.Drawing.Font("Janna LT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date.LocationFloat = new DevExpress.Utils.PointFloat(241.6667F, 126.375F);
+            this.date.LocationFloat = new DevExpress.Utils.PointFloat(10F, 126.375F);
             this.date.Multiline = true;
             this.date.Name = "date";
             this.date.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -87,7 +87,7 @@ namespace LIMS_Demo
             // patientName
             // 
             this.patientName.Font = new System.Drawing.Font("Janna LT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(241.6667F, 7.916673F);
+            this.patientName.LocationFloat = new DevExpress.Utils.PointFloat(10F, 7.916673F);
             this.patientName.Multiline = true;
             this.patientName.Name = "patientName";
             this.patientName.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -101,10 +101,9 @@ namespace LIMS_Demo
             // code
             // 
             this.code.AutoModule = true;
-            this.code.LocationFloat = new DevExpress.Utils.PointFloat(266.1458F, 69.08334F);
+            this.code.LocationFloat = new DevExpress.Utils.PointFloat(34.47913F, 69.08334F);
             this.code.Name = "code";
             this.code.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
-            this.code.ShowText = false;
             this.code.SizeF = new System.Drawing.SizeF(136.9791F, 57.29167F);
             this.code.StylePriority.UseTextAlignment = false;
             this.code.Symbology = upcSupplemental5Generator1;

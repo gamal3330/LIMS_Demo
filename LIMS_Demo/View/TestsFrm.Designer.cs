@@ -30,11 +30,12 @@ namespace LIMS_Demo.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestsFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestsFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TestPan = new System.Windows.Forms.Panel();
+            this.dvgTest = new System.Windows.Forms.DataGridView();
             this.barcodepnl = new System.Windows.Forms.Panel();
             this.multiBarcodeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.singleBarcodeBtn = new DevExpress.XtraEditors.SimpleButton();
@@ -45,7 +46,6 @@ namespace LIMS_Demo.View
             this.btnDelete = new CustomControls.RJControls.RJButton();
             this.btnEdit = new CustomControls.RJControls.RJButton();
             this.btnAdd = new CustomControls.RJControls.RJButton();
-            this.dvgTest = new System.Windows.Forms.DataGridView();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.checkEdit4 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
@@ -109,9 +109,9 @@ namespace LIMS_Demo.View
             this.test_CatTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.Test_CatTableAdapter();
             this.testsTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.TestsTableAdapter();
             this.TestPan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).BeginInit();
             this.barcodepnl.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
@@ -162,6 +162,29 @@ namespace LIMS_Demo.View
             this.TestPan.Size = new System.Drawing.Size(934, 847);
             this.TestPan.TabIndex = 0;
             // 
+            // dvgTest
+            // 
+            this.dvgTest.AllowUserToAddRows = false;
+            this.dvgTest.AllowUserToDeleteRows = false;
+            this.dvgTest.AllowUserToOrderColumns = true;
+            this.dvgTest.AllowUserToResizeColumns = false;
+            this.dvgTest.AllowUserToResizeRows = false;
+            this.dvgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgTest.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dvgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgTest.Location = new System.Drawing.Point(440, 501);
+            this.dvgTest.Name = "dvgTest";
+            this.dvgTest.Size = new System.Drawing.Size(472, 223);
+            this.dvgTest.TabIndex = 11;
+            // 
             // barcodepnl
             // 
             this.barcodepnl.Controls.Add(this.multiBarcodeBtn);
@@ -174,7 +197,7 @@ namespace LIMS_Demo.View
             // 
             // multiBarcodeBtn
             // 
-            this.multiBarcodeBtn.Location = new System.Drawing.Point(18, 56);
+            this.multiBarcodeBtn.Location = new System.Drawing.Point(18, 55);
             this.multiBarcodeBtn.Name = "multiBarcodeBtn";
             this.multiBarcodeBtn.Size = new System.Drawing.Size(199, 33);
             this.multiBarcodeBtn.TabIndex = 0;
@@ -335,29 +358,6 @@ namespace LIMS_Demo.View
             this.btnAdd.TextColor = System.Drawing.Color.White;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.rjButton6_Click);
-            // 
-            // dvgTest
-            // 
-            this.dvgTest.AllowUserToAddRows = false;
-            this.dvgTest.AllowUserToDeleteRows = false;
-            this.dvgTest.AllowUserToOrderColumns = true;
-            this.dvgTest.AllowUserToResizeColumns = false;
-            this.dvgTest.AllowUserToResizeRows = false;
-            this.dvgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dvgTest.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dvgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgTest.Location = new System.Drawing.Point(440, 501);
-            this.dvgTest.Name = "dvgTest";
-            this.dvgTest.Size = new System.Drawing.Size(472, 223);
-            this.dvgTest.TabIndex = 11;
             // 
             // groupBox9
             // 
@@ -1126,9 +1126,9 @@ namespace LIMS_Demo.View
             this.Text = "Tests";
             this.TestPan.ResumeLayout(false);
             this.TestPan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).EndInit();
             this.barcodepnl.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).EndInit();
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();

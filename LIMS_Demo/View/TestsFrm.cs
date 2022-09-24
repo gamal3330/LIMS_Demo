@@ -63,7 +63,6 @@ namespace LIMS_Demo.View
 
         private void ClearFields()
         {
-            maxId = 0;
             sampletxt.Text = "";
             unittxt.Text = "";
             pricetxt.Text = Convert.ToDouble(0).ToString();
@@ -112,7 +111,7 @@ namespace LIMS_Demo.View
 
             try
             {
-                if (patientId != "")
+                if (nametxt.Text != "")
                 {
                     if (cmbtst.SelectedIndex < 0 )
                     {
@@ -248,6 +247,7 @@ namespace LIMS_Demo.View
             Methods.Enquiry enquiry = new Methods.Enquiry();
             
             List<Barcode> barcodes = new List<Barcode>();
+            Barcode barcode = new Barcode();
             //string selectedSmpAvalible;
 
 
@@ -277,12 +277,8 @@ namespace LIMS_Demo.View
                     inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
                     db.invoice_details.Add(inv_Details);
 
-                    //samples avalible 
-                    
-
-
                     //barcode
-                    Barcode barcode = new Barcode();
+                    
                     barcode.patientName.Text = patientName;
                     barcode.TestName.Text = dvgTest.Rows[i].Cells[1].Value.ToString();
                     barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
@@ -290,14 +286,22 @@ namespace LIMS_Demo.View
                     barcodes.Add(barcode);
                     barcodes[i].ShowPreviewDialog();  
                 }
-                smpl();
+
+                if (!smpleTesttxt.Text.Contains("-"))
+                {
+                    smpl();
+                }
+
+
                 db.SaveChanges();
                 enquiry.enquriyMethod(int.Parse(patientId) , true , false , false);
                 barcodepnl.Visible = false;
 
                 MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                barcode.Dispose();
                 ClearFields();
+                nametxt.Text = "";
+                Idtxt.Text = "";
             }
             else
             {
@@ -310,6 +314,8 @@ namespace LIMS_Demo.View
             {
                 int userid = View.Permision.userID;
                 var category = new List<String>();
+                Barcode barcode = new Barcode();
+
                 string notes = string.Format($"{whatsApp},{email},{pregnant},{fasting}");
                 if (dvgTest.Rows.Count > 0)
                 {
@@ -321,6 +327,7 @@ namespace LIMS_Demo.View
                     invoice.User_ID = userid;
                     invoice.Notes = notes;
                     db.Invoice.Add(invoice);
+                    db.SaveChanges();
                     // save invoice detailes 
                     for (int i = 0; i < dvgTest.Rows.Count; i++)
                     {
@@ -330,13 +337,8 @@ namespace LIMS_Demo.View
                         inv_Details.Test_Category = dvgTest.Rows[i].Cells[0].Value.ToString();
                         inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
                         db.invoice_details.Add(inv_Details);
-                        
-
-                        //samples avalible
-
+                        db.SaveChanges();
                     }
-                   
-
 
                     //After save to DB , give all test category from Invoice_detailesTB in List
                     var codes = db.invoice_details.Where(x => x.Invoice_ID == maxId).Select(x => x.Test_Category).ToList();
@@ -345,7 +347,6 @@ namespace LIMS_Demo.View
                     foreach (var item in codes.Distinct().ToList())
                     {
                         //Create an object from Barcode in every loop
-                        Barcode barcode = new Barcode();
                         barcode.patientName.Text = patientName;
                         barcode.TestName.Text = item;
                         barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
@@ -353,14 +354,21 @@ namespace LIMS_Demo.View
                         barcode.ShowPreviewDialog();
 
                     }
-                    smpl();
-                    db.SaveChanges();
+
+                    if (!smpleTesttxt.Text.Contains("-"))
+                    {
+                        smpl();
+                    }
+                   
+                    
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                     barcodepnl.Visible = false;
                     MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
-                        ClearFields();
-                    
+                    barcode.Dispose();
+                    ClearFields();
+                    nametxt.Text = "";
+                    Idtxt.Text = "";
+
                 }
                 else
                 {
@@ -439,6 +447,7 @@ namespace LIMS_Demo.View
             {
                 MessageBox.Show("الرجاء تحديد مريض", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
             else if (dvgTest.Rows.Count == 0)
             {
                 MessageBox.Show("الرجاء إختيار تحليل", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -454,29 +463,33 @@ namespace LIMS_Demo.View
 
         private void smpl ()
         {
-            string smplStr;
-            string test;
-            int smplInt;
-            for (int i = 0; i < dvgTest.Rows.Count; i++)
-            {
-                test = dvgTest.Rows[i].Cells[1].Value.ToString();
+            
+                string smplStr;
+                string test;
+                int smplInt;
+                for (int i = 0; i < dvgTest.Rows.Count; i++)
+                {
+                    test = dvgTest.Rows[i].Cells[1].Value.ToString();
 
-                smplStr = db.Tests.Where(
-                    x => x.TestName == test).Select(
-                    x => x.smpleAvalible).FirstOrDefault();
-                smplInt = int.Parse(smplStr);
-                smplInt -= 1;
+                    smplStr = db.Tests.Where(
+                        x => x.TestName == test).Select(
+                        x => x.smpleAvalible).FirstOrDefault();
+                    smplInt = int.Parse(smplStr);
+                    smplInt -= 1;
 
-                var tstId = db.Tests.Where(x => x.TestName == test).Select(x => x.Test_ID).FirstOrDefault();
-                
-
-                var selectedtest = db.Tests.SingleOrDefault(x => x.Test_ID == tstId);
-
-                selectedtest.smpleAvalible = smplInt.ToString();
-                test = string.Empty;
+                    var tstId = db.Tests.Where(x => x.TestName == test).Select(x => x.Test_ID).FirstOrDefault();
 
 
-            }
+                    var selectedtest = db.Tests.SingleOrDefault(x => x.Test_ID == tstId);
+
+                    selectedtest.smpleAvalible = smplInt.ToString();
+                    test = string.Empty;
+
+
+                }
+            
+
+            
             
         }
     }
