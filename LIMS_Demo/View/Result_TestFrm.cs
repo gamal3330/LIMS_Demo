@@ -75,13 +75,8 @@ namespace LIMS_Demo.View
                     MessageBox.Show("يرجى إدخال قيمة عددية فقط");
                     return;
                 }
-
-
-
                 else
                 {
-
-
                     if (invoiceId.Contains(int.Parse(txtBarcode.Text)))
                     {
                         barcode = int.Parse(txtBarcode.Text);
@@ -103,7 +98,7 @@ namespace LIMS_Demo.View
 
                         }
 
-                        rowIndex = dvgResult.CurrentRow.Index;
+                        //rowIndex = dvgResult.CurrentRow.Index;
                     }
                     else
                     {
@@ -180,15 +175,12 @@ namespace LIMS_Demo.View
                     db.SaveChanges();
                 }
                 var iD = int.Parse(patientId);
-                foreach(var item in Enquiry.ID)
-                {
-                    var r = db.Enquirys.Where(x => x.Patient_ID == iD).Where(x => x.id == item).Select(x => x.isEntered).FirstOrDefault();
-                    r = true;
-                    db.SaveChanges();
-                }
-                
-                
-                MessageBox.Show("تم الحفظ");
+
+                var r = db.Enquirys.SingleOrDefault(x => x.Invoice_ID == barcode);
+                r.isEntered = true;
+                db.SaveChanges();
+
+                MessageBox.Show("تم الحفظ" , "" , MessageBoxButtons.OK , MessageBoxIcon.Information);
             }
         }
 

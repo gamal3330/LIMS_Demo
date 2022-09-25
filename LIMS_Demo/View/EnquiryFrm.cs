@@ -32,10 +32,6 @@ namespace LIMS_Demo.View
 
         private void EnquiryFrm_Load(object sender, EventArgs e)
         {
-       
-            
-      
-                
             
         }
     }

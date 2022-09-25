@@ -11,6 +11,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Invoice_ID" Type="int" />
           <Property Name="isDrawed" Type="bit" />
           <Property Name="isEntered" Type="bit" />
           <Property Name="isReceived" Type="bit" />
@@ -425,6 +426,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Patient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Invoice_ID" Type="Int32" />
           <Property Name="isDrawed" Type="Boolean" />
           <Property Name="isEntered" Type="Boolean" />
           <Property Name="isReceived" Type="Boolean" />
@@ -867,6 +869,7 @@
               <MappingFragment StoreEntitySet="Enquirys">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
                 <ScalarProperty Name="isDrawed" ColumnName="isDrawed" />
                 <ScalarProperty Name="isEntered" ColumnName="isEntered" />
                 <ScalarProperty Name="isReceived" ColumnName="isReceived" />

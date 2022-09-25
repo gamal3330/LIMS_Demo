@@ -57,7 +57,6 @@ namespace LIMS_Demo.View
             cmbdiscount.Enabled = Convert.ToBoolean(View.Permision.disCountPer);
 
 
-            
 
         }
 
@@ -146,7 +145,8 @@ namespace LIMS_Demo.View
 
                             table.Rows.Add(row);
                             CalcTotal();
-                           
+                            
+
                             sampletxt.Text = "";
                             unittxt.Text = "";
                             pricetxt.Text = Convert.ToDouble(0).ToString();
@@ -294,9 +294,12 @@ namespace LIMS_Demo.View
 
 
                 db.SaveChanges();
-                enquiry.enquriyMethod(int.Parse(patientId) , true , false , false);
+                enquiry.enquriyMethod(
+                    patientId: int.Parse(patientId) ,
+                    Invoice_ID : db.Invoice.Max(x => x.Invoice_ID),
+                    isDrawed: true);
                 barcodepnl.Visible = false;
-
+                log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                 MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 barcode.Dispose();
                 ClearFields();
@@ -310,6 +313,9 @@ namespace LIMS_Demo.View
         }
         private void multiBarcodeBtn_Click(object sender, EventArgs e)
         {
+
+            Methods.Enquiry enquiry = new Methods.Enquiry();
+
             try
             {
                 int userid = View.Permision.userID;
@@ -359,8 +365,11 @@ namespace LIMS_Demo.View
                     {
                         smpl();
                     }
-                   
-                    
+
+                    enquiry.enquriyMethod(
+                    patientId: int.Parse(patientId),
+                    Invoice_ID: db.Invoice.Max(x => x.Invoice_ID),
+                    isDrawed: true);
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                     barcodepnl.Visible = false;
                     MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -445,12 +454,12 @@ namespace LIMS_Demo.View
         {
             if (patientName == "" )
             {
-                MessageBox.Show("الرجاء تحديد مريض", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("الرجاء تحديد مريض", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             
-            else if (dvgTest.Rows.Count == 0)
+            if (dvgTest.Rows.Count == 0)
             {
-                MessageBox.Show("الرجاء إختيار تحليل", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("الرجاء إختيار تحليل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 testL.ForeColor = Color.Red;
             }
             else
@@ -458,6 +467,7 @@ namespace LIMS_Demo.View
                 int userid = View.Permision.userID;
                 Barcode barcode = new Barcode();
                 barcodepnl.Visible = true;
+                
             }
         }
 

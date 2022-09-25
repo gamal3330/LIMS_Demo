@@ -33,8 +33,6 @@ namespace LIMS_Demo.View
             this.label1 = new System.Windows.Forms.Label();
             this.SettingsPan = new System.Windows.Forms.Panel();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
-            this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
@@ -46,14 +44,16 @@ namespace LIMS_Demo.View
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.SettingsPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage5.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
+            this.xtraTabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -100,36 +100,6 @@ namespace LIMS_Demo.View
             this.xtraTabPage3,
             this.xtraTabPage4,
             this.xtraTabPage5});
-            // 
-            // xtraTabPage5
-            // 
-            this.xtraTabPage5.Controls.Add(this.rjButton8);
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(932, 718);
-            this.xtraTabPage5.Text = "الباركود";
-            // 
-            // rjButton8
-            // 
-            this.rjButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton8.BorderRadius = 20;
-            this.rjButton8.BorderSize = 0;
-            this.rjButton8.FlatAppearance.BorderSize = 0;
-            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton8.ForeColor = System.Drawing.Color.White;
-            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
-            this.rjButton8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton8.Location = new System.Drawing.Point(600, 85);
-            this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(235, 117);
-            this.rjButton8.TabIndex = 41;
-            this.rjButton8.Text = "تعديل الباركود";
-            this.rjButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rjButton8.TextColor = System.Drawing.Color.White;
-            this.rjButton8.UseVisualStyleBackColor = false;
-            this.rjButton8.Click += new System.EventHandler(this.rjButton8_Click);
             // 
             // xtraTabPage1
             // 
@@ -259,7 +229,7 @@ namespace LIMS_Demo.View
             this.rjButton3.ForeColor = System.Drawing.Color.White;
             this.rjButton3.Image = ((System.Drawing.Image)(resources.GetObject("rjButton3.Image")));
             this.rjButton3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton3.Location = new System.Drawing.Point(606, 82);
+            this.rjButton3.Location = new System.Drawing.Point(600, 85);
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(235, 117);
             this.rjButton3.TabIndex = 40;
@@ -292,7 +262,7 @@ namespace LIMS_Demo.View
             this.rjButton7.Name = "rjButton7";
             this.rjButton7.Size = new System.Drawing.Size(235, 117);
             this.rjButton7.TabIndex = 40;
-            this.rjButton7.Text = "استعلام";
+            this.rjButton7.Text = "حركة يومية";
             this.rjButton7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.rjButton7.TextColor = System.Drawing.Color.White;
             this.rjButton7.UseVisualStyleBackColor = false;
@@ -321,6 +291,36 @@ namespace LIMS_Demo.View
             this.rjButton5.UseVisualStyleBackColor = false;
             this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click_1);
             // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.rjButton8);
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(932, 718);
+            this.xtraTabPage5.Text = "الباركود";
+            // 
+            // rjButton8
+            // 
+            this.rjButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton8.BorderRadius = 20;
+            this.rjButton8.BorderSize = 0;
+            this.rjButton8.FlatAppearance.BorderSize = 0;
+            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton8.ForeColor = System.Drawing.Color.White;
+            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
+            this.rjButton8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton8.Location = new System.Drawing.Point(600, 85);
+            this.rjButton8.Name = "rjButton8";
+            this.rjButton8.Size = new System.Drawing.Size(235, 117);
+            this.rjButton8.TabIndex = 41;
+            this.rjButton8.Text = "تعديل الباركود";
+            this.rjButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rjButton8.TextColor = System.Drawing.Color.White;
+            this.rjButton8.UseVisualStyleBackColor = false;
+            this.rjButton8.Click += new System.EventHandler(this.rjButton8_Click);
+            // 
             // SettingsFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,11 +335,11 @@ namespace LIMS_Demo.View
             this.SettingsPan.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage5.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage4.ResumeLayout(false);
+            this.xtraTabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

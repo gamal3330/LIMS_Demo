@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,9 +16,10 @@ namespace LIMS_Demo.Methods
 
         public static List<int> ID = new List<int>();
 
-        public void enquriyMethod (int patientId,bool isDrawed , bool isEntered, bool isReceived)
+        public void enquriyMethod (int patientId , int Invoice_ID , [Optional] bool isDrawed , [Optional] bool isEntered, [Optional] bool isReceived)
         {
             enquirys.Patient_ID = patientId;
+            enquirys.Invoice_ID = Invoice_ID;
             enquirys.isDrawed   = isDrawed;
             enquirys.isEntered  = isEntered;
             enquirys.isReceived = isReceived;

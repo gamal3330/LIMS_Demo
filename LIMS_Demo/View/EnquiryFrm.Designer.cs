@@ -32,6 +32,7 @@ namespace LIMS_Demo.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnquiryFrm));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colInvoice_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPatient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisDrawed = new DevExpress.XtraGrid.Columns.GridColumn();
             this.isDrawed = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -67,6 +68,7 @@ namespace LIMS_Demo.View
             this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Janna LT", 10F);
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colInvoice_ID,
             this.colPatient,
             this.colisDrawed,
             this.colisEntered,
@@ -78,6 +80,31 @@ namespace LIMS_Demo.View
             this.gridView1.OptionsSelection.CheckBoxSelectorField = "isDrawed";
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colInvoice_ID
+            // 
+            this.colInvoice_ID.AppearanceCell.Options.UseTextOptions = true;
+            this.colInvoice_ID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colInvoice_ID.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.colInvoice_ID.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
+            this.colInvoice_ID.AppearanceHeader.Options.UseBackColor = true;
+            this.colInvoice_ID.AppearanceHeader.Options.UseFont = true;
+            this.colInvoice_ID.AppearanceHeader.Options.UseTextOptions = true;
+            this.colInvoice_ID.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colInvoice_ID.Caption = "الكود";
+            this.colInvoice_ID.FieldName = "Invoice_ID";
+            this.colInvoice_ID.Name = "colInvoice_ID";
+            this.colInvoice_ID.OptionsColumn.AllowEdit = false;
+            this.colInvoice_ID.OptionsColumn.AllowFocus = false;
+            this.colInvoice_ID.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.OptionsColumn.AllowIncrementalSearch = false;
+            this.colInvoice_ID.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.OptionsColumn.AllowMove = false;
+            this.colInvoice_ID.OptionsColumn.AllowShowHide = false;
+            this.colInvoice_ID.OptionsColumn.AllowSize = false;
+            this.colInvoice_ID.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.Visible = true;
+            this.colInvoice_ID.VisibleIndex = 0;
             // 
             // colPatient
             // 
@@ -101,7 +128,7 @@ namespace LIMS_Demo.View
             this.colPatient.OptionsColumn.AllowShowHide = false;
             this.colPatient.OptionsColumn.AllowSize = false;
             this.colPatient.Visible = true;
-            this.colPatient.VisibleIndex = 0;
+            this.colPatient.VisibleIndex = 1;
             // 
             // colisDrawed
             // 
@@ -126,7 +153,7 @@ namespace LIMS_Demo.View
             this.colisDrawed.OptionsColumn.AllowShowHide = false;
             this.colisDrawed.OptionsColumn.AllowSize = false;
             this.colisDrawed.Visible = true;
-            this.colisDrawed.VisibleIndex = 1;
+            this.colisDrawed.VisibleIndex = 2;
             // 
             // isDrawed
             // 
@@ -157,7 +184,7 @@ namespace LIMS_Demo.View
             this.colisEntered.OptionsColumn.AllowShowHide = false;
             this.colisEntered.OptionsColumn.AllowSize = false;
             this.colisEntered.Visible = true;
-            this.colisEntered.VisibleIndex = 2;
+            this.colisEntered.VisibleIndex = 3;
             // 
             // isEntered
             // 
@@ -188,7 +215,7 @@ namespace LIMS_Demo.View
             this.colisReceived.OptionsColumn.AllowShowHide = false;
             this.colisReceived.OptionsColumn.AllowSize = false;
             this.colisReceived.Visible = true;
-            this.colisReceived.VisibleIndex = 3;
+            this.colisReceived.VisibleIndex = 4;
             // 
             // isRecived
             // 
@@ -227,5 +254,6 @@ namespace LIMS_Demo.View
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit isEntered;
         private DevExpress.XtraGrid.Columns.GridColumn colisReceived;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit isRecived;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoice_ID;
     }
 }
