@@ -117,12 +117,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Reports\Barcode\Barcode.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\Barcode\Barcode.Designer.cs">
-      <DependentUpon>Barcode.cs</DependentUpon>
-    </Compile>
     <Compile Include="DB\Enquirys.cs">
       <DependentUpon>LIMS.tt</DependentUpon>
     </Compile>
@@ -159,9 +153,6 @@
     <Compile Include="DB\Rays.cs">
       <DependentUpon>LIMS.tt</DependentUpon>
     </Compile>
-    <Compile Include="DB\Result.cs">
-      <DependentUpon>LIMS.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Samples.cs">
       <DependentUpon>LIMS.tt</DependentUpon>
     </Compile>
@@ -179,6 +170,12 @@
     </Compile>
     <Compile Include="DB\Users.cs">
       <DependentUpon>LIMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Barcode\Barcode.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Barcode\Barcode.Designer.cs">
+      <DependentUpon>Barcode.cs</DependentUpon>
     </Compile>
     <Compile Include="LIMSDataSet.cs">
       <DependentUpon>LIMSDataSet.xsd</DependentUpon>

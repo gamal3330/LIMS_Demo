@@ -13,8 +13,7 @@
           <Property Name="Patient_ID" Type="int" Nullable="false" />
           <Property Name="Invoice_ID" Type="int" />
           <Property Name="isDrawed" Type="bit" />
-          <Property Name="isEntered" Type="bit" />
-          <Property Name="isReceived" Type="bit" />
+          <Property Name="isReady" Type="bit" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -34,7 +33,6 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Invoice_ID" Type="int" Nullable="false" />
-          <Property Name="result_id" Type="int" />
           <Property Name="result_value" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_name" Type="nvarchar" MaxLength="50" />
           <Property Name="Test_Category" Type="nvarchar" MaxLength="50" />
@@ -83,20 +81,6 @@
           <Property Name="Ray_Code" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="Price" Type="float" Nullable="false" />
           <Property Name="Notes" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="Result">
-          <Key>
-            <PropertyRef Name="Result_ID" />
-          </Key>
-          <Property Name="Result_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Patient_ID" Type="int" />
-          <Property Name="Test_Cat_ID" Type="int" />
-          <Property Name="Test_ID" Type="int" />
-          <Property Name="Result_Value" Type="float" />
-          <Property Name="User_ID" Type="int" />
-          <Property Name="Sample_Type_ID" Type="int" />
-          <Property Name="Rays_ID" Type="int" />
-          <Property Name="Notes" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Samples">
           <Key>
@@ -227,80 +211,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Result_Patient">
-          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="Patient_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Patient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Rays">
-          <End Role="Rays" Type="Self.Rays" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Rays">
-              <PropertyRef Name="Ray_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Rays_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Samples">
-          <End Role="Samples" Type="Self.Samples" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Samples">
-              <PropertyRef Name="Sample_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Sample_Type_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Test_Cat">
-          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Test_Cat">
-              <PropertyRef Name="Cat_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Test_Cat_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Tests">
-          <End Role="Tests" Type="Self.Tests" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tests">
-              <PropertyRef Name="Test_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Test_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="User_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Tests_Category">
           <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -351,7 +261,6 @@
           <EntitySet Name="Login_Logout" EntityType="Self.Login_Logout" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rays" EntityType="Self.Rays" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Result" EntityType="Self.Result" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Samples" EntityType="Self.Samples" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Test_Cat" EntityType="Self.Test_Cat" Schema="dbo" store:Type="Tables" />
@@ -377,30 +286,6 @@
           <AssociationSet Name="FK_Login_Logout_Users" Association="Self.FK_Login_Logout_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Login_Logout" EntitySet="Login_Logout" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Patient" Association="Self.FK_Result_Patient">
-            <End Role="Patient" EntitySet="Patient" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Rays" Association="Self.FK_Result_Rays">
-            <End Role="Rays" EntitySet="Rays" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Samples" Association="Self.FK_Result_Samples">
-            <End Role="Samples" EntitySet="Samples" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Test_Cat" Association="Self.FK_Result_Test_Cat">
-            <End Role="Test_Cat" EntitySet="Test_Cat" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Tests" Association="Self.FK_Result_Tests">
-            <End Role="Tests" EntitySet="Tests" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Users" Association="Self.FK_Result_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Result" EntitySet="Result" />
           </AssociationSet>
           <AssociationSet Name="FK_Tests_Category" Association="Self.FK_Tests_Category">
             <End Role="Test_Cat" EntitySet="Test_Cat" />
@@ -428,8 +313,7 @@
           <Property Name="Patient_ID" Type="Int32" Nullable="false" />
           <Property Name="Invoice_ID" Type="Int32" />
           <Property Name="isDrawed" Type="Boolean" />
-          <Property Name="isEntered" Type="Boolean" />
-          <Property Name="isReceived" Type="Boolean" />
+          <Property Name="isReady" Type="Boolean" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Enquirys_Patient" FromRole="Enquirys" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Invoice">
@@ -452,7 +336,6 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Invoice_ID" Type="Int32" Nullable="false" />
-          <Property Name="result_id" Type="Int32" />
           <Property Name="result_value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Test_Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -496,7 +379,6 @@
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Enquirys" Relationship="Self.FK_Enquirys_Patient" FromRole="Patient" ToRole="Enquirys" />
           <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Invoice" FromRole="Patient" ToRole="Invoice" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Patient" FromRole="Patient" ToRole="Result" />
         </EntityType>
         <EntityType Name="Rays">
           <Key>
@@ -507,27 +389,6 @@
           <Property Name="Ray_Code" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Rays" FromRole="Rays" ToRole="Result" />
-        </EntityType>
-        <EntityType Name="Result">
-          <Key>
-            <PropertyRef Name="Result_ID" />
-          </Key>
-          <Property Name="Result_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Patient_ID" Type="Int32" />
-          <Property Name="Test_Cat_ID" Type="Int32" />
-          <Property Name="Test_ID" Type="Int32" />
-          <Property Name="Result_Value" Type="Double" />
-          <Property Name="User_ID" Type="Int32" />
-          <Property Name="Sample_Type_ID" Type="Int32" />
-          <Property Name="Rays_ID" Type="Int32" />
-          <Property Name="Notes" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <NavigationProperty Name="Patient" Relationship="Self.FK_Result_Patient" FromRole="Result" ToRole="Patient" />
-          <NavigationProperty Name="Rays" Relationship="Self.FK_Result_Rays" FromRole="Result" ToRole="Rays" />
-          <NavigationProperty Name="Samples" Relationship="Self.FK_Result_Samples" FromRole="Result" ToRole="Samples" />
-          <NavigationProperty Name="Test_Cat" Relationship="Self.FK_Result_Test_Cat" FromRole="Result" ToRole="Test_Cat" />
-          <NavigationProperty Name="Tests" Relationship="Self.FK_Result_Tests" FromRole="Result" ToRole="Tests" />
-          <NavigationProperty Name="Users" Relationship="Self.FK_Result_Users" FromRole="Result" ToRole="Users" />
         </EntityType>
         <EntityType Name="Samples">
           <Key>
@@ -535,7 +396,6 @@
           </Key>
           <Property Name="Sample_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Sample_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Samples" FromRole="Samples" ToRole="Result" />
           <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Sample" FromRole="Samples" ToRole="Tests" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -554,7 +414,6 @@
           </Key>
           <Property Name="Cat_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Test_Cat" FromRole="Test_Cat" ToRole="Result" />
           <NavigationProperty Name="Tests" Relationship="Self.FK_Tests_Category" FromRole="Test_Cat" ToRole="Tests" />
         </EntityType>
         <EntityType Name="Tests">
@@ -572,7 +431,6 @@
           <Property Name="RangeFORwomen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Double" Nullable="false" />
           <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Tests" FromRole="Tests" ToRole="Result" />
           <NavigationProperty Name="Samples" Relationship="Self.FK_Tests_Sample" FromRole="Tests" ToRole="Samples" />
           <NavigationProperty Name="Test_Cat" Relationship="Self.FK_Tests_Category" FromRole="Tests" ToRole="Test_Cat" />
           <NavigationProperty Name="Units" Relationship="Self.FK_Tests_Unit" FromRole="Tests" ToRole="Units" />
@@ -604,7 +462,6 @@
           <Property Name="ResultFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="LogFile" Relationship="Self.FK_LogFile_Users" FromRole="Users" ToRole="LogFile" />
           <NavigationProperty Name="Login_Logout" Relationship="Self.FK_Login_Logout_Users" FromRole="Users" ToRole="Login_Logout" />
-          <NavigationProperty Name="Result" Relationship="Self.FK_Result_Users" FromRole="Users" ToRole="Result" />
         </EntityType>
         <Association Name="FK_Enquirys_Patient">
           <End Role="Patient" Type="Self.Patient" Multiplicity="1">
@@ -670,80 +527,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Result_Patient">
-          <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Patient">
-              <PropertyRef Name="Patient_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Patient_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Rays">
-          <End Role="Rays" Type="Self.Rays" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Rays">
-              <PropertyRef Name="Ray_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Rays_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Samples">
-          <End Role="Samples" Type="Self.Samples" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Samples">
-              <PropertyRef Name="Sample_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Sample_Type_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Test_Cat">
-          <End Role="Test_Cat" Type="Self.Test_Cat" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Test_Cat">
-              <PropertyRef Name="Cat_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Test_Cat_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Tests">
-          <End Role="Tests" Type="Self.Tests" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Tests">
-              <PropertyRef Name="Test_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="Test_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Result_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="Result" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="User_ID" />
-            </Principal>
-            <Dependent Role="Result">
-              <PropertyRef Name="User_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Tests_Sample">
           <End Role="Samples" Type="Self.Samples" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -794,7 +577,6 @@
           <EntitySet Name="Login_Logout" EntityType="Self.Login_Logout" />
           <EntitySet Name="Patient" EntityType="Self.Patient" />
           <EntitySet Name="Rays" EntityType="Self.Rays" />
-          <EntitySet Name="Result" EntityType="Self.Result" />
           <EntitySet Name="Samples" EntityType="Self.Samples" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Test_Cat" EntityType="Self.Test_Cat" />
@@ -820,30 +602,6 @@
           <AssociationSet Name="FK_Login_Logout_Users" Association="Self.FK_Login_Logout_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Login_Logout" EntitySet="Login_Logout" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Patient" Association="Self.FK_Result_Patient">
-            <End Role="Patient" EntitySet="Patient" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Rays" Association="Self.FK_Result_Rays">
-            <End Role="Rays" EntitySet="Rays" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Samples" Association="Self.FK_Result_Samples">
-            <End Role="Samples" EntitySet="Samples" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Test_Cat" Association="Self.FK_Result_Test_Cat">
-            <End Role="Test_Cat" EntitySet="Test_Cat" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Tests" Association="Self.FK_Result_Tests">
-            <End Role="Tests" EntitySet="Tests" />
-            <End Role="Result" EntitySet="Result" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Result_Users" Association="Self.FK_Result_Users">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Result" EntitySet="Result" />
           </AssociationSet>
           <AssociationSet Name="FK_Tests_Sample" Association="Self.FK_Tests_Sample">
             <End Role="Samples" EntitySet="Samples" />
@@ -871,8 +629,7 @@
                 <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
                 <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
                 <ScalarProperty Name="isDrawed" ColumnName="isDrawed" />
-                <ScalarProperty Name="isEntered" ColumnName="isEntered" />
-                <ScalarProperty Name="isReceived" ColumnName="isReceived" />
+                <ScalarProperty Name="isReady" ColumnName="isReady" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -894,7 +651,6 @@
               <MappingFragment StoreEntitySet="invoice_details">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
-                <ScalarProperty Name="result_id" ColumnName="result_id" />
                 <ScalarProperty Name="result_value" ColumnName="result_value" />
                 <ScalarProperty Name="Test_name" ColumnName="Test_name" />
                 <ScalarProperty Name="Test_Category" ColumnName="Test_Category" />
@@ -946,21 +702,6 @@
                 <ScalarProperty Name="Ray_Name" ColumnName="Ray_Name" />
                 <ScalarProperty Name="Ray_Code" ColumnName="Ray_Code" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
-                <ScalarProperty Name="Notes" ColumnName="Notes" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Result">
-            <EntityTypeMapping TypeName="LIMSModel.Result">
-              <MappingFragment StoreEntitySet="Result">
-                <ScalarProperty Name="Result_ID" ColumnName="Result_ID" />
-                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
-                <ScalarProperty Name="Test_Cat_ID" ColumnName="Test_Cat_ID" />
-                <ScalarProperty Name="Test_ID" ColumnName="Test_ID" />
-                <ScalarProperty Name="Result_Value" ColumnName="Result_Value" />
-                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
-                <ScalarProperty Name="Sample_Type_ID" ColumnName="Sample_Type_ID" />
-                <ScalarProperty Name="Rays_ID" ColumnName="Rays_ID" />
                 <ScalarProperty Name="Notes" ColumnName="Notes" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -19,7 +19,6 @@ namespace LIMS_Demo.DB
         {
             this.Enquirys = new HashSet<Enquirys>();
             this.Invoice = new HashSet<Invoice>();
-            this.Result = new HashSet<Result>();
         }
     
         public int Patient_ID { get; set; }
@@ -35,7 +34,5 @@ namespace LIMS_Demo.DB
         public virtual ICollection<Enquirys> Enquirys { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoice { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Result { get; set; }
     }
 }

@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrinting.BarCode;
-
 namespace LIMS_Demo.View
 {
     public partial class TestsFrm : Form
@@ -33,7 +32,6 @@ namespace LIMS_Demo.View
         string smpleTest;
         double dicsount;
      
-        Result result = new Result();
         Invoice invoice = new Invoice();
         invoice_details inv_Details = new invoice_details();
         View.Permision permision = new Permision();
@@ -41,6 +39,8 @@ namespace LIMS_Demo.View
         DataTable table = new DataTable();
         LogFile_Track log = new LogFile_Track();
         Tests Tests = new Tests();
+
+
         public TestsFrm()
         {
             InitializeComponent();
@@ -78,7 +78,6 @@ namespace LIMS_Demo.View
         {
             View.SelectPatient select = new SelectPatient();
             select.ShowDialog();
-
             patientId = select.id.ToString();
             patientName = select.name;
             this.nametxt.Text = patientName;
@@ -107,7 +106,6 @@ namespace LIMS_Demo.View
         //add test into datagridview
         private void rjButton6_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (nametxt.Text != "")
@@ -242,73 +240,78 @@ namespace LIMS_Demo.View
 
         private void singleBarcodeBtn_Click(object sender, EventArgs e)
         {
-            int userid = View.Permision.userID;
-
-            Methods.Enquiry enquiry = new Methods.Enquiry();
-            
-            List<Barcode> barcodes = new List<Barcode>();
-            Barcode barcode = new Barcode();
-            //string selectedSmpAvalible;
-
-
-
-            if (dvgTest.Rows.Count > 0)
+            try
             {
-                //save invoice
-                
-                invoice.Patinet_ID = int.Parse(patientId);
-                invoice.total = Convert.ToDouble(totaltxt.Text);
-                invoice.discount = discountxt.Text == "" ? 0.0 : Convert.ToDouble(discountxt.Text);
-                invoice.Invoice_Date = DateTime.Now;
-                invoice.User_ID = userid;
-                invoice.Notes = $"{whatsApp} , {email} , {pregnant} , {fasting}";
-                db.Invoice.Add(invoice);
+                int userid = View.Permision.userID;
 
-              
+                Methods.Enquiry enquiry = new Methods.Enquiry();
 
+                List<Barcode> barcodes = new List<Barcode>();
 
-                
-                for (int i = 0; i < dvgTest.Rows.Count; i++)
+                //string selectedSmpAvalible;
+
+                if (dvgTest.Rows.Count > 0)
                 {
-                    // save invoice detailes 
-                    inv_Details.Invoice_ID = db.Invoice.Max(x => x.Invoice_ID);
-                    inv_Details.Test_name = dvgTest.Rows[i].Cells[1].Value.ToString(); 
-                    inv_Details.Test_Category = dvgTest.Rows[i].Cells[0].Value.ToString();
-                    inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
-                    db.invoice_details.Add(inv_Details);
-
+                    //save invoice
+                    invoice.Patinet_ID = int.Parse(patientId);
+                    invoice.total = Convert.ToDouble(totaltxt.Text);
+                    invoice.discount = discountxt.Text == "" ? 0.0 : Convert.ToDouble(discountxt.Text);
+                    invoice.Invoice_Date = DateTime.Now;
+                    invoice.User_ID = userid;
+                    invoice.Notes = $"{whatsApp} , {email} , {pregnant} , {fasting}";
+                    db.Invoice.Add(invoice);
+                    db.SaveChanges();
+                    maxId = db.Invoice.Max(x => x.Invoice_ID);
+                    for (int i = 0; i < dvgTest.Rows.Count; i++)
+                    {
+                        // save invoice detailes 
+                        inv_Details.Invoice_ID = maxId;
+                        inv_Details.Test_name = dvgTest.Rows[i].Cells[1].Value.ToString();
+                        inv_Details.Test_Category = dvgTest.Rows[i].Cells[0].Value.ToString();
+                        inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
+                        db.invoice_details.Add(inv_Details);
+                    }
+                    db.SaveChanges();
                     //barcode
-                    
-                    barcode.patientName.Text = patientName;
-                    barcode.TestName.Text = dvgTest.Rows[i].Cells[1].Value.ToString();
-                    barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
-                    barcode.date.Text = DateTime.Now.ToString();
-                    barcodes.Add(barcode);
-                    barcodes[i].ShowPreviewDialog();  
-                }
+                    for (int i = 0; i < dvgTest.Rows.Count; i++)
+                    {
+                        Barcode barcode = new Barcode();
+                        barcode.patientName.Text = patientName;
+                        barcode.TestName.Text = dvgTest.Rows[i].Cells[1].Value.ToString();
+                        barcode.code.Text = maxId.ToString();
+                        barcode.date.Text = DateTime.Now.ToString();
+                        barcodes.Add(barcode);
+                        barcodes[i].ShowPreviewDialog();
+                        barcode.Dispose();
+                    }
 
-                if (!smpleTesttxt.Text.Contains("-"))
+                    if (!smpleTesttxt.Text.Contains("-"))
+                    {
+                        smpl();
+                        db.SaveChanges();
+                    }
+
+                    enquiry.enquriyMethod(
+                        patientId: int.Parse(patientId),
+                        Invoice_ID: db.Invoice.Max(x => x.Invoice_ID),
+                        isDrawed: true);
+
+                    barcodepnl.Visible = false;
+                    log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
+                    MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearFields();
+                    nametxt.Text = "";
+                    Idtxt.Text = "";
+                }
+                else
                 {
-                    smpl();
+                    MessageBox.Show("لم يتم إضافة تحليل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-
-
-                db.SaveChanges();
-                enquiry.enquriyMethod(
-                    patientId: int.Parse(patientId) ,
-                    Invoice_ID : db.Invoice.Max(x => x.Invoice_ID),
-                    isDrawed: true);
-                barcodepnl.Visible = false;
-                log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
-                MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                barcode.Dispose();
-                ClearFields();
-                nametxt.Text = "";
-                Idtxt.Text = "";
             }
-            else
+            catch (Exception error)
             {
-                MessageBox.Show("لم يتم إضافة تحليل", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                MessageBox.Show(error.Message);
             }
         }
         private void multiBarcodeBtn_Click(object sender, EventArgs e)
@@ -320,7 +323,6 @@ namespace LIMS_Demo.View
             {
                 int userid = View.Permision.userID;
                 var category = new List<String>();
-                Barcode barcode = new Barcode();
 
                 string notes = string.Format($"{whatsApp},{email},{pregnant},{fasting}");
                 if (dvgTest.Rows.Count > 0)
@@ -345,25 +347,33 @@ namespace LIMS_Demo.View
                         db.invoice_details.Add(inv_Details);
                         db.SaveChanges();
                     }
+                    
 
+                    List<string> lists = new List<string>();
+                    for (int i = 0; i < dvgTest.Rows.Count; i++)
+                    {
+                        lists.Add(dvgTest.Rows[i].Cells[0].Value.ToString());
+                    }
                     //After save to DB , give all test category from Invoice_detailesTB in List
-                    var codes = db.invoice_details.Where(x => x.Invoice_ID == maxId).Select(x => x.Test_Category).ToList();
+                    //var codes = db.invoice_details.Where(x => x.Invoice_ID == maxId).Select(x => x.Test_Category).ToList();
 
                     //Make ForEach and remove dupilcate
-                    foreach (var item in codes.Distinct().ToList())
+                    foreach (var item in lists.Distinct())
                     {
                         //Create an object from Barcode in every loop
+                        Barcode barcode = new Barcode();
                         barcode.patientName.Text = patientName;
                         barcode.TestName.Text = item;
                         barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
                         barcode.date.Text = DateTime.Now.ToString();
                         barcode.ShowPreviewDialog();
-
+                        barcode.Dispose();
                     }
 
                     if (!smpleTesttxt.Text.Contains("-"))
                     {
                         smpl();
+                        db.SaveChanges();
                     }
 
                     enquiry.enquriyMethod(
@@ -373,7 +383,6 @@ namespace LIMS_Demo.View
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                     barcodepnl.Visible = false;
                     MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    barcode.Dispose();
                     ClearFields();
                     nametxt.Text = "";
                     Idtxt.Text = "";

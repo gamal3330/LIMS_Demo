@@ -30,37 +30,33 @@ namespace LIMS_Demo.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnquiryFrm));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.dvgEnquirys = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colInvoice_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPatient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisDrawed = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.isDrawed = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.colisEntered = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.isEntered = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.colisReceived = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.isRecived = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.colisReady = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEnquirys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isDrawed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isEntered)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isRecived)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // dvgEnquirys
             // 
-            this.gridControl1.DataSource = typeof(LIMS_Demo.DB.Enquirys);
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.isDrawed,
-            this.isEntered,
-            this.isRecived});
-            this.gridControl1.Size = new System.Drawing.Size(1150, 758);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dvgEnquirys.DataSource = typeof(LIMS_Demo.DB.Enquirys);
+            this.dvgEnquirys.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dvgEnquirys.Location = new System.Drawing.Point(0, 0);
+            this.dvgEnquirys.MainView = this.gridView1;
+            this.dvgEnquirys.Name = "dvgEnquirys";
+            this.dvgEnquirys.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1,
+            this.repositoryItemCheckEdit2});
+            this.dvgEnquirys.Size = new System.Drawing.Size(1150, 758);
+            this.dvgEnquirys.TabIndex = 0;
+            this.dvgEnquirys.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -71,9 +67,8 @@ namespace LIMS_Demo.View
             this.colInvoice_ID,
             this.colPatient,
             this.colisDrawed,
-            this.colisEntered,
-            this.colisReceived});
-            this.gridView1.GridControl = this.gridControl1;
+            this.colisReady});
+            this.gridView1.GridControl = this.dvgEnquirys;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsFind.FindNullPrompt = "الإسم";
@@ -103,6 +98,11 @@ namespace LIMS_Demo.View
             this.colInvoice_ID.OptionsColumn.AllowShowHide = false;
             this.colInvoice_ID.OptionsColumn.AllowSize = false;
             this.colInvoice_ID.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.OptionsFilter.AllowAutoFilter = false;
+            this.colInvoice_ID.OptionsFilter.AllowFilter = false;
+            this.colInvoice_ID.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.OptionsFilter.AllowInHeaderSearch = DevExpress.Utils.DefaultBoolean.False;
+            this.colInvoice_ID.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.True;
             this.colInvoice_ID.Visible = true;
             this.colInvoice_ID.VisibleIndex = 0;
             // 
@@ -127,6 +127,12 @@ namespace LIMS_Demo.View
             this.colPatient.OptionsColumn.AllowMove = false;
             this.colPatient.OptionsColumn.AllowShowHide = false;
             this.colPatient.OptionsColumn.AllowSize = false;
+            this.colPatient.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colPatient.OptionsFilter.AllowAutoFilter = false;
+            this.colPatient.OptionsFilter.AllowFilter = false;
+            this.colPatient.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colPatient.OptionsFilter.AllowInHeaderSearch = DevExpress.Utils.DefaultBoolean.False;
+            this.colPatient.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.True;
             this.colPatient.Visible = true;
             this.colPatient.VisibleIndex = 1;
             // 
@@ -141,7 +147,7 @@ namespace LIMS_Demo.View
             this.colisDrawed.AppearanceHeader.Options.UseTextOptions = true;
             this.colisDrawed.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colisDrawed.Caption = "تم سحب العينة";
-            this.colisDrawed.ColumnEdit = this.isDrawed;
+            this.colisDrawed.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colisDrawed.FieldName = "isDrawed";
             this.colisDrawed.Name = "colisDrawed";
             this.colisDrawed.OptionsColumn.AllowEdit = false;
@@ -152,108 +158,85 @@ namespace LIMS_Demo.View
             this.colisDrawed.OptionsColumn.AllowMove = false;
             this.colisDrawed.OptionsColumn.AllowShowHide = false;
             this.colisDrawed.OptionsColumn.AllowSize = false;
+            this.colisDrawed.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colisDrawed.OptionsFilter.AllowAutoFilter = false;
+            this.colisDrawed.OptionsFilter.AllowFilter = false;
+            this.colisDrawed.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colisDrawed.OptionsFilter.AllowInHeaderSearch = DevExpress.Utils.DefaultBoolean.False;
+            this.colisDrawed.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.True;
             this.colisDrawed.Visible = true;
             this.colisDrawed.VisibleIndex = 2;
             // 
-            // isDrawed
+            // colisReady
             // 
-            this.isDrawed.AutoHeight = false;
-            this.isDrawed.Name = "isDrawed";
-            this.isDrawed.ReadOnly = true;
+            this.colisReady.AppearanceCell.Options.UseTextOptions = true;
+            this.colisReady.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colisReady.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.colisReady.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
+            this.colisReady.AppearanceHeader.Options.UseBackColor = true;
+            this.colisReady.AppearanceHeader.Options.UseFont = true;
+            this.colisReady.AppearanceHeader.Options.UseTextOptions = true;
+            this.colisReady.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colisReady.Caption = "جاهز للإستلام";
+            this.colisReady.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.colisReady.FieldName = "isReady";
+            this.colisReady.Name = "colisReady";
+            this.colisReady.OptionsColumn.AllowEdit = false;
+            this.colisReady.OptionsColumn.AllowFocus = false;
+            this.colisReady.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.colisReady.OptionsColumn.AllowIncrementalSearch = false;
+            this.colisReady.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colisReady.OptionsColumn.AllowMove = false;
+            this.colisReady.OptionsColumn.AllowShowHide = false;
+            this.colisReady.OptionsColumn.AllowSize = false;
+            this.colisReady.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colisReady.OptionsFilter.AllowAutoFilter = false;
+            this.colisReady.OptionsFilter.AllowFilter = false;
+            this.colisReady.OptionsFilter.AllowFilterModeChanging = DevExpress.Utils.DefaultBoolean.False;
+            this.colisReady.OptionsFilter.AllowInHeaderSearch = DevExpress.Utils.DefaultBoolean.False;
+            this.colisReady.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.True;
+            this.colisReady.Visible = true;
+            this.colisReady.VisibleIndex = 3;
             // 
-            // colisEntered
+            // repositoryItemCheckEdit1
             // 
-            this.colisEntered.AppearanceCell.Options.UseTextOptions = true;
-            this.colisEntered.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colisEntered.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.colisEntered.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
-            this.colisEntered.AppearanceHeader.Options.UseBackColor = true;
-            this.colisEntered.AppearanceHeader.Options.UseFont = true;
-            this.colisEntered.AppearanceHeader.Options.UseTextOptions = true;
-            this.colisEntered.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colisEntered.Caption = "تم إدخال النتيجة";
-            this.colisEntered.ColumnEdit = this.isEntered;
-            this.colisEntered.FieldName = "isEntered";
-            this.colisEntered.Name = "colisEntered";
-            this.colisEntered.OptionsColumn.AllowEdit = false;
-            this.colisEntered.OptionsColumn.AllowFocus = false;
-            this.colisEntered.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colisEntered.OptionsColumn.AllowIncrementalSearch = false;
-            this.colisEntered.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colisEntered.OptionsColumn.AllowMove = false;
-            this.colisEntered.OptionsColumn.AllowShowHide = false;
-            this.colisEntered.OptionsColumn.AllowSize = false;
-            this.colisEntered.Visible = true;
-            this.colisEntered.VisibleIndex = 3;
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
-            // isEntered
+            // repositoryItemCheckEdit2
             // 
-            this.isEntered.AutoHeight = false;
-            this.isEntered.Name = "isEntered";
-            this.isEntered.ReadOnly = true;
-            // 
-            // colisReceived
-            // 
-            this.colisReceived.AppearanceCell.Options.UseTextOptions = true;
-            this.colisReceived.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colisReceived.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.colisReceived.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
-            this.colisReceived.AppearanceHeader.Options.UseBackColor = true;
-            this.colisReceived.AppearanceHeader.Options.UseFont = true;
-            this.colisReceived.AppearanceHeader.Options.UseTextOptions = true;
-            this.colisReceived.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colisReceived.Caption = "تم الإستلام";
-            this.colisReceived.ColumnEdit = this.isRecived;
-            this.colisReceived.FieldName = "isReceived";
-            this.colisReceived.Name = "colisReceived";
-            this.colisReceived.OptionsColumn.AllowEdit = false;
-            this.colisReceived.OptionsColumn.AllowFocus = false;
-            this.colisReceived.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.colisReceived.OptionsColumn.AllowIncrementalSearch = false;
-            this.colisReceived.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colisReceived.OptionsColumn.AllowMove = false;
-            this.colisReceived.OptionsColumn.AllowShowHide = false;
-            this.colisReceived.OptionsColumn.AllowSize = false;
-            this.colisReceived.Visible = true;
-            this.colisReceived.VisibleIndex = 4;
-            // 
-            // isRecived
-            // 
-            this.isRecived.AutoHeight = false;
-            this.isRecived.Name = "isRecived";
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
             // 
             // EnquiryFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 758);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.dvgEnquirys);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnquiryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الإستعلامات";
             this.Load += new System.EventHandler(this.EnquiryFrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgEnquirys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isDrawed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isEntered)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isRecived)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.GridControl dvgEnquirys;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colInvoice_ID;
         private DevExpress.XtraGrid.Columns.GridColumn colPatient;
         private DevExpress.XtraGrid.Columns.GridColumn colisDrawed;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit isDrawed;
-        private DevExpress.XtraGrid.Columns.GridColumn colisEntered;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit isEntered;
-        private DevExpress.XtraGrid.Columns.GridColumn colisReceived;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit isRecived;
-        private DevExpress.XtraGrid.Columns.GridColumn colInvoice_ID;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colisReady;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }

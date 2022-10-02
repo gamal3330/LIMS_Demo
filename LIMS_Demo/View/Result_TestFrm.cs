@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using USB_Barcode_Scanner;
 using LIMS_Demo.Methods;
 
 namespace LIMS_Demo.View
@@ -30,30 +29,12 @@ namespace LIMS_Demo.View
         LIMS db = new LIMS();
         public Result_TestFrm()
         {
-
-            
-
             InitializeComponent();
-
-            BarcodeScanner barcodeScanner = new BarcodeScanner(resulttxt);
-            
-            barcodeScanner.BarcodeScanned += BarcodeScanner_BarcodeScanned;
-
             table.Columns.Add("المجموعة");
             table.Columns.Add("التحليل");
             table.Columns.Add("النتيجة");
-
             dvgResult.DataSource = table;
-
             resulttxt.Focus();
-
-
-
-        }
-
-        private void BarcodeScanner_BarcodeScanned(object sender, BarcodeScannerEventArgs e)
-        {
-            resulttxt.Text = e.Barcode;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -95,28 +76,22 @@ namespace LIMS_Demo.View
                             row[1] = itemT.Test_name;
                             row[2] = itemT.result_value;
                             table.Rows.Add(row);
-
                         }
-
                         //rowIndex = dvgResult.CurrentRow.Index;
                     }
                     else
                     {
                         MessageBox.Show("عذراً , لا يوجد هذا الفحص !");
                     }
-
                 }
             }
             catch (Exception error)
             {
-
                 MessageBox.Show(error.Message);
             }
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (resulttxt.Text == "")
@@ -125,7 +100,6 @@ namespace LIMS_Demo.View
                 }
                 else
                 {
-                    
                     dvgResult.Rows[rowIndex].Cells[2].Value = resulttxt.Text;
                     resulttxt.Text = string.Empty;
                     resulttxt.Focus();
@@ -141,23 +115,17 @@ namespace LIMS_Demo.View
                     dvgResult.Rows[dvgResult.CurrentRow.Index].Selected = false;
                     dvgResult.Rows[currrentrow].Selected = true;
                     rowIndex += 1;
-                    
                 }
             }
             catch (Exception error)
             {
-
                 MessageBox.Show(error.Message);
             }
-            
-
-
         }
         private void dvgResult_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             rowIndex = e.RowIndex;
         }
-
         private void saveBtn_Click(object sender, EventArgs e)
         {
             if(patientName == "")
@@ -177,17 +145,39 @@ namespace LIMS_Demo.View
                 var iD = int.Parse(patientId);
 
                 var r = db.Enquirys.SingleOrDefault(x => x.Invoice_ID == barcode);
-                r.isEntered = true;
+                r.isReady = true;
                 db.SaveChanges();
 
                 MessageBox.Show("تم الحفظ" , "" , MessageBoxButtons.OK , MessageBoxIcon.Information);
+                Clear();
             }
         }
 
         private void Result_TestFrm_Activated(object sender, EventArgs e)
         {
             this.ActiveControl = txtBarcode;
+        }
 
+
+        private void rjButton5_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+        void Clear() 
+        {
+            txtBarcode.Text = "";
+            nametxt.Text = "";
+            phonetxt.Text = "";
+            patientId = "";
+            patientName = "";
+            table.Clear();
+            resulttxt.Text = "";
+            cmbResutlt.SelectedIndex = -1;
+        }
+
+        private void cmbResutlt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resulttxt.Text = cmbResutlt.Text;
         }
     }
 }

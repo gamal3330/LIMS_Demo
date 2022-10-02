@@ -37,15 +37,8 @@ namespace LIMS_Demo.View
             cmbdiscount.Enabled = Convert.ToBoolean(View.Permision.disCountPer);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void addPatientBtn_Click(object sender, EventArgs e)
         {
@@ -155,24 +148,16 @@ namespace LIMS_Demo.View
 
         private void ClearField ()
         {
+            patientId = "";
+            patientName = "";
             Idtxt.Text = "";
             nametxt.Text = "";
-            cmbdiscount.SelectedIndex= -1;
             txtCode.Text = "";
             txtNotes.Text = "";
             pricetxt.Text = "";
             discountxt.Text = "";
             cmbdiscount.SelectedIndex = -1;
-        }
-
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog opnfd = new OpenFileDialog();
-            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
-            if (opnfd.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox1.Image = new Bitmap(opnfd.FileName);
-            }
+            pictureBox1.Image =  null;
         }
 
         byte[] ConvertImageToByte (Image img) 
@@ -183,5 +168,21 @@ namespace LIMS_Demo.View
                 return ms.ToArray();
             }
         }
+
+        private void rjButton1_Click_1(object sender, EventArgs e)
+        {
+            OpenFileDialog opnfd = new OpenFileDialog();
+            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+            if (opnfd.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = new Bitmap(opnfd.FileName);
+            }
+        }
+
+        private void rjButton5_Click(object sender, EventArgs e)
+        {
+            ClearField();
+        }
+       
     }
 }

@@ -16,7 +16,6 @@ namespace LIMS_Demo.DB
     {
         public int id { get; set; }
         public int Invoice_ID { get; set; }
-        public Nullable<int> result_id { get; set; }
         public string result_value { get; set; }
         public string Test_name { get; set; }
         public string Test_Category { get; set; }

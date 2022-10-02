@@ -32,6 +32,7 @@ namespace LIMS_Demo.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaysFrm));
             this.RaysPan = new System.Windows.Forms.Panel();
+            this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cmbdiscount = new System.Windows.Forms.ComboBox();
             this.discountxt = new DevExpress.XtraEditors.TextEdit();
@@ -44,10 +45,11 @@ namespace LIMS_Demo.View
             this.label8 = new System.Windows.Forms.Label();
             this.Idtxt = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.saveBtn = new CustomControls.RJControls.RJButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbRayName = new System.Windows.Forms.ComboBox();
             this.raysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lIMSDataSet = new LIMS_Demo.LIMSDataSet();
@@ -58,8 +60,6 @@ namespace LIMS_Demo.View
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.raysTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.RaysTableAdapter();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RaysPan.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.discountxt.Properties)).BeginInit();
@@ -68,17 +68,17 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.nametxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Idtxt.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raysBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lIMSDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // RaysPan
             // 
+            this.RaysPan.Controls.Add(this.rjButton5);
             this.RaysPan.Controls.Add(this.groupBox7);
             this.RaysPan.Controls.Add(this.groupBox5);
-            this.RaysPan.Controls.Add(this.rjButton5);
             this.RaysPan.Controls.Add(this.rjButton3);
             this.RaysPan.Controls.Add(this.saveBtn);
             this.RaysPan.Controls.Add(this.groupBox2);
@@ -88,6 +88,28 @@ namespace LIMS_Demo.View
             this.RaysPan.Name = "RaysPan";
             this.RaysPan.Size = new System.Drawing.Size(934, 847);
             this.RaysPan.TabIndex = 0;
+            // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BorderRadius = 15;
+            this.rjButton5.BorderSize = 0;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
+            this.rjButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton5.Location = new System.Drawing.Point(61, 749);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(180, 60);
+            this.rjButton5.TabIndex = 35;
+            this.rjButton5.Text = "جديد";
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click);
             // 
             // groupBox7
             // 
@@ -252,28 +274,6 @@ namespace LIMS_Demo.View
             this.label2.TabIndex = 8;
             this.label2.Text = "ID";
             // 
-            // rjButton5
-            // 
-            this.rjButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton5.BorderRadius = 15;
-            this.rjButton5.BorderSize = 0;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
-            this.rjButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton5.Location = new System.Drawing.Point(61, 749);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(180, 60);
-            this.rjButton5.TabIndex = 29;
-            this.rjButton5.Text = "تفريغ الحقول";
-            this.rjButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rjButton5.TextColor = System.Drawing.Color.White;
-            this.rjButton5.UseVisualStyleBackColor = false;
-            // 
             // rjButton3
             // 
             this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -287,7 +287,7 @@ namespace LIMS_Demo.View
             this.rjButton3.ForeColor = System.Drawing.Color.White;
             this.rjButton3.Image = ((System.Drawing.Image)(resources.GetObject("rjButton3.Image")));
             this.rjButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton3.Location = new System.Drawing.Point(358, 750);
+            this.rjButton3.Location = new System.Drawing.Point(347, 750);
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(180, 60);
             this.rjButton3.TabIndex = 31;
@@ -309,7 +309,7 @@ namespace LIMS_Demo.View
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveBtn.Image")));
             this.saveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveBtn.Location = new System.Drawing.Point(677, 749);
+            this.saveBtn.Location = new System.Drawing.Point(665, 750);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.saveBtn.Size = new System.Drawing.Size(180, 60);
@@ -339,6 +339,38 @@ namespace LIMS_Demo.View
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اختيار أشعة";
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Location = new System.Drawing.Point(70, 181);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(120, 53);
+            this.rjButton1.TabIndex = 33;
+            this.rjButton1.Text = "إدراج صورة";
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(31, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(204, 129);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
             // 
             // cmbRayName
             // 
@@ -432,37 +464,6 @@ namespace LIMS_Demo.View
             // 
             this.raysTableAdapter.ClearBeforeFill = true;
             // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 15;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(70, 181);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(120, 53);
-            this.rjButton1.TabIndex = 33;
-            this.rjButton1.Text = "إدراج صورة";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(31, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 129);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 32;
-            this.pictureBox1.TabStop = false;
-            // 
             // RaysFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,17 +487,16 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.Idtxt.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.raysBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lIMSDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJButton rjButton5;
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJButton saveBtn;
         public System.Windows.Forms.Panel RaysPan;
@@ -524,5 +524,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Label label19;
         private CustomControls.RJControls.RJButton rjButton1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private CustomControls.RJControls.RJButton rjButton5;
     }
 }

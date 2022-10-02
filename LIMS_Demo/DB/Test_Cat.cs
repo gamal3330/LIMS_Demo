@@ -17,15 +17,12 @@ namespace LIMS_Demo.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Test_Cat()
         {
-            this.Result = new HashSet<Result>();
             this.Tests = new HashSet<Tests>();
         }
     
         public int Cat_ID { get; set; }
         public string Cat_Name { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Result { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tests> Tests { get; set; }
     }

@@ -14,12 +14,6 @@ namespace LIMS_Demo.DB
     
     public partial class Tests
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tests()
-        {
-            this.Result = new HashSet<Result>();
-        }
-    
         public int Test_ID { get; set; }
         public int Cat_ID { get; set; }
         public int Unit_ID { get; set; }
@@ -32,8 +26,6 @@ namespace LIMS_Demo.DB
         public double Price { get; set; }
         public string Notes { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Result> Result { get; set; }
         public virtual Samples Samples { get; set; }
         public virtual Test_Cat Test_Cat { get; set; }
         public virtual Units Units { get; set; }

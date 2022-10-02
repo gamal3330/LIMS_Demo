@@ -32,7 +32,6 @@ namespace LIMS_Demo.DB
         public virtual DbSet<Login_Logout> Login_Logout { get; set; }
         public virtual DbSet<Patient> Patient { get; set; }
         public virtual DbSet<Rays> Rays { get; set; }
-        public virtual DbSet<Result> Result { get; set; }
         public virtual DbSet<Samples> Samples { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Test_Cat> Test_Cat { get; set; }
