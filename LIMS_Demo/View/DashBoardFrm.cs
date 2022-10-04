@@ -166,6 +166,18 @@ namespace LIMS_Demo.View
 
         }
 
-
+        private void delEnqBtn_Click(object sender, EventArgs e)
+        {
+            var dialog = MessageBox.Show("هل أنت متأكد من حذف جميع تحاليل اليوم ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+            {
+                View.ConfirmWithPassFrm confirmWithPassFrm = new ConfirmWithPassFrm();
+                confirmWithPassFrm.ShowDialog();
+            }
+            if (dialog == DialogResult.No)
+            {
+                return;
+            }
+        }
     }
 }

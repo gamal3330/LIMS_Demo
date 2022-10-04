@@ -41,6 +41,7 @@ namespace LIMS_Demo.View
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.DashPan = new System.Windows.Forms.Panel();
+            this.delEnqBtn = new CustomControls.RJControls.RJButton();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.btnSettings = new CustomControls.RJControls.RJButton();
             this.btnInvoice = new CustomControls.RJControls.RJButton();
@@ -58,6 +59,7 @@ namespace LIMS_Demo.View
             // 
             this.sidePanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.sidePanel1.Appearance.Options.UseBackColor = true;
+            this.sidePanel1.Controls.Add(this.delEnqBtn);
             this.sidePanel1.Controls.Add(this.pictureBox1);
             this.sidePanel1.Controls.Add(this.panel7);
             this.sidePanel1.Controls.Add(this.panel6);
@@ -166,6 +168,25 @@ namespace LIMS_Demo.View
             this.DashPan.Name = "DashPan";
             this.DashPan.Size = new System.Drawing.Size(934, 847);
             this.DashPan.TabIndex = 31;
+            // 
+            // delEnqBtn
+            // 
+            this.delEnqBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.delEnqBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.delEnqBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.delEnqBtn.BorderRadius = 0;
+            this.delEnqBtn.BorderSize = 0;
+            this.delEnqBtn.FlatAppearance.BorderSize = 0;
+            this.delEnqBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delEnqBtn.ForeColor = System.Drawing.Color.White;
+            this.delEnqBtn.Image = ((System.Drawing.Image)(resources.GetObject("delEnqBtn.Image")));
+            this.delEnqBtn.Location = new System.Drawing.Point(189, 831);
+            this.delEnqBtn.Name = "delEnqBtn";
+            this.delEnqBtn.Size = new System.Drawing.Size(74, 69);
+            this.delEnqBtn.TabIndex = 36;
+            this.delEnqBtn.TextColor = System.Drawing.Color.White;
+            this.delEnqBtn.UseVisualStyleBackColor = false;
+            this.delEnqBtn.Click += new System.EventHandler(this.delEnqBtn_Click);
             // 
             // rjButton7
             // 
@@ -389,5 +410,6 @@ namespace LIMS_Demo.View
         public CustomControls.RJControls.RJButton btnPatient;
         public System.Windows.Forms.Panel panel3;
         public CustomControls.RJControls.RJButton btnResultTst;
+        private CustomControls.RJControls.RJButton delEnqBtn;
     }
 }

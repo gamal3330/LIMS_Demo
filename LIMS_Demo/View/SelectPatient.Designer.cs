@@ -45,6 +45,7 @@ namespace LIMS_Demo.View
             this.colDate_Entry = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNotes = new DevExpress.XtraGrid.Columns.GridColumn();
             this.label4 = new System.Windows.Forms.Label();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtSeachPatient.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectPatientGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectPatientGridView)).BeginInit();
@@ -71,7 +72,7 @@ namespace LIMS_Demo.View
             // 
             // txtSeachPatient
             // 
-            this.txtSeachPatient.Location = new System.Drawing.Point(251, 120);
+            this.txtSeachPatient.Location = new System.Drawing.Point(295, 167);
             this.txtSeachPatient.Name = "txtSeachPatient";
             this.txtSeachPatient.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F);
             this.txtSeachPatient.Properties.Appearance.Options.UseFont = true;
@@ -91,7 +92,7 @@ namespace LIMS_Demo.View
             this.searchPatientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.searchPatientBtn.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchPatientBtn.ForeColor = System.Drawing.Color.White;
-            this.searchPatientBtn.Location = new System.Drawing.Point(691, 116);
+            this.searchPatientBtn.Location = new System.Drawing.Point(735, 164);
             this.searchPatientBtn.Name = "searchPatientBtn";
             this.searchPatientBtn.Size = new System.Drawing.Size(98, 52);
             this.searchPatientBtn.TabIndex = 18;
@@ -386,11 +387,32 @@ namespace LIMS_Demo.View
             this.label4.TabIndex = 22;
             this.label4.Text = "اختيار مريض";
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton1.ForeColor = System.Drawing.Color.Red;
+            this.rjButton1.Location = new System.Drawing.Point(226, 170);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(63, 40);
+            this.rjButton1.TabIndex = 23;
+            this.rjButton1.Text = "حذف";
+            this.rjButton1.TextColor = System.Drawing.Color.Red;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
             // SelectPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 782);
+            this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.selectPatientGrid);
             this.Controls.Add(this.selectPAtientBtn);
@@ -428,5 +450,6 @@ namespace LIMS_Demo.View
         private DevExpress.XtraGrid.Columns.GridColumn colDate_Entry;
         private DevExpress.XtraGrid.Columns.GridColumn colNotes;
         private System.Windows.Forms.Label label4;
+        private CustomControls.RJControls.RJButton rjButton1;
     }
 }

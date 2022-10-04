@@ -83,6 +83,17 @@ namespace LIMS_Demo.View
                     {
                         MessageBox.Show("عذراً , لا يوجد هذا الفحص !");
                     }
+                    for (int i = 0; i < dvgResult.Rows.Count; i++)
+                    {
+                        if(dvgResult.Rows[i].Cells[2].Value.ToString() != "")
+                        {
+                            saveBtn.Enabled = false;
+                        }
+                        else
+                        {
+                            saveBtn.Enabled = true;
+                        }
+                    }
                 }
             }
             catch (Exception error)
@@ -128,28 +139,38 @@ namespace LIMS_Demo.View
         }
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if(patientName == "")
+
+            try
             {
-                MessageBox.Show("يرجى إدخال باركود", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtBarcode.Focus();
-            }else
-            {
-                for (int i = 0; i < dvgResult.Rows.Count; i++)
+                if (patientName == "")
                 {
-                    var test = dvgResult.Rows[i].Cells[1].Value.ToString();
-                    var id = db.invoice_details.Where(item => item.Invoice_ID == barcode).Where(x => x.Test_name == test).Select(x=>x.id).FirstOrDefault();
-                    var selected = db.invoice_details.Where(x => x.id == id).FirstOrDefault();
-                    selected.result_value = dvgResult.Rows[i].Cells[2].Value.ToString();
-                    db.SaveChanges();
+                    MessageBox.Show("يرجى إدخال باركود", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBarcode.Focus();
                 }
-                var iD = int.Parse(patientId);
+                else
+                {
+                    for (int i = 0; i < dvgResult.Rows.Count; i++)
+                    {
+                        var test = dvgResult.Rows[i].Cells[1].Value.ToString();
+                        var id = db.invoice_details.Where(item => item.Invoice_ID == barcode).Where(x => x.Test_name == test).Select(x => x.id).FirstOrDefault();
+                        var selected = db.invoice_details.Where(x => x.id == id).FirstOrDefault();
+                        selected.result_value = dvgResult.Rows[i].Cells[2].Value.ToString();
+                        db.SaveChanges();
+                    }
+                    var iD = int.Parse(patientId);
 
-                var r = db.Enquirys.SingleOrDefault(x => x.Invoice_ID == barcode);
-                r.isReady = true;
-                db.SaveChanges();
+                    var r = db.Enquirys.SingleOrDefault(x => x.Invoice_ID == barcode);
+                    r.isReady = true;
+                    db.SaveChanges();
 
-                MessageBox.Show("تم الحفظ" , "" , MessageBoxButtons.OK , MessageBoxIcon.Information);
-                Clear();
+                    MessageBox.Show("تم الحفظ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                }
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
             }
         }
 
@@ -165,6 +186,7 @@ namespace LIMS_Demo.View
         }
         void Clear() 
         {
+            saveBtn.Enabled = true;
             txtBarcode.Text = "";
             nametxt.Text = "";
             phonetxt.Text = "";

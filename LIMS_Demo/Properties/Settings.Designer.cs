@@ -32,5 +32,23 @@ namespace LIMS_Demo.Properties {
                 return ((string)(this["LIMSConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("info")]
+        public string user {
+            get {
+                return ((string)(this["user"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("123")]
+        public string pass {
+            get {
+                return ((string)(this["pass"]));
+            }
+        }
     }
 }

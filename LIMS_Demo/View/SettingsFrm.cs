@@ -13,11 +13,16 @@ namespace LIMS_Demo.View
 {
     public partial class SettingsFrm : Form
     {
-       
+
+
         public SettingsFrm()
         {
             InitializeComponent();
+            textBox1.Text = Properties.Settings.Default["user"].ToString();
+            textBox2.Text = Properties.Settings.Default["pass"].ToString();
         }
+
+
 
 
         private void rjButton3_Click(object sender, EventArgs e)
@@ -66,7 +71,8 @@ namespace LIMS_Demo.View
             Barcode barcode = new Barcode();
             barcode.ShowDesigner();
 
-
         }
+
+        
     }
 }

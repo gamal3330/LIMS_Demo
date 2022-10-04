@@ -93,7 +93,7 @@ namespace LIMS_Demo.View
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var image = ConvertImageToByte(pictureBox1.Image);
+            
 
             int userid = View.Permision.userID;
             try
@@ -115,7 +115,7 @@ namespace LIMS_Demo.View
 
 
                         //use convert image to byte
-
+                        var image = ConvertImageToByte(pictureBox1.Image);
                         // save detiles invoice
                         inve_Details.Invoice_ID = (int)maxId;
                         inve_Details.price = Convert.ToDouble(pricetxt.Text);

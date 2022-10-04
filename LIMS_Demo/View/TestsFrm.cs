@@ -15,8 +15,6 @@ namespace LIMS_Demo.View
 {
     public partial class TestsFrm : Form
     {
-
-
         int selectedTest, selectedCat, testId, maxId ;
 
         string patientId = "";
@@ -283,6 +281,7 @@ namespace LIMS_Demo.View
                         barcodes.Add(barcode);
                         barcodes[i].ShowPreviewDialog();
                         barcode.Dispose();
+                        
                     }
 
                     if (!smpleTesttxt.Text.Contains("-"))
@@ -294,7 +293,9 @@ namespace LIMS_Demo.View
                     enquiry.enquriyMethod(
                         patientId: int.Parse(patientId),
                         Invoice_ID: db.Invoice.Max(x => x.Invoice_ID),
-                        isDrawed: true);
+                        isDrawed: true,
+                        date : DateTime.Now
+                        );
 
                     barcodepnl.Visible = false;
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);

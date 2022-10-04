@@ -19,6 +19,7 @@ namespace LIMS_Demo.DB
         public Nullable<int> Invoice_ID { get; set; }
         public Nullable<bool> isDrawed { get; set; }
         public Nullable<bool> isReady { get; set; }
+        public Nullable<System.DateTime> date { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

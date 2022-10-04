@@ -114,7 +114,7 @@ namespace LIMS_Demo
         {
             try
             {
-                if (txtUser.Text == "info" && txtPass.Text == "123")
+                if (txtUser.Text == Properties.Settings.Default["user"].ToString() && txtPass.Text == Properties.Settings.Default["pass"].ToString())
                 {
                     View.EnquiryFrm enquiryFrm = new EnquiryFrm();
                     enquiryFrm.Show();

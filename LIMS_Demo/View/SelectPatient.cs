@@ -96,5 +96,10 @@ namespace LIMS_Demo.View
 
             
         }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            txtSeachPatient.Text = "";
+        }
     }
 }

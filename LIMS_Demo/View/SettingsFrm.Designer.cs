@@ -42,6 +42,11 @@ namespace LIMS_Demo.View
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
@@ -53,6 +58,7 @@ namespace LIMS_Demo.View
             this.xtraTabPage2.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.xtraTabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -240,11 +246,65 @@ namespace LIMS_Demo.View
             // 
             // xtraTabPage4
             // 
+            this.xtraTabPage4.Controls.Add(this.groupBox1);
             this.xtraTabPage4.Controls.Add(this.rjButton7);
             this.xtraTabPage4.Controls.Add(this.rjButton5);
             this.xtraTabPage4.Name = "xtraTabPage4";
             this.xtraTabPage4.Size = new System.Drawing.Size(932, 718);
             this.xtraTabPage4.Text = "النظام";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Font = new System.Drawing.Font("Janna LT", 16F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.groupBox1.Location = new System.Drawing.Point(21, 284);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(900, 214);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = " شاشة الإستعلام";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.label3.Location = new System.Drawing.Point(261, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 35);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "كلمة المرور";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.label2.Location = new System.Drawing.Point(702, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 35);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "أسم المستخدم";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(62, 100);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(193, 47);
+            this.textBox2.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(491, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 47);
+            this.textBox1.TabIndex = 0;
             // 
             // rjButton7
             // 
@@ -257,9 +317,11 @@ namespace LIMS_Demo.View
             this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton7.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton7.ForeColor = System.Drawing.Color.White;
+            this.rjButton7.Image = ((System.Drawing.Image)(resources.GetObject("rjButton7.Image")));
             this.rjButton7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.rjButton7.Location = new System.Drawing.Point(83, 85);
             this.rjButton7.Name = "rjButton7";
+            this.rjButton7.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.rjButton7.Size = new System.Drawing.Size(235, 117);
             this.rjButton7.TabIndex = 40;
             this.rjButton7.Text = "حركة يومية";
@@ -339,6 +401,8 @@ namespace LIMS_Demo.View
             this.xtraTabPage2.ResumeLayout(false);
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage4.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.xtraTabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -362,5 +426,10 @@ namespace LIMS_Demo.View
         private CustomControls.RJControls.RJButton rjButton5;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
         private CustomControls.RJControls.RJButton rjButton8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

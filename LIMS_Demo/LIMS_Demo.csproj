@@ -92,15 +92,49 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.6.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -188,6 +222,25 @@
     <Compile Include="Methods\Enquiry.cs" />
     <Compile Include="Methods\LogFile.cs" />
     <Compile Include="Methods\Login_Logout.cs" />
+    <Compile Include="Reports\Patients\Patients_Daily.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Patients\Patients_Daily.Designer.cs">
+      <DependentUpon>Patients_Daily.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Rays\All_Rays.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Rays\All_Rays.Designer.cs">
+      <DependentUpon>All_Rays.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Tests\All_Tests.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Tests\All_Tests.Designer.cs">
+      <DependentUpon>All_Tests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="View\Add_Cat_Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +258,12 @@
     </Compile>
     <Compile Include="View\Add_Tests_Frm.Designer.cs">
       <DependentUpon>Add_Tests_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConfirmWithPassFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConfirmWithPassFrm.Designer.cs">
+      <DependentUpon>ConfirmWithPassFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DashBoardFrm.cs">
       <SubType>Form</SubType>
@@ -305,6 +364,15 @@
     <EmbeddedResource Include="Reports\Barcode\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Patients\Patients_Daily.resx">
+      <DependentUpon>Patients_Daily.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rays\All_Rays.resx">
+      <DependentUpon>All_Rays.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Tests\All_Tests.resx">
+      <DependentUpon>All_Tests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Cat_Test.resx">
       <DependentUpon>Add_Cat_Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Tests_Frm.resx">
       <DependentUpon>Add_Tests_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConfirmWithPassFrm.resx">
+      <DependentUpon>ConfirmWithPassFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DashBoardFrm.resx">
       <DependentUpon>DashBoardFrm.cs</DependentUpon>
@@ -437,6 +508,8 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
 </Project>

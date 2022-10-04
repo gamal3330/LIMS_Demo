@@ -14,6 +14,7 @@
           <Property Name="Invoice_ID" Type="int" />
           <Property Name="isDrawed" Type="bit" />
           <Property Name="isReady" Type="bit" />
+          <Property Name="date" Type="datetime" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -314,6 +315,7 @@
           <Property Name="Invoice_ID" Type="Int32" />
           <Property Name="isDrawed" Type="Boolean" />
           <Property Name="isReady" Type="Boolean" />
+          <Property Name="date" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Enquirys_Patient" FromRole="Enquirys" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Invoice">
@@ -630,6 +632,7 @@
                 <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
                 <ScalarProperty Name="isDrawed" ColumnName="isDrawed" />
                 <ScalarProperty Name="isReady" ColumnName="isReady" />
+                <ScalarProperty Name="date" ColumnName="date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
