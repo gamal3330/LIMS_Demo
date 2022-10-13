@@ -39,5 +39,17 @@ namespace LIMS_Demo.View
             Patients_Daily patients_Daily = new Patients_Daily();
             patients_Daily.ShowPreviewDialog();
         }
+
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Daily_Report_Financial daily_Report_Financial = new Daily_Report_Financial();
+            daily_Report_Financial.ShowPreviewDialog();
+        }
+
+        private void linkLabel5_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.Select_Date select_Date = new Select_Date();
+            select_Date.ShowDialog();
+        }
     }
 }

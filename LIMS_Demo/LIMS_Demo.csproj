@@ -222,6 +222,12 @@
     <Compile Include="Methods\Enquiry.cs" />
     <Compile Include="Methods\LogFile.cs" />
     <Compile Include="Methods\Login_Logout.cs" />
+    <Compile Include="Reports\Financial\Custom_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\Custom_Report.Designer.cs">
+      <DependentUpon>Custom_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Patients\Patients_Daily.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -239,6 +245,18 @@
     </Compile>
     <Compile Include="Reports\Tests\All_Tests.Designer.cs">
       <DependentUpon>All_Tests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\Daily_Report_Financial.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\Daily_Report_Financial.Designer.cs">
+      <DependentUpon>Daily_Report_Financial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Tests\Test_Result.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Tests\Test_Result.Designer.cs">
+      <DependentUpon>Test_Result.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="View\Add_Cat_Test.cs">
@@ -276,6 +294,12 @@
     </Compile>
     <Compile Include="View\EnquiryFrm.Designer.cs">
       <DependentUpon>EnquiryFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InfoFrm.Designer.cs">
+      <DependentUpon>InfoFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\InvoiceFrm.cs">
       <SubType>Form</SubType>
@@ -343,6 +367,12 @@
     <Compile Include="View\SelectPatient.Designer.cs">
       <DependentUpon>SelectPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Select_Date.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Select_Date.Designer.cs">
+      <DependentUpon>Select_Date.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SettingsFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -364,6 +394,9 @@
     <EmbeddedResource Include="Reports\Barcode\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\Custom_Report.resx">
+      <DependentUpon>Custom_Report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Patients\Patients_Daily.resx">
       <DependentUpon>Patients_Daily.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +405,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Tests\All_Tests.resx">
       <DependentUpon>All_Tests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\Daily_Report_Financial.resx">
+      <DependentUpon>Daily_Report_Financial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Tests\Test_Result.resx">
+      <DependentUpon>Test_Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Add_Cat_Test.resx">
       <DependentUpon>Add_Cat_Test.cs</DependentUpon>
@@ -390,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\EnquiryFrm.resx">
       <DependentUpon>EnquiryFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InfoFrm.resx">
+      <DependentUpon>InfoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\InvoiceFrm.resx">
       <DependentUpon>InvoiceFrm.cs</DependentUpon>
@@ -430,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SelectPatient.resx">
       <DependentUpon>SelectPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Select_Date.resx">
+      <DependentUpon>Select_Date.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SettingsFrm.resx">
       <DependentUpon>SettingsFrm.cs</DependentUpon>

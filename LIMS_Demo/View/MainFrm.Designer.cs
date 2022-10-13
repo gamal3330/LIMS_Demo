@@ -198,6 +198,7 @@ namespace LIMS_Demo
             this.InfoBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.InfoBtn.TextColor = System.Drawing.Color.White;
             this.InfoBtn.UseVisualStyleBackColor = false;
+            this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
             // 
             // InvoiceBtn
             // 

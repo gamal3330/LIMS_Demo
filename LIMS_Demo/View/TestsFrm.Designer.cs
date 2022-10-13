@@ -30,22 +30,22 @@ namespace LIMS_Demo.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TestsFrm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TestPan = new System.Windows.Forms.Panel();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.rjButton4 = new CustomControls.RJControls.RJButton();
+            this.rjButton6 = new CustomControls.RJControls.RJButton();
+            this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.dvgTest = new System.Windows.Forms.DataGridView();
             this.barcodepnl = new System.Windows.Forms.Panel();
             this.multiBarcodeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.singleBarcodeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.btnDeleteAll = new CustomControls.RJControls.RJButton();
-            this.btnDelete = new CustomControls.RJControls.RJButton();
-            this.btnEdit = new CustomControls.RJControls.RJButton();
-            this.btnAdd = new CustomControls.RJControls.RJButton();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.checkEdit4 = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdit2 = new DevExpress.XtraEditors.CheckEdit();
@@ -60,6 +60,11 @@ namespace LIMS_Demo.View
             this.DisCountLb = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteAll = new CustomControls.RJControls.RJButton();
+            this.btnDelete = new CustomControls.RJControls.RJButton();
+            this.btnEdit = new CustomControls.RJControls.RJButton();
+            this.btnAdd = new CustomControls.RJControls.RJButton();
             this.smpleTestLb = new System.Windows.Forms.Label();
             this.smpleTesttxt = new DevExpress.XtraEditors.TextEdit();
             this.sampletxt = new DevExpress.XtraEditors.TextEdit();
@@ -109,9 +114,9 @@ namespace LIMS_Demo.View
             this.test_CatTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.Test_CatTableAdapter();
             this.testsTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.TestsTableAdapter();
             this.TestPan.SuspendLayout();
+            this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).BeginInit();
             this.barcodepnl.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).BeginInit();
@@ -122,6 +127,7 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.discountxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pricetxt.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smpleTesttxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampletxt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unittxt.Properties)).BeginInit();
@@ -146,11 +152,12 @@ namespace LIMS_Demo.View
             // 
             // TestPan
             // 
+            this.TestPan.Controls.Add(this.rjButton2);
+            this.TestPan.Controls.Add(this.groupBox10);
             this.TestPan.Controls.Add(this.dvgTest);
             this.TestPan.Controls.Add(this.barcodepnl);
             this.TestPan.Controls.Add(this.rjButton5);
             this.TestPan.Controls.Add(this.rjButton3);
-            this.TestPan.Controls.Add(this.groupBox8);
             this.TestPan.Controls.Add(this.groupBox9);
             this.TestPan.Controls.Add(this.groupBox7);
             this.TestPan.Controls.Add(this.groupBox6);
@@ -162,6 +169,101 @@ namespace LIMS_Demo.View
             this.TestPan.Size = new System.Drawing.Size(934, 847);
             this.TestPan.TabIndex = 0;
             // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 15;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton2.Location = new System.Drawing.Point(25, 745);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.rjButton2.Size = new System.Drawing.Size(150, 59);
+            this.rjButton2.TabIndex = 36;
+            this.rjButton2.Text = "حذف الكل";
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.rjButton4);
+            this.groupBox10.Controls.Add(this.rjButton6);
+            this.groupBox10.Controls.Add(this.rjButton7);
+            this.groupBox10.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.groupBox10.Location = new System.Drawing.Point(827, 482);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox10.Size = new System.Drawing.Size(83, 223);
+            this.groupBox10.TabIndex = 35;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "إجراء";
+            // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton4.BorderRadius = 15;
+            this.rjButton4.BorderSize = 0;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.ForeColor = System.Drawing.Color.White;
+            this.rjButton4.Image = ((System.Drawing.Image)(resources.GetObject("rjButton4.Image")));
+            this.rjButton4.Location = new System.Drawing.Point(18, 161);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.rjButton4.Size = new System.Drawing.Size(50, 50);
+            this.rjButton4.TabIndex = 0;
+            this.rjButton4.TextColor = System.Drawing.Color.White;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            this.rjButton4.Click += new System.EventHandler(this.rjButton4_Click);
+            // 
+            // rjButton6
+            // 
+            this.rjButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton6.BorderRadius = 15;
+            this.rjButton6.BorderSize = 0;
+            this.rjButton6.FlatAppearance.BorderSize = 0;
+            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton6.ForeColor = System.Drawing.Color.White;
+            this.rjButton6.Image = ((System.Drawing.Image)(resources.GetObject("rjButton6.Image")));
+            this.rjButton6.Location = new System.Drawing.Point(18, 94);
+            this.rjButton6.Name = "rjButton6";
+            this.rjButton6.Size = new System.Drawing.Size(50, 50);
+            this.rjButton6.TabIndex = 0;
+            this.rjButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton6.TextColor = System.Drawing.Color.White;
+            this.rjButton6.UseVisualStyleBackColor = false;
+            this.rjButton6.Click += new System.EventHandler(this.rjButton6_Click);
+            // 
+            // rjButton7
+            // 
+            this.rjButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton7.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton7.BorderRadius = 15;
+            this.rjButton7.BorderSize = 0;
+            this.rjButton7.FlatAppearance.BorderSize = 0;
+            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton7.ForeColor = System.Drawing.Color.White;
+            this.rjButton7.Image = ((System.Drawing.Image)(resources.GetObject("rjButton7.Image")));
+            this.rjButton7.Location = new System.Drawing.Point(18, 29);
+            this.rjButton7.Name = "rjButton7";
+            this.rjButton7.Size = new System.Drawing.Size(50, 50);
+            this.rjButton7.TabIndex = 0;
+            this.rjButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton7.TextColor = System.Drawing.Color.White;
+            this.rjButton7.UseVisualStyleBackColor = false;
+            this.rjButton7.Click += new System.EventHandler(this.rjButton7_Click_1);
+            // 
             // dvgTest
             // 
             this.dvgTest.AllowUserToAddRows = false;
@@ -171,18 +273,18 @@ namespace LIMS_Demo.View
             this.dvgTest.AllowUserToResizeRows = false;
             this.dvgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgTest.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dvgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgTest.Location = new System.Drawing.Point(440, 501);
+            this.dvgTest.Location = new System.Drawing.Point(19, 501);
             this.dvgTest.Name = "dvgTest";
-            this.dvgTest.Size = new System.Drawing.Size(472, 223);
+            this.dvgTest.Size = new System.Drawing.Size(802, 204);
             this.dvgTest.TabIndex = 11;
             // 
             // barcodepnl
@@ -257,107 +359,6 @@ namespace LIMS_Demo.View
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
             this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.btnDeleteAll);
-            this.groupBox8.Controls.Add(this.btnDelete);
-            this.groupBox8.Controls.Add(this.btnEdit);
-            this.groupBox8.Controls.Add(this.btnAdd);
-            this.groupBox8.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.groupBox8.Location = new System.Drawing.Point(19, 482);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox8.Size = new System.Drawing.Size(415, 242);
-            this.groupBox8.TabIndex = 12;
-            this.groupBox8.TabStop = false;
-            // 
-            // btnDeleteAll
-            // 
-            this.btnDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnDeleteAll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnDeleteAll.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDeleteAll.BorderRadius = 15;
-            this.btnDeleteAll.BorderSize = 0;
-            this.btnDeleteAll.FlatAppearance.BorderSize = 0;
-            this.btnDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteAll.Location = new System.Drawing.Point(17, 161);
-            this.btnDeleteAll.Name = "btnDeleteAll";
-            this.btnDeleteAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnDeleteAll.Size = new System.Drawing.Size(150, 59);
-            this.btnDeleteAll.TabIndex = 0;
-            this.btnDeleteAll.Text = "حذف الكل";
-            this.btnDeleteAll.TextColor = System.Drawing.Color.White;
-            this.btnDeleteAll.UseVisualStyleBackColor = false;
-            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDelete.BorderRadius = 15;
-            this.btnDelete.BorderSize = 0;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(218, 161);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btnDelete.Size = new System.Drawing.Size(150, 59);
-            this.btnDelete.TabIndex = 0;
-            this.btnDelete.Text = "حذف";
-            this.btnDelete.TextColor = System.Drawing.Color.White;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.rjButton7_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEdit.BorderRadius = 15;
-            this.btnEdit.BorderSize = 0;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEdit.Location = new System.Drawing.Point(17, 63);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 59);
-            this.btnEdit.TabIndex = 0;
-            this.btnEdit.Text = "تعديل";
-            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.TextColor = System.Drawing.Color.White;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAdd.BorderRadius = 15;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(218, 63);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 59);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "إضافة ";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.TextColor = System.Drawing.Color.White;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.rjButton6_Click);
             // 
             // groupBox9
             // 
@@ -450,6 +451,7 @@ namespace LIMS_Demo.View
             this.cmbdiscount.Name = "cmbdiscount";
             this.cmbdiscount.Size = new System.Drawing.Size(50, 28);
             this.cmbdiscount.TabIndex = 19;
+            this.cmbdiscount.SelectedIndexChanged += new System.EventHandler(this.cmbdiscount_SelectedIndexChanged);
             // 
             // totaltxt
             // 
@@ -525,6 +527,7 @@ namespace LIMS_Demo.View
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.groupBox8);
             this.groupBox6.Controls.Add(this.smpleTestLb);
             this.groupBox6.Controls.Add(this.smpleTesttxt);
             this.groupBox6.Controls.Add(this.sampletxt);
@@ -544,6 +547,101 @@ namespace LIMS_Demo.View
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "التحليل";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.btnDeleteAll);
+            this.groupBox8.Controls.Add(this.btnDelete);
+            this.groupBox8.Controls.Add(this.btnEdit);
+            this.groupBox8.Controls.Add(this.btnAdd);
+            this.groupBox8.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
+            this.groupBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.groupBox8.Location = new System.Drawing.Point(57, 288);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox8.Size = new System.Drawing.Size(415, 242);
+            this.groupBox8.TabIndex = 35;
+            this.groupBox8.TabStop = false;
+            // 
+            // btnDeleteAll
+            // 
+            this.btnDeleteAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnDeleteAll.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnDeleteAll.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDeleteAll.BorderRadius = 15;
+            this.btnDeleteAll.BorderSize = 0;
+            this.btnDeleteAll.FlatAppearance.BorderSize = 0;
+            this.btnDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteAll.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeleteAll.Location = new System.Drawing.Point(17, 161);
+            this.btnDeleteAll.Name = "btnDeleteAll";
+            this.btnDeleteAll.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnDeleteAll.Size = new System.Drawing.Size(150, 59);
+            this.btnDeleteAll.TabIndex = 0;
+            this.btnDeleteAll.Text = "حذف الكل";
+            this.btnDeleteAll.TextColor = System.Drawing.Color.White;
+            this.btnDeleteAll.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnDelete.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnDelete.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDelete.BorderRadius = 15;
+            this.btnDelete.BorderSize = 0;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDelete.Location = new System.Drawing.Point(218, 161);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btnDelete.Size = new System.Drawing.Size(150, 59);
+            this.btnDelete.TabIndex = 0;
+            this.btnDelete.Text = "حذف";
+            this.btnDelete.TextColor = System.Drawing.Color.White;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit.BorderRadius = 15;
+            this.btnEdit.BorderSize = 0;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.Location = new System.Drawing.Point(17, 63);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(73, 59);
+            this.btnEdit.TabIndex = 0;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEdit.TextColor = System.Drawing.Color.White;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAdd.BorderRadius = 15;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.Image")));
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdd.Location = new System.Drawing.Point(218, 63);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(71, 59);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.TextColor = System.Drawing.Color.White;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // smpleTestLb
             // 
@@ -783,23 +881,23 @@ namespace LIMS_Demo.View
             // 
             this.gvSelectedTests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvSelectedTests.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvSelectedTests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvSelectedTests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gvSelectedTests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Janna LT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvSelectedTests.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Janna LT", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvSelectedTests.DefaultCellStyle = dataGridViewCellStyle3;
             this.gvSelectedTests.GridColor = System.Drawing.Color.White;
             this.gvSelectedTests.Location = new System.Drawing.Point(471, 483);
             this.gvSelectedTests.Name = "gvSelectedTests";
@@ -1126,9 +1224,9 @@ namespace LIMS_Demo.View
             this.Text = "Tests";
             this.TestPan.ResumeLayout(false);
             this.TestPan.PerformLayout();
+            this.groupBox10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dvgTest)).EndInit();
             this.barcodepnl.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEdit2.Properties)).EndInit();
@@ -1141,6 +1239,7 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.pricetxt.Properties)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.smpleTesttxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampletxt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unittxt.Properties)).EndInit();
@@ -1227,11 +1326,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView dvgTest;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private CustomControls.RJControls.RJButton btnDelete;
-        private CustomControls.RJControls.RJButton btnAdd;
-        private CustomControls.RJControls.RJButton btnDeleteAll;
-        private CustomControls.RJControls.RJButton btnEdit;
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJButton rjButton5;
         public DevExpress.XtraEditors.TextEdit discountxt;
@@ -1244,5 +1338,15 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Panel barcodepnl;
         private DevExpress.XtraEditors.SimpleButton multiBarcodeBtn;
         private DevExpress.XtraEditors.SimpleButton singleBarcodeBtn;
+        private CustomControls.RJControls.RJButton rjButton2;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private CustomControls.RJControls.RJButton rjButton4;
+        private CustomControls.RJControls.RJButton rjButton6;
+        private CustomControls.RJControls.RJButton rjButton7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private CustomControls.RJControls.RJButton btnDeleteAll;
+        private CustomControls.RJControls.RJButton btnDelete;
+        private CustomControls.RJControls.RJButton btnEdit;
+        private CustomControls.RJControls.RJButton btnAdd;
     }
 }

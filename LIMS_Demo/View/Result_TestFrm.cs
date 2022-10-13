@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 using LIMS_Demo.Methods;
+using LIMS_Demo.Reports.Tests;
 
 namespace LIMS_Demo.View
 {
@@ -88,10 +89,12 @@ namespace LIMS_Demo.View
                         if(dvgResult.Rows[i].Cells[2].Value.ToString() != "")
                         {
                             saveBtn.Enabled = false;
+                            btnAdd.Enabled  = false;
                         }
                         else
                         {
                             saveBtn.Enabled = true;
+                            btnAdd.Enabled  = true;
                         }
                     }
                 }
@@ -133,6 +136,15 @@ namespace LIMS_Demo.View
                 MessageBox.Show(error.Message);
             }
         }
+
+       
+        private void print()
+        {
+            Test_Result test_Result = new Test_Result();
+            test_Result.BarcodeLb.DataBindings.Add("" , txtBarcode.Text,"");
+            test_Result.ShowPrintStatusDialog();
+
+        }
         private void dvgResult_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             rowIndex = e.RowIndex;
@@ -160,9 +172,13 @@ namespace LIMS_Demo.View
                     var iD = int.Parse(patientId);
 
                     var r = db.Enquirys.SingleOrDefault(x => x.Invoice_ID == barcode);
-                    r.isReady = true;
-                    db.SaveChanges();
+                    if (r != null)
+                    {
+                        r.isReady = true;
+                        db.SaveChanges();
+                    }
 
+                    print();
                     MessageBox.Show("تم الحفظ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
                 }

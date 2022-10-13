@@ -209,6 +209,10 @@ namespace LIMS_Demo
             time.Text = DateTime.Now.ToString();
         }
 
-       
+        private void InfoBtn_Click(object sender, EventArgs e)
+        {
+            View.InfoFrm infoFrm = new View.InfoFrm();
+            infoFrm.Show();
+        }
     }
 }

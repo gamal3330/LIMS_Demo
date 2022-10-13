@@ -20,6 +20,7 @@ namespace LIMS_Demo.DB
         public Nullable<bool> isDrawed { get; set; }
         public Nullable<bool> isReady { get; set; }
         public Nullable<System.DateTime> date { get; set; }
+        public Nullable<double> total { get; set; }
     
         public virtual Patient Patient { get; set; }
     }

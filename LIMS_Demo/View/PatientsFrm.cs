@@ -61,9 +61,6 @@ namespace LIMS_Demo.View
                 if (txtPatName.Text == "" && txtPatAge.Text == "" )
                 {
                     MessageBox.Show("الرجاء تعبئة الحقول " , "خطأ",  MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    NameLb.ForeColor = Color.Red;
-                    AgeLb.ForeColor = Color.Red;
-                    DateEntryLb.ForeColor = Color.Red;
                 }
                 else
                 {
@@ -76,9 +73,6 @@ namespace LIMS_Demo.View
                             patient.Phone = txtPatPhone.Text;
                             patient.Date_Entry = dateNow;
                             patient.Notes = txtPatNotes.Text;
-                            NameLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
-                            AgeLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
-                            DateEntryLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
                             db.Patient.Add(patient);
                             db.SaveChanges();
                             log.LogSystem(Permision.userID, "حفظ مريض", DateTime.Now , txtPatName.Text);
@@ -90,31 +84,35 @@ namespace LIMS_Demo.View
 
         private void editBtn_Click(object sender, EventArgs e)
         {
-            if (txtPatName.Text == "" && txtPatAge.Text == "" )
+            var diaglog = MessageBox.Show("هل أنت متأكد من تعديل بيانات هذا المريض ؟", "تعديل", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (diaglog == DialogResult.Yes)
             {
-                MessageBox.Show("الرجاء تعبئة الحقول ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                NameLb.ForeColor = Color.Red;
-                AgeLb.ForeColor = Color.Red;
-                DateEntryLb.ForeColor = Color.Red;
-            }
-            else 
-            {
-                id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Patient_ID"));
-                var selectedRow = db.Patient.SingleOrDefault(x => x.Patient_ID == id);
+                if (txtPatName.Text == "" && txtPatAge.Text == "")
+                {
+                    MessageBox.Show("الرجاء تعبئة الحقول ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                selectedRow.FullName = txtPatName.Text;
-                selectedRow.Age = txtPatAge.Text;
-                selectedRow.Gender = txtPatGender.Text;
-                selectedRow.Address = txtPatAddress.Text;
-                selectedRow.Phone = txtPatPhone.Text;
-                selectedRow.Date_Entry = DateEntry.Text;
-                selectedRow.Notes = txtPatNotes.Text;
-                db.SaveChanges();
-                log.LogSystem(Permision.userID, "تعديل مريض", DateTime.Now, txtPatName.Text);
-                MessageBox.Show("تم تعديل بيانات المريض بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                updateDate();
+                }
+                else
+                {
+                    id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Patient_ID"));
+                    var selectedRow = db.Patient.SingleOrDefault(x => x.Patient_ID == id);
+
+                    selectedRow.FullName = txtPatName.Text;
+                    selectedRow.Age = txtPatAge.Text;
+                    selectedRow.Gender = txtPatGender.Text;
+                    selectedRow.Address = txtPatAddress.Text;
+                    selectedRow.Phone = txtPatPhone.Text;
+                    selectedRow.Date_Entry = DateEntry.Text;
+                    selectedRow.Notes = txtPatNotes.Text;
+                    db.SaveChanges();
+                    log.LogSystem(Permision.userID, "تعديل مريض", DateTime.Now, txtPatName.Text);
+                    MessageBox.Show("تم تعديل بيانات المريض بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updateDate();
+                }
+            }else
+            {
+                return;
             }
-            
         }
     }
 }

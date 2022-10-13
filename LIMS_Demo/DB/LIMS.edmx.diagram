@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3e153a13d3224ec5b5398dc0cf1496a6" Name="Diagram1">
+      <Diagram DiagramId="5cfbe343a8144b819fd053a3e7e46b28" Name="Diagram1">
         <EntityTypeShape EntityType="LIMSModel.Enquirys" Width="1.5" PointX="5" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="LIMSModel.Invoice" Width="1.5" PointX="5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LIMSModel.invoice_details" Width="1.5" PointX="7.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LIMSModel.Invoice" Width="1.5" PointX="5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="LIMSModel.invoice_details" Width="1.5" PointX="7.25" PointY="12" IsExpanded="true" />
         <EntityTypeShape EntityType="LIMSModel.LogFile" Width="1.5" PointX="8" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LIMSModel.Login_Logout" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="LIMSModel.Patient" Width="1.5" PointX="2.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LIMSModel.Patient" Width="1.5" PointX="2.75" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LIMSModel.Rays" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="LIMSModel.Samples" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LIMSModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="8.25" IsExpanded="true" />

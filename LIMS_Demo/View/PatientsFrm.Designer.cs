@@ -89,6 +89,8 @@ namespace LIMS_Demo.View
             // gridControl1
             // 
             this.gridControl1.DataSource = typeof(LIMS_Demo.DB.Patient);
+            this.gridControl1.EmbeddedNavigator.Appearance.BorderColor = System.Drawing.Color.Transparent;
+            this.gridControl1.EmbeddedNavigator.Appearance.Options.UseBorderColor = true;
             this.gridControl1.Location = new System.Drawing.Point(27, 414);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -113,6 +115,7 @@ namespace LIMS_Demo.View
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.FindNullPrompt = "بحث";
             this.gridView1.OptionsFind.FindPanelLocation = DevExpress.XtraGrid.Views.Grid.GridFindPanelLocation.Panel;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
@@ -289,7 +292,7 @@ namespace LIMS_Demo.View
             this.editBtn.Location = new System.Drawing.Point(213, 775);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(180, 60);
-            this.editBtn.TabIndex = 6;
+            this.editBtn.TabIndex = 1;
             this.editBtn.Text = "تعديل   ";
             this.editBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.editBtn.TextColor = System.Drawing.Color.White;
@@ -311,7 +314,7 @@ namespace LIMS_Demo.View
             this.saveBrn.Location = new System.Drawing.Point(509, 775);
             this.saveBrn.Name = "saveBrn";
             this.saveBrn.Size = new System.Drawing.Size(180, 60);
-            this.saveBrn.TabIndex = 5;
+            this.saveBrn.TabIndex = 0;
             this.saveBrn.Text = "حفظ   ";
             this.saveBrn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.saveBrn.TextColor = System.Drawing.Color.White;
@@ -349,25 +352,26 @@ namespace LIMS_Demo.View
             // 
             this.txtPatNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPatNotes.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPatNotes.Location = new System.Drawing.Point(23, 198);
+            this.txtPatNotes.Location = new System.Drawing.Point(23, 188);
             this.txtPatNotes.Multiline = true;
             this.txtPatNotes.Name = "txtPatNotes";
             this.txtPatNotes.Size = new System.Drawing.Size(189, 112);
-            this.txtPatNotes.TabIndex = 19;
+            this.txtPatNotes.TabIndex = 6;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(218, 232);
+            this.label9.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(218, 198);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(108, 44);
+            this.label9.Size = new System.Drawing.Size(84, 35);
             this.label9.TabIndex = 18;
             this.label9.Text = "ملاحظات";
             // 
             // DateEntry
             // 
             this.DateEntry.EditValue = null;
-            this.DateEntry.Location = new System.Drawing.Point(502, 228);
+            this.DateEntry.Location = new System.Drawing.Point(502, 190);
             this.DateEntry.Name = "DateEntry";
             this.DateEntry.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateEntry.Properties.Appearance.Options.UseFont = true;
@@ -376,35 +380,36 @@ namespace LIMS_Demo.View
             this.DateEntry.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.DateEntry.Size = new System.Drawing.Size(221, 52);
-            this.DateEntry.TabIndex = 17;
+            this.DateEntry.TabIndex = 4;
             // 
             // DateEntryLb
             // 
             this.DateEntryLb.AutoSize = true;
-            this.DateEntryLb.Location = new System.Drawing.Point(729, 232);
+            this.DateEntryLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateEntryLb.Location = new System.Drawing.Point(744, 198);
             this.DateEntryLb.Name = "DateEntryLb";
-            this.DateEntryLb.Size = new System.Drawing.Size(137, 44);
+            this.DateEntryLb.Size = new System.Drawing.Size(107, 35);
             this.DateEntryLb.TabIndex = 16;
             this.DateEntryLb.Text = "تاريخ الدخول";
             // 
             // txtPatPhone
             // 
             this.txtPatPhone.EditValue = "";
-            this.txtPatPhone.Location = new System.Drawing.Point(23, 126);
+            this.txtPatPhone.Location = new System.Drawing.Point(502, 258);
             this.txtPatPhone.Name = "txtPatPhone";
             this.txtPatPhone.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatPhone.Properties.Appearance.Options.UseBorderColor = true;
             this.txtPatPhone.Properties.Appearance.Options.UseFont = true;
-            this.txtPatPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtPatPhone.Size = new System.Drawing.Size(189, 52);
-            this.txtPatPhone.TabIndex = 15;
+            this.txtPatPhone.Size = new System.Drawing.Size(221, 52);
+            this.txtPatPhone.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(230, 130);
+            this.label7.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(786, 266);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 44);
+            this.label7.Size = new System.Drawing.Size(65, 35);
             this.label7.TabIndex = 14;
             this.label7.Text = "الهاتف";
             // 
@@ -416,25 +421,26 @@ namespace LIMS_Demo.View
             this.txtPatAddress.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatAddress.Properties.Appearance.Options.UseBorderColor = true;
             this.txtPatAddress.Properties.Appearance.Options.UseFont = true;
-            this.txtPatAddress.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtPatAddress.Size = new System.Drawing.Size(272, 52);
-            this.txtPatAddress.TabIndex = 13;
+            this.txtPatAddress.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(780, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 44);
+            this.label6.Size = new System.Drawing.Size(71, 35);
             this.label6.TabIndex = 12;
             this.label6.Text = "العنوان";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(116, 55);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 44);
+            this.label5.Size = new System.Drawing.Size(65, 35);
             this.label5.TabIndex = 10;
             this.label5.Text = "الجنس";
             // 
@@ -446,25 +452,26 @@ namespace LIMS_Demo.View
             this.txtPatAge.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatAge.Properties.Appearance.Options.UseBorderColor = true;
             this.txtPatAge.Properties.Appearance.Options.UseFont = true;
-            this.txtPatAge.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtPatAge.Size = new System.Drawing.Size(73, 52);
-            this.txtPatAge.TabIndex = 9;
+            this.txtPatAge.TabIndex = 1;
             // 
             // AgeLb
             // 
             this.AgeLb.AutoSize = true;
+            this.AgeLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AgeLb.Location = new System.Drawing.Point(385, 55);
             this.AgeLb.Name = "AgeLb";
-            this.AgeLb.Size = new System.Drawing.Size(71, 44);
+            this.AgeLb.Size = new System.Drawing.Size(54, 35);
             this.AgeLb.TabIndex = 8;
             this.AgeLb.Text = "العمر";
             // 
             // NameLb
             // 
             this.NameLb.AutoSize = true;
-            this.NameLb.Location = new System.Drawing.Point(784, 55);
+            this.NameLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLb.Location = new System.Drawing.Point(786, 55);
             this.NameLb.Name = "NameLb";
-            this.NameLb.Size = new System.Drawing.Size(82, 44);
+            this.NameLb.Size = new System.Drawing.Size(65, 35);
             this.NameLb.TabIndex = 3;
             this.NameLb.Text = "الإسم";
             // 
@@ -476,7 +483,6 @@ namespace LIMS_Demo.View
             this.txtPatGender.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatGender.Properties.Appearance.Options.UseBorderColor = true;
             this.txtPatGender.Properties.Appearance.Options.UseFont = true;
-            this.txtPatGender.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtPatGender.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtPatGender.Properties.DropDownRows = 2;
@@ -485,7 +491,7 @@ namespace LIMS_Demo.View
             "Male"});
             this.txtPatGender.Properties.Sorted = true;
             this.txtPatGender.Size = new System.Drawing.Size(87, 52);
-            this.txtPatGender.TabIndex = 11;
+            this.txtPatGender.TabIndex = 2;
             // 
             // txtPatName
             // 
@@ -493,9 +499,8 @@ namespace LIMS_Demo.View
             this.txtPatName.Name = "txtPatName";
             this.txtPatName.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPatName.Properties.Appearance.Options.UseFont = true;
-            this.txtPatName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtPatName.Size = new System.Drawing.Size(272, 52);
-            this.txtPatName.TabIndex = 7;
+            this.txtPatName.TabIndex = 0;
             // 
             // label1
             // 

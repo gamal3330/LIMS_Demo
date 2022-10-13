@@ -54,6 +54,11 @@ namespace LIMS_Demo.View
             discountxt.Enabled  = Convert.ToBoolean( View.Permision.disCountPer);
             cmbdiscount.Enabled = Convert.ToBoolean(View.Permision.disCountPer);
 
+            if (cmbdiscount.SelectedIndex == -1)
+            {
+                discountxt.Enabled = false;
+            }
+
 
 
         }
@@ -68,6 +73,8 @@ namespace LIMS_Demo.View
             discountxt.Text = "";
             cmbdiscount.SelectedIndex = -1;
             table.Clear();
+            maxId = 0;
+            discountxt.Enabled = false;
         }
 
 
@@ -101,101 +108,16 @@ namespace LIMS_Demo.View
             pricetxt.Text = price;
             smpleTesttxt.Text = smpleTest.ToString();
         }
-        //add test into datagridview
-        private void rjButton6_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (nametxt.Text != "")
-                {
-                    if (cmbtst.SelectedIndex < 0 )
-                    {
-                        MessageBox.Show("الرجاء إختيار تحليل ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        testL.ForeColor = Color.Red;
-                    }
-                    else
-                    {
-                        if (smpleTesttxt.Text != "0" || smpleTesttxt.Text == "-" )
-                        {
-                            for (int i = 0; i < dvgTest.Rows.Count; i++)
-                            {
-                                if(cmbtst.Text == dvgTest.Rows[i].Cells[1].Value.ToString())
-                                {
-                                    MessageBox.Show("هذا التحليل مضاف مسبقاً ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
-                            }
-                            
-                            var id = int.Parse(patientId);
-                            var category = int.Parse(selectedCat.ToString());
-                            var testId = int.Parse(selectedTest.ToString());
-                            var res = smpleTesttxt.Text;
-                            this.testId = testId;
 
 
-                            DataRow row = table.NewRow();
-                            row[0] = cmbCategory.Text;
-                            row[1] = cmbtst.Text;
-                            row[2] = price;
-                            
-
-                            table.Rows.Add(row);
-                            CalcTotal();
-                            
-
-                            sampletxt.Text = "";
-                            unittxt.Text = "";
-                            pricetxt.Text = Convert.ToDouble(0).ToString();
-                            testL.ForeColor = Color.FromArgb(255 , 25, 113, 176);
-                        }
-                        else
-                        {
-                            MessageBox.Show("لا توجد عينات متاحة , يرجى الإضافة", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("الرجاء تحديد مريض", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception)
-            {
-                
-            }
-        }
-
-        //remove specific test from  datagridview
-        private void rjButton7_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dvgTest.Rows.RemoveAt(dvgTest.CurrentRow.Index);
-                CalcTotal();
-
-            } catch (Exception )
-            {
-                return;
-            }
-            CalcTotal();
-        }
+        
         //clear of datagridview
         private void btnDeleteAll_Click(object sender, EventArgs e)
         {
             table.Clear();
             CalcTotal();
         }
-        //edit for specific test from datagridview
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            try 
-            {
 
-                dvgTest.Rows.RemoveAt(dvgTest.CurrentRow.Index);
-                CalcTotal();
-            }
-            catch (Exception) { return; }
-        }
         // calculate of Total
         private void CalcTotal ()
         {
@@ -211,27 +133,32 @@ namespace LIMS_Demo.View
         //DisCount
          private void discountxt_Leave(object sender, EventArgs e)
         {
+
             try
             {
+                double price = Convert.ToDouble(totaltxt.Text);
                 if (cmbdiscount.SelectedIndex == 0)
                 {
                     double total, dicsount;
-                    total = double.Parse(totaltxt.Text);
-                    dicsount = double.Parse(discountxt.Text);
-                    totaltxt.Text = (total - dicsount).ToString();
+                    dicsount = int.Parse(discountxt.Text);
+                    total = price - dicsount;
+                    totaltxt.Text = total.ToString();
+
                 }
                 if (cmbdiscount.SelectedIndex == 1)
                 {
                     double dis, total;
                     dis = double.Parse(discountxt.Text);
                     total = double.Parse(totaltxt.Text);
-                    dicsount = dis * total / 100;
+                    var dicsount = dis * total / 100;
                     totaltxt.Text = (total - dicsount).ToString();
 
                 }
             }
-            catch (Exception error) { MessageBox.Show(error.Message); }
-
+            catch (Exception error)
+            {
+              MessageBox.Show(error.Message);  
+            }
         }
 
 
@@ -241,13 +168,8 @@ namespace LIMS_Demo.View
             try
             {
                 int userid = View.Permision.userID;
-
                 Methods.Enquiry enquiry = new Methods.Enquiry();
-
                 List<Barcode> barcodes = new List<Barcode>();
-
-                //string selectedSmpAvalible;
-
                 if (dvgTest.Rows.Count > 0)
                 {
                     //save invoice
@@ -269,6 +191,7 @@ namespace LIMS_Demo.View
                         inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
                         db.invoice_details.Add(inv_Details);
                     }
+                    db.Entry(inv_Details).State = EntityState.Added;
                     db.SaveChanges();
                     //barcode
                     for (int i = 0; i < dvgTest.Rows.Count; i++)
@@ -281,7 +204,6 @@ namespace LIMS_Demo.View
                         barcodes.Add(barcode);
                         barcodes[i].ShowPreviewDialog();
                         barcode.Dispose();
-                        
                     }
 
                     if (!smpleTesttxt.Text.Contains("-"))
@@ -293,6 +215,7 @@ namespace LIMS_Demo.View
                     enquiry.enquriyMethod(
                         patientId: int.Parse(patientId),
                         Invoice_ID: db.Invoice.Max(x => x.Invoice_ID),
+                        total: Convert.ToDouble(totaltxt.Text),
                         isDrawed: true,
                         date : DateTime.Now
                         );
@@ -338,18 +261,20 @@ namespace LIMS_Demo.View
                     db.Invoice.Add(invoice);
                     db.SaveChanges();
                     // save invoice detailes 
+                    maxId = db.Invoice.Max(x => x.Invoice_ID);
+
                     for (int i = 0; i < dvgTest.Rows.Count; i++)
                     {
-                        maxId = db.Invoice.Max(x => x.Invoice_ID);
                         inv_Details.Invoice_ID = maxId;
                         inv_Details.Test_name = dvgTest.Rows[i].Cells[1].Value.ToString();
                         inv_Details.Test_Category = dvgTest.Rows[i].Cells[0].Value.ToString();
                         inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
                         db.invoice_details.Add(inv_Details);
+                        db.Entry(inv_Details).State = EntityState.Added;
                         db.SaveChanges();
+                        db.Entry(inv_Details).State = EntityState.Detached;
                     }
                     
-
                     List<string> lists = new List<string>();
                     for (int i = 0; i < dvgTest.Rows.Count; i++)
                     {
@@ -371,7 +296,7 @@ namespace LIMS_Demo.View
                         barcode.Dispose();
                     }
 
-                    if (!smpleTesttxt.Text.Contains("-"))
+                    if (smpleTesttxt.Text.Contains("-") == true)
                     {
                         smpl();
                         db.SaveChanges();
@@ -379,15 +304,18 @@ namespace LIMS_Demo.View
 
                     enquiry.enquriyMethod(
                     patientId: int.Parse(patientId),
-                    Invoice_ID: db.Invoice.Max(x => x.Invoice_ID),
-                    isDrawed: true);
+                    Invoice_ID: maxId,
+                    total : Convert.ToDouble(totaltxt.Text),
+                    isDrawed: true,
+                    date: DateTime.Now);
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                     barcodepnl.Visible = false;
                     MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
+                    category.Clear();
+                    notes = string.Empty;
                     nametxt.Text = "";
                     Idtxt.Text = "";
-
                 }
                 else
                 {
@@ -447,6 +375,105 @@ namespace LIMS_Demo.View
                 fasting = "";
             }
         }
+
+        private void cmbdiscount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            discountxt.Enabled = Enabled;
+        }
+
+
+        //add test into datagridview
+
+        private void rjButton7_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (nametxt.Text != "")
+                {
+                    if (cmbtst.SelectedIndex < 0)
+                    {
+                        MessageBox.Show("الرجاء إختيار تحليل ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        testL.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (smpleTesttxt.Text != "0" || smpleTesttxt.Text == "-")
+                        {
+                            for (int i = 0; i < dvgTest.Rows.Count; i++)
+                            {
+                                if (cmbtst.Text == dvgTest.Rows[i].Cells[1].Value.ToString())
+                                {
+                                    MessageBox.Show("هذا التحليل مضاف مسبقاً ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
+                                }
+                            }
+
+                            var id = int.Parse(patientId);
+                            var category = int.Parse(selectedCat.ToString());
+                            var testId = int.Parse(selectedTest.ToString());
+                            var res = smpleTesttxt.Text;
+                            this.testId = testId;
+
+
+                            DataRow row = table.NewRow();
+                            row[0] = cmbCategory.Text;
+                            row[1] = cmbtst.Text;
+                            row[2] = price;
+
+
+                            table.Rows.Add(row);
+                            CalcTotal();
+
+
+                            sampletxt.Text = "";
+                            unittxt.Text = "";
+                            pricetxt.Text = Convert.ToDouble(0).ToString();
+                            testL.ForeColor = Color.FromArgb(255, 25, 113, 176);
+                        }
+                        else
+                        {
+                            MessageBox.Show("لا توجد عينات متاحة , يرجى الإضافة", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("الرجاء تحديد مريض", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+        //remove specific test from  datagridview
+        private void rjButton6_Click(object sender, EventArgs e)
+        {
+                try
+                {
+                    dvgTest.Rows.RemoveAt(dvgTest.CurrentRow.Index);
+                    CalcTotal();
+
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                CalcTotal();
+            }
+        //edit for specific test from datagridview
+
+        private void rjButton4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                dvgTest.Rows.RemoveAt(dvgTest.CurrentRow.Index);
+                CalcTotal();
+            }
+            catch (Exception) { return; }
+        }
+
 
 
         //Clear all fields and datagridview

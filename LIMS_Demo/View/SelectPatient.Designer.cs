@@ -72,12 +72,12 @@ namespace LIMS_Demo.View
             // 
             // txtSeachPatient
             // 
-            this.txtSeachPatient.Location = new System.Drawing.Point(295, 167);
+            this.txtSeachPatient.Location = new System.Drawing.Point(295, 164);
             this.txtSeachPatient.Name = "txtSeachPatient";
-            this.txtSeachPatient.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F);
+            this.txtSeachPatient.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F);
             this.txtSeachPatient.Properties.Appearance.Options.UseFont = true;
             this.txtSeachPatient.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtSeachPatient.Size = new System.Drawing.Size(412, 46);
+            this.txtSeachPatient.Size = new System.Drawing.Size(412, 52);
             this.txtSeachPatient.TabIndex = 17;
             this.txtSeachPatient.EditValueChanged += new System.EventHandler(this.txtSeachPatient_EditValueChanged);
             // 

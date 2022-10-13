@@ -15,6 +15,7 @@
           <Property Name="isDrawed" Type="bit" />
           <Property Name="isReady" Type="bit" />
           <Property Name="date" Type="datetime" />
+          <Property Name="total" Type="float" />
         </EntityType>
         <EntityType Name="Invoice">
           <Key>
@@ -316,6 +317,7 @@
           <Property Name="isDrawed" Type="Boolean" />
           <Property Name="isReady" Type="Boolean" />
           <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="total" Type="Double" />
           <NavigationProperty Name="Patient" Relationship="Self.FK_Enquirys_Patient" FromRole="Enquirys" ToRole="Patient" />
         </EntityType>
         <EntityType Name="Invoice">
@@ -633,6 +635,7 @@
                 <ScalarProperty Name="isDrawed" ColumnName="isDrawed" />
                 <ScalarProperty Name="isReady" ColumnName="isReady" />
                 <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="total" ColumnName="total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
