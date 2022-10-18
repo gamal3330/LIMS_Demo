@@ -41,7 +41,7 @@ namespace LIMS_Demo.View
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            Reports.Financial.Custom_Report custom_Report = new Reports.Financial.Custom_Report();
+            Reports.Financial.Custom_Date_Report custom_Report = new Reports.Financial.Custom_Date_Report();
             custom_Report.Parameters["date1"].Value = dateTimePicker1.Value;
             custom_Report.Parameters["date2"].Value = dateTimePicker2.Value;
             custom_Report.RequestParameters = false;

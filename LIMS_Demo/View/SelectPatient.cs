@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
 using LIMS_Demo.DB;
+using DevExpress.XtraReports.UI;
 
 namespace LIMS_Demo.View
 {
@@ -70,6 +71,7 @@ namespace LIMS_Demo.View
         private void rjButton9_Click(object sender, EventArgs e)
         {
             this.Hide();
+                
         }
 
         private void txtSeachPatient_EditValueChanged(object sender, EventArgs e)
@@ -90,11 +92,18 @@ namespace LIMS_Demo.View
 
         private void selectPAtientBtn_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();
-            
+            if (selectPAtientBtn.Text == "طباعة")
+            {
+                Reports.Financial.Custom_Patient_Report custom_Patient_Report = new Reports.Financial.Custom_Patient_Report();
+                custom_Patient_Report.RequestParameters = false;
+                custom_Patient_Report.Parameters["patId"].Value = id;
+                custom_Patient_Report.ShowPreviewDialog();
+            }else
+            {
+                this.Hide();
+            }
 
-            
+
         }
 
         private void rjButton1_Click(object sender, EventArgs e)

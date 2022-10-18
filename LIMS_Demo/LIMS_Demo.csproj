@@ -224,11 +224,17 @@
     <Compile Include="Methods\Enquiry.cs" />
     <Compile Include="Methods\LogFile.cs" />
     <Compile Include="Methods\Login_Logout.cs" />
-    <Compile Include="Reports\Financial\Custom_Report.cs">
+    <Compile Include="Reports\Financial\Custom_Patient_Report.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Financial\Custom_Report.Designer.cs">
-      <DependentUpon>Custom_Report.cs</DependentUpon>
+    <Compile Include="Reports\Financial\Custom_Patient_Report.Designer.cs">
+      <DependentUpon>Custom_Patient_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Financial\Custom_Date_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Financial\Custom_Date_Report.Designer.cs">
+      <DependentUpon>Custom_Date_Report.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\Patients\Patients_Daily.cs">
       <SubType>Component</SubType>
@@ -396,8 +402,11 @@
     <EmbeddedResource Include="Reports\Barcode\Barcode.resx">
       <DependentUpon>Barcode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Financial\Custom_Report.resx">
-      <DependentUpon>Custom_Report.cs</DependentUpon>
+    <EmbeddedResource Include="Reports\Financial\Custom_Patient_Report.resx">
+      <DependentUpon>Custom_Patient_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Financial\Custom_Date_Report.resx">
+      <DependentUpon>Custom_Date_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Patients\Patients_Daily.resx">
       <DependentUpon>Patients_Daily.cs</DependentUpon>

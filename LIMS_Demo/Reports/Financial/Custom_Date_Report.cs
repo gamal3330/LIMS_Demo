@@ -6,9 +6,9 @@ using System.Drawing;
 
 namespace LIMS_Demo.Reports.Financial
 {
-    public partial class Custom_Report : DevExpress.XtraReports.UI.XtraReport
+    public partial class Custom_Date_Report : DevExpress.XtraReports.UI.XtraReport
     {
-        public Custom_Report()
+        public Custom_Date_Report()
         {
             InitializeComponent();
         }

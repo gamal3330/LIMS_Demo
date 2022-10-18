@@ -269,7 +269,7 @@ namespace LIMS_Demo.View
             // 
             this.barcodepnl.Controls.Add(this.multiBarcodeBtn);
             this.barcodepnl.Controls.Add(this.singleBarcodeBtn);
-            this.barcodepnl.Location = new System.Drawing.Point(485, 735);
+            this.barcodepnl.Location = new System.Drawing.Point(484, 730);
             this.barcodepnl.Name = "barcodepnl";
             this.barcodepnl.Size = new System.Drawing.Size(229, 100);
             this.barcodepnl.TabIndex = 34;
@@ -332,8 +332,7 @@ namespace LIMS_Demo.View
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(180, 60);
             this.rjButton3.TabIndex = 32;
-            this.rjButton3.Text = "حفظ وطباعة";
-            this.rjButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rjButton3.Text = "حفظ";
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
             this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click);

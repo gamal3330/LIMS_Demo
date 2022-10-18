@@ -16,6 +16,7 @@ namespace LIMS_Demo.View
 {
     public partial class ReportsFrm : Form
     {
+
         public ReportsFrm()
         {
             InitializeComponent();
@@ -55,6 +56,8 @@ namespace LIMS_Demo.View
         private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             View.SelectPatient selectPatient = new SelectPatient();
+            selectPatient.selectPAtientBtn.Text = "طباعة";
+            selectPatient.ShowDialog();
         }
     }
 }

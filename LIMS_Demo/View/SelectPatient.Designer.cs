@@ -438,7 +438,6 @@ namespace LIMS_Demo.View
         private CustomControls.RJControls.RJButton rjButton9;
         private DevExpress.XtraEditors.TextEdit txtSeachPatient;
         private CustomControls.RJControls.RJButton searchPatientBtn;
-        private CustomControls.RJControls.RJButton selectPAtientBtn;
         private DevExpress.XtraGrid.GridControl selectPatientGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView selectPatientGridView;
         private DevExpress.XtraGrid.Columns.GridColumn colPatient_ID;
@@ -451,5 +450,6 @@ namespace LIMS_Demo.View
         private DevExpress.XtraGrid.Columns.GridColumn colNotes;
         private System.Windows.Forms.Label label4;
         private CustomControls.RJControls.RJButton rjButton1;
+        public CustomControls.RJControls.RJButton selectPAtientBtn;
     }
 }

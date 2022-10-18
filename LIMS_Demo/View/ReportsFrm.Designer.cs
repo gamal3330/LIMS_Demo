@@ -32,6 +32,7 @@ namespace LIMS_Demo.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsFrm));
             this.ReportPan = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -39,7 +40,6 @@ namespace LIMS_Demo.View
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.ReportPan.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -71,17 +71,30 @@ namespace LIMS_Demo.View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "تقارير مالية";
             // 
+            // linkLabel6
+            // 
+            this.linkLabel6.AutoSize = true;
+            this.linkLabel6.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.linkLabel6.Location = new System.Drawing.Point(28, 80);
+            this.linkLabel6.Name = "linkLabel6";
+            this.linkLabel6.Size = new System.Drawing.Size(194, 44);
+            this.linkLabel6.TabIndex = 2;
+            this.linkLabel6.TabStop = true;
+            this.linkLabel6.Text = "تقرير حسب مريض";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
+            // 
             // linkLabel5
             // 
             this.linkLabel5.AutoSize = true;
             this.linkLabel5.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
             this.linkLabel5.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel5.Location = new System.Drawing.Point(43, 80);
+            this.linkLabel5.Location = new System.Drawing.Point(244, 161);
             this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(146, 44);
+            this.linkLabel5.Size = new System.Drawing.Size(194, 44);
             this.linkLabel5.TabIndex = 1;
             this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "تقرير مخصص";
+            this.linkLabel5.Text = "تقرير حسب التاريخ";
             this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
@@ -161,19 +174,6 @@ namespace LIMS_Demo.View
             this.label1.Size = new System.Drawing.Size(139, 69);
             this.label1.TabIndex = 5;
             this.label1.Text = "التقارير";
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
-            this.linkLabel6.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel6.Location = new System.Drawing.Point(305, 161);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(132, 44);
-            this.linkLabel6.TabIndex = 2;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "تقرير مريض";
-            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // ReportsFrm
             // 
