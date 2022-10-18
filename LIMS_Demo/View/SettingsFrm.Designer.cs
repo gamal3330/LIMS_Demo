@@ -243,6 +243,7 @@ namespace LIMS_Demo.View
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
+            this.rjButton3.Click += new System.EventHandler(this.rjButton3_Click_1);
             // 
             // xtraTabPage4
             // 

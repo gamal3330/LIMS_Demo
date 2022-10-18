@@ -51,5 +51,10 @@ namespace LIMS_Demo.View
             View.Select_Date select_Date = new Select_Date();
             select_Date.ShowDialog();
         }
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.SelectPatient selectPatient = new SelectPatient();
+        }
     }
 }

@@ -35,7 +35,6 @@ namespace LIMS_Demo.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TestPan = new System.Windows.Forms.Panel();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.rjButton6 = new CustomControls.RJControls.RJButton();
@@ -152,7 +151,6 @@ namespace LIMS_Demo.View
             // 
             // TestPan
             // 
-            this.TestPan.Controls.Add(this.rjButton2);
             this.TestPan.Controls.Add(this.groupBox10);
             this.TestPan.Controls.Add(this.dvgTest);
             this.TestPan.Controls.Add(this.barcodepnl);
@@ -168,26 +166,6 @@ namespace LIMS_Demo.View
             this.TestPan.Name = "TestPan";
             this.TestPan.Size = new System.Drawing.Size(934, 847);
             this.TestPan.TabIndex = 0;
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.BorderRadius = 15;
-            this.rjButton2.BorderSize = 0;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton2.Location = new System.Drawing.Point(25, 745);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.rjButton2.Size = new System.Drawing.Size(150, 59);
-            this.rjButton2.TabIndex = 36;
-            this.rjButton2.Text = "حذف الكل";
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
             // 
             // groupBox10
             // 
@@ -1338,7 +1316,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Panel barcodepnl;
         private DevExpress.XtraEditors.SimpleButton multiBarcodeBtn;
         private DevExpress.XtraEditors.SimpleButton singleBarcodeBtn;
-        private CustomControls.RJControls.RJButton rjButton2;
         private System.Windows.Forms.GroupBox groupBox10;
         private CustomControls.RJControls.RJButton rjButton4;
         private CustomControls.RJControls.RJButton rjButton6;

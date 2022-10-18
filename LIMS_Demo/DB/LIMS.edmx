@@ -41,6 +41,9 @@
           <Property Name="price" Type="float" />
           <Property Name="Ray_name" Type="nvarchar" MaxLength="50" />
           <Property Name="ray_image" Type="image" />
+          <Property Name="R&amp;M_Man" Type="nvarchar" MaxLength="50" />
+          <Property Name="R&amp;M_Women" Type="nvarchar" MaxLength="50" />
+          <Property Name="unit_Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="LogFile">
           <Key>
@@ -346,6 +349,9 @@
           <Property Name="price" Type="Double" />
           <Property Name="Ray_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ray_image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="R_M_Man" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="R_M_Women" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="unit_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Invoice" Relationship="Self.FK_invoice_details_Invoice" FromRole="invoice_details" ToRole="Invoice" />
         </EntityType>
         <EntityType Name="LogFile">
@@ -663,6 +669,9 @@
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="Ray_name" ColumnName="Ray_name" />
                 <ScalarProperty Name="ray_image" ColumnName="ray_image" />
+                <ScalarProperty Name="R_M_Man" ColumnName="R&amp;M_Man" />
+                <ScalarProperty Name="R_M_Women" ColumnName="R&amp;M_Women" />
+                <ScalarProperty Name="unit_Name" ColumnName="unit_Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

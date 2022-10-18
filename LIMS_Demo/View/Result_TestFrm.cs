@@ -13,6 +13,9 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using LIMS_Demo.Methods;
 using LIMS_Demo.Reports.Tests;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.Xpo;
 
 namespace LIMS_Demo.View
 {
@@ -140,9 +143,24 @@ namespace LIMS_Demo.View
        
         private void print()
         {
+
             Test_Result test_Result = new Test_Result();
-            test_Result.BarcodeLb.DataBindings.Add("" , txtBarcode.Text,"");
-            test_Result.ShowPrintStatusDialog();
+            test_Result.Parameters["invo"].Value = txtBarcode.Text;
+            test_Result.RequestParameters = false;
+
+            //Header
+            int paId = int.Parse(patientId);
+            int invoice = Convert.ToInt32(txtBarcode.Text);
+            test_Result.Code.Text         = invoice.ToString();
+            test_Result.PatientLb.Text    = nametxt.Text;
+            test_Result.PatinetIdLb.Text  = patientId;
+
+            test_Result.GenderLb.Text     = db.Patient.Where(x => x.Patient_ID == paId).Select(x => x.Gender).FirstOrDefault();
+            test_Result.AgeLb.Text        = db.Patient.Where(x => x.Patient_ID == paId).Select(x => x.Age).FirstOrDefault();
+            test_Result.PhoneLb.Text      = db.Patient.Where(x => x.Patient_ID == paId).Select(x => x.Phone).FirstOrDefault();
+            test_Result.DateLb.Text       = db.Invoice.Where(x=>x.Invoice_ID == invoice).Select(x=>x.Invoice_Date.ToString()).FirstOrDefault();
+            test_Result.ShowPreviewDialog();
+            
 
         }
         private void dvgResult_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -216,6 +234,11 @@ namespace LIMS_Demo.View
         private void cmbResutlt_SelectedIndexChanged(object sender, EventArgs e)
         {
             resulttxt.Text = cmbResutlt.Text;
+        }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            print();
         }
     }
 }

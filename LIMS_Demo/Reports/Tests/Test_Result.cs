@@ -11,13 +11,11 @@ namespace LIMS_Demo.Reports.Tests
         public Test_Result()
         {
             InitializeComponent();
+            
         }
+       
 
-        public static void Print()
-        {
-            Test_Result test_Result = new Test_Result();
-            test_Result.Detail.
-        }
+ 
 
     }
 }

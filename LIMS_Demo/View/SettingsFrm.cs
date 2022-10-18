@@ -73,6 +73,18 @@ namespace LIMS_Demo.View
 
         }
 
-        
+        private void rjButton3_Click_1(object sender, EventArgs e)
+        {
+            Reports.Tests.Test_Result test_Result = new Reports.Tests.Test_Result();
+            var dialog = MessageBox.Show("هل أنت متأكد من هذا الإجراء؟","" ,MessageBoxButtons.YesNo , MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+            {
+                test_Result.ShowDesigner();
+            }else
+            {
+                return;
+            }
+            
+        }
     }
 }

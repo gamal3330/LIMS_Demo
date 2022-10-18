@@ -22,6 +22,9 @@ namespace LIMS_Demo.DB
         public Nullable<double> price { get; set; }
         public string Ray_name { get; set; }
         public byte[] ray_image { get; set; }
+        public string R_M_Man { get; set; }
+        public string R_M_Women { get; set; }
+        public string unit_Name { get; set; }
     
         public virtual Invoice Invoice { get; set; }
     }

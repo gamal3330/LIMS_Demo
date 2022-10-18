@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,7 +41,14 @@ namespace LIMS_Demo.View
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+            Reports.Financial.Custom_Report custom_Report = new Reports.Financial.Custom_Report();
+            custom_Report.Parameters["date1"].Value = dateTimePicker1.Value;
+            custom_Report.Parameters["date2"].Value = dateTimePicker2.Value;
+            custom_Report.RequestParameters = false;
+            custom_Report.ShowPreviewDialog();
             this.Hide();
+
+
         }
     }
 }

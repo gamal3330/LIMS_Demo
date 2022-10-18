@@ -28,7 +28,7 @@ namespace LIMS_Demo.View
         string price;
         string total;
         string smpleTest;
-        double dicsount;
+        //double dicsount;
      
         Invoice invoice = new Invoice();
         invoice_details inv_Details = new invoice_details();
@@ -267,8 +267,13 @@ namespace LIMS_Demo.View
                     {
                         inv_Details.Invoice_ID = maxId;
                         inv_Details.Test_name = dvgTest.Rows[i].Cells[1].Value.ToString();
+                        var tstnm = dvgTest.Rows[i].Cells[1].Value.ToString();
                         inv_Details.Test_Category = dvgTest.Rows[i].Cells[0].Value.ToString();
                         inv_Details.price = Convert.ToDouble(dvgTest.Rows[i].Cells[2].Value.ToString());
+                        var tst = db.Tests.Where(x => x.TestName == tstnm).Select(x => x.Test_ID).FirstOrDefault();
+                        inv_Details.R_M_Man = db.Tests.Where(x => x.Test_ID == tst).Select(x => x.RangeFORman).FirstOrDefault();
+                        inv_Details.R_M_Women = db.Tests.Where(x => x.Test_ID == tst).Select(x => x.RangeFORwomen).FirstOrDefault();
+                        inv_Details.unit_Name = db.Tests.Where(x => x.Test_ID == tst).Select(x => x.Units.Unit_Name).FirstOrDefault();
                         db.invoice_details.Add(inv_Details);
                         db.Entry(inv_Details).State = EntityState.Added;
                         db.SaveChanges();

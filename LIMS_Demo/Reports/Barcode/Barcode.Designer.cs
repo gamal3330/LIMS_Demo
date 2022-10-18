@@ -41,7 +41,7 @@ namespace LIMS_Demo
             // 
             // TopMargin
             // 
-            this.TopMargin.HeightF = 43.75F;
+            this.TopMargin.HeightF = 44F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
