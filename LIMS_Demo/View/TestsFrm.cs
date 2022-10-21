@@ -112,12 +112,6 @@ namespace LIMS_Demo.View
 
 
         
-        //clear of datagridview
-        private void btnDeleteAll_Click(object sender, EventArgs e)
-        {
-            table.Clear();
-            CalcTotal();
-        }
 
         // calculate of Total
         private void CalcTotal ()
@@ -518,13 +512,19 @@ namespace LIMS_Demo.View
                 string smplStr;
                 string test;
                 int smplInt;
-                for (int i = 0; i < dvgTest.Rows.Count; i++)
+            //int exeption = 0;
+            int ppp;
+            for (int i = 0; i < dvgTest.Rows.Count; i++)
                 {
                     test = dvgTest.Rows[i].Cells[1].Value.ToString();
 
                     smplStr = db.Tests.Where(
                         x => x.TestName == test).Select(
                         x => x.smpleAvalible).FirstOrDefault();
+                
+                    //smplInt = smplStr.Contains("-") ? exeption=1 : int.Parse(smplStr);
+                if (int.TryParse(smplStr, out ppp))
+                {
                     smplInt = int.Parse(smplStr);
                     smplInt -= 1;
 
@@ -536,6 +536,11 @@ namespace LIMS_Demo.View
                     selectedtest.smpleAvalible = smplInt.ToString();
                     test = string.Empty;
                     db.SaveChanges();
+                }else
+                {
+                    return;
+                }
+                    
                 }
             
 

@@ -106,6 +106,7 @@ namespace LIMS_Demo.View
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "name";
+            this.label3.Visible = false;
             // 
             // Select_Date
             // 

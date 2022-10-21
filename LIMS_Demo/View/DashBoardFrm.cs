@@ -171,5 +171,10 @@ namespace LIMS_Demo.View
                 return;
             }
         }
+
+        private void rjButton1_Click_1(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
