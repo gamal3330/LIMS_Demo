@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
+using LIMS_Demo.DB;
 using LIMS_Demo.Reports.Patients;
 using LIMS_Demo.Reports.Rays;
 using LIMS_Demo.Reports.Tests;
@@ -16,7 +17,7 @@ namespace LIMS_Demo.View
 {
     public partial class ReportsFrm : Form
     {
-
+        LIMS db = new LIMS();
         public ReportsFrm()
         {
             InitializeComponent();
@@ -25,25 +26,29 @@ namespace LIMS_Demo.View
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             All_Tests all_Tests = new All_Tests();
-
+            all_Tests.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
             all_Tests.ShowPreviewDialog();
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             All_Rays all_Rays = new All_Rays();
+            all_Rays.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
             all_Rays.ShowPreviewDialog();
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Patients_Daily patients_Daily = new Patients_Daily();
+            patients_Daily.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
             patients_Daily.ShowPreviewDialog();
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Daily_Report_Financial daily_Report_Financial = new Daily_Report_Financial();
+            daily_Report_Financial.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
+
             daily_Report_Financial.ShowPreviewDialog();
         }
 
@@ -58,6 +63,20 @@ namespace LIMS_Demo.View
             View.SelectPatient selectPatient = new SelectPatient();
             selectPatient.selectPAtientBtn.Text = "طباعة";
             selectPatient.ShowDialog();
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.Select_Date select_Date = new Select_Date();
+            select_Date.label3.Text = "1";
+            select_Date.ShowDialog();
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            View.Select_Date select_Date = new Select_Date();
+            select_Date.label3.Text = "2";
+            select_Date.ShowDialog();
         }
     }
 }

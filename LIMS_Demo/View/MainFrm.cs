@@ -42,7 +42,6 @@ namespace LIMS_Demo
             Testbtn.Enabled      = Convert.ToBoolean(   View.Permision.testFrm);
             ReportBtn.Enabled    = Convert.ToBoolean( View.Permision.reportFrm);
             RayBtn.Enabled       = Convert.ToBoolean(    View.Permision.raysFrm);
-            InvoiceBtn.Enabled   = Convert.ToBoolean(View.Permision.invoiceFrm);
             ResultBtn.Enabled    = Convert.ToBoolean(View.Permision.resultFrm);
             SettingsBtn.Enabled  = Convert.ToBoolean(View.Permision.settingsFrm);
 
@@ -87,7 +86,6 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -103,7 +101,6 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -119,7 +116,6 @@ namespace LIMS_Demo
             dashBoardFrm.panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -135,7 +131,6 @@ namespace LIMS_Demo
             dashBoardFrm.panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -151,24 +146,13 @@ namespace LIMS_Demo
             dashBoardFrm.panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
         private void rjButton4_Click(object sender, EventArgs e)
         {
-            View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
-            View.InvoiceFrm invoice = new View.InvoiceFrm();
-            this.Hide();
-            dashBoardFrm.Show();
-            dashBoardFrm.DashPan.Controls.Add(invoice.InvoicePan);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 228,77,68);
-            dashBoardFrm.panel1.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+            View.EnquiryFrm enquiryFrm = new View.EnquiryFrm();
+            enquiryFrm.ShowDialog();
         }
 
         private void rjButton5_Click(object sender, EventArgs e)
@@ -185,7 +169,6 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            dashBoardFrm.panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
         private void rjButton7_Click(object sender, EventArgs e)

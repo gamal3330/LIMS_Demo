@@ -41,15 +41,13 @@ namespace LIMS_Demo.View
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ReTeCe = new DevExpress.XtraEditors.CheckEdit();
             this.DisCe = new DevExpress.XtraEditors.CheckEdit();
             this.SeCe = new DevExpress.XtraEditors.CheckEdit();
             this.ReCe = new DevExpress.XtraEditors.CheckEdit();
-            this.InCe = new DevExpress.XtraEditors.CheckEdit();
             this.TeCe = new DevExpress.XtraEditors.CheckEdit();
             this.RaCe = new DevExpress.XtraEditors.CheckEdit();
             this.PaCe = new DevExpress.XtraEditors.CheckEdit();
-            this.AddBtn = new CustomControls.RJControls.RJButton();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUser_ID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,19 +56,17 @@ namespace LIMS_Demo.View
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rjButton9 = new CustomControls.RJControls.RJButton();
-            this.ReTeCe = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ReTeCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DisCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReCe.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RaCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaCe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReTeCe.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -107,11 +103,11 @@ namespace LIMS_Demo.View
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.label5.Location = new System.Drawing.Point(329, 124);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 44);
+            this.label5.Size = new System.Drawing.Size(71, 35);
             this.label5.TabIndex = 36;
             this.label5.Text = "العنوان";
             this.label5.Click += new System.EventHandler(this.label1_Click);
@@ -119,11 +115,11 @@ namespace LIMS_Demo.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.label3.Location = new System.Drawing.Point(838, 124);
+            this.label3.Location = new System.Drawing.Point(878, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 44);
+            this.label3.Size = new System.Drawing.Size(65, 35);
             this.label3.TabIndex = 36;
             this.label3.Text = "الهاتف";
             this.label3.Click += new System.EventHandler(this.label1_Click);
@@ -131,11 +127,11 @@ namespace LIMS_Demo.View
             // PassLb
             // 
             this.PassLb.AutoSize = true;
-            this.PassLb.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.PassLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.PassLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.PassLb.Location = new System.Drawing.Point(286, 57);
+            this.PassLb.Location = new System.Drawing.Point(299, 57);
             this.PassLb.Name = "PassLb";
-            this.PassLb.Size = new System.Drawing.Size(133, 44);
+            this.PassLb.Size = new System.Drawing.Size(101, 35);
             this.PassLb.TabIndex = 36;
             this.PassLb.Text = "كلمة المرور";
             this.PassLb.Click += new System.EventHandler(this.label1_Click);
@@ -143,11 +139,11 @@ namespace LIMS_Demo.View
             // UserLb
             // 
             this.UserLb.AutoSize = true;
-            this.UserLb.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.UserLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.UserLb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.UserLb.Location = new System.Drawing.Point(794, 57);
+            this.UserLb.Location = new System.Drawing.Point(807, 57);
             this.UserLb.Name = "UserLb";
-            this.UserLb.Size = new System.Drawing.Size(173, 44);
+            this.UserLb.Size = new System.Drawing.Size(136, 35);
             this.UserLb.TabIndex = 36;
             this.UserLb.Text = "اسم المستخدم";
             this.UserLb.Click += new System.EventHandler(this.label1_Click);
@@ -157,7 +153,7 @@ namespace LIMS_Demo.View
             this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAddress.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold);
             this.txtAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtAddress.Location = new System.Drawing.Point(19, 124);
+            this.txtAddress.Location = new System.Drawing.Point(38, 115);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -169,7 +165,7 @@ namespace LIMS_Demo.View
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPass.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold);
             this.txtPass.ForeColor = System.Drawing.Color.Black;
-            this.txtPass.Location = new System.Drawing.Point(19, 57);
+            this.txtPass.Location = new System.Drawing.Point(38, 57);
             this.txtPass.Multiline = true;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '•';
@@ -182,7 +178,7 @@ namespace LIMS_Demo.View
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold);
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(530, 124);
+            this.txtPhone.Location = new System.Drawing.Point(559, 115);
             this.txtPhone.Multiline = true;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -194,7 +190,7 @@ namespace LIMS_Demo.View
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUser.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold);
             this.txtUser.ForeColor = System.Drawing.Color.Black;
-            this.txtUser.Location = new System.Drawing.Point(530, 57);
+            this.txtUser.Location = new System.Drawing.Point(559, 58);
             this.txtUser.Multiline = true;
             this.txtUser.Name = "txtUser";
             this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -207,7 +203,6 @@ namespace LIMS_Demo.View
             this.groupBox2.Controls.Add(this.DisCe);
             this.groupBox2.Controls.Add(this.SeCe);
             this.groupBox2.Controls.Add(this.ReCe);
-            this.groupBox2.Controls.Add(this.InCe);
             this.groupBox2.Controls.Add(this.TeCe);
             this.groupBox2.Controls.Add(this.RaCe);
             this.groupBox2.Controls.Add(this.PaCe);
@@ -222,9 +217,20 @@ namespace LIMS_Demo.View
             this.groupBox2.Text = "الصلاحيات";
             this.groupBox2.TextChanged += new System.EventHandler(this.س);
             // 
+            // ReTeCe
+            // 
+            this.ReTeCe.Location = new System.Drawing.Point(473, 131);
+            this.ReTeCe.Name = "ReTeCe";
+            this.ReTeCe.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 18F);
+            this.ReTeCe.Properties.Appearance.Options.UseFont = true;
+            this.ReTeCe.Properties.Caption = "نتائج التحاليل";
+            this.ReTeCe.Size = new System.Drawing.Size(180, 48);
+            this.ReTeCe.TabIndex = 5;
+            this.ReTeCe.CheckedChanged += new System.EventHandler(this.checkEdit6_CheckedChanged);
+            // 
             // DisCe
             // 
-            this.DisCe.Location = new System.Drawing.Point(47, 131);
+            this.DisCe.Location = new System.Drawing.Point(53, 61);
             this.DisCe.Name = "DisCe";
             this.DisCe.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 18F);
             this.DisCe.Properties.Appearance.Options.UseFont = true;
@@ -253,16 +259,6 @@ namespace LIMS_Demo.View
             this.ReCe.Properties.Caption = "التقارير";
             this.ReCe.Size = new System.Drawing.Size(149, 48);
             this.ReCe.TabIndex = 2;
-            // 
-            // InCe
-            // 
-            this.InCe.Location = new System.Drawing.Point(47, 61);
-            this.InCe.Name = "InCe";
-            this.InCe.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 18F);
-            this.InCe.Properties.Appearance.Options.UseFont = true;
-            this.InCe.Properties.Caption = "الفواتير";
-            this.InCe.Size = new System.Drawing.Size(149, 48);
-            this.InCe.TabIndex = 4;
             // 
             // TeCe
             // 
@@ -294,57 +290,8 @@ namespace LIMS_Demo.View
             this.PaCe.Size = new System.Drawing.Size(149, 48);
             this.PaCe.TabIndex = 0;
             // 
-            // AddBtn
-            // 
-            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.AddBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.AddBtn.BorderRadius = 15;
-            this.AddBtn.BorderSize = 0;
-            this.AddBtn.FlatAppearance.BorderSize = 0;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Image = ((System.Drawing.Image)(resources.GetObject("AddBtn.Image")));
-            this.AddBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AddBtn.Location = new System.Drawing.Point(486, 787);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.AddBtn.Size = new System.Drawing.Size(180, 60);
-            this.AddBtn.TabIndex = 35;
-            this.AddBtn.Text = "إضافة";
-            this.AddBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AddBtn.TextColor = System.Drawing.Color.White;
-            this.AddBtn.UseVisualStyleBackColor = false;
-            this.AddBtn.Click += new System.EventHandler(this.rjButton2_Click);
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 15;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Image = ((System.Drawing.Image)(resources.GetObject("rjButton1.Image")));
-            this.rjButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton1.Location = new System.Drawing.Point(254, 787);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.rjButton1.Size = new System.Drawing.Size(180, 60);
-            this.rjButton1.TabIndex = 35;
-            this.rjButton1.Text = "تعديل";
-            this.rjButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = typeof(LIMS_Demo.DB.Users);
             this.gridControl1.Location = new System.Drawing.Point(13, 500);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -375,6 +322,7 @@ namespace LIMS_Demo.View
             this.colUser_ID.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
             this.colUser_ID.AppearanceHeader.Options.UseBackColor = true;
             this.colUser_ID.AppearanceHeader.Options.UseFont = true;
+            this.colUser_ID.Caption = "ID";
             this.colUser_ID.FieldName = "User_ID";
             this.colUser_ID.Name = "colUser_ID";
             this.colUser_ID.OptionsColumn.AllowEdit = false;
@@ -398,6 +346,7 @@ namespace LIMS_Demo.View
             this.colUserName.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
             this.colUserName.AppearanceHeader.Options.UseBackColor = true;
             this.colUserName.AppearanceHeader.Options.UseFont = true;
+            this.colUserName.Caption = "اسم المستخدم";
             this.colUserName.FieldName = "UserName";
             this.colUserName.Name = "colUserName";
             this.colUserName.OptionsColumn.AllowEdit = false;
@@ -421,6 +370,7 @@ namespace LIMS_Demo.View
             this.colPassword.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
             this.colPassword.AppearanceHeader.Options.UseBackColor = true;
             this.colPassword.AppearanceHeader.Options.UseFont = true;
+            this.colPassword.Caption = "كلمة المرور";
             this.colPassword.FieldName = "Password";
             this.colPassword.Name = "colPassword";
             this.colPassword.OptionsColumn.AllowEdit = false;
@@ -444,6 +394,7 @@ namespace LIMS_Demo.View
             this.colPhone.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
             this.colPhone.AppearanceHeader.Options.UseBackColor = true;
             this.colPhone.AppearanceHeader.Options.UseFont = true;
+            this.colPhone.Caption = "رقم الهاتف";
             this.colPhone.FieldName = "Phone";
             this.colPhone.Name = "colPhone";
             this.colPhone.OptionsColumn.AllowEdit = false;
@@ -467,6 +418,7 @@ namespace LIMS_Demo.View
             this.colAddress.AppearanceHeader.Font = new System.Drawing.Font("Janna LT", 10F);
             this.colAddress.AppearanceHeader.Options.UseBackColor = true;
             this.colAddress.AppearanceHeader.Options.UseFont = true;
+            this.colAddress.Caption = "العنوان";
             this.colAddress.FieldName = "Address";
             this.colAddress.Name = "colAddress";
             this.colAddress.OptionsColumn.AllowEdit = false;
@@ -501,18 +453,7 @@ namespace LIMS_Demo.View
             this.rjButton9.TabIndex = 37;
             this.rjButton9.TextColor = System.Drawing.Color.Transparent;
             this.rjButton9.UseVisualStyleBackColor = false;
-            this.rjButton9.Click += new System.EventHandler(this.rjButton9_Click_1);
-            // 
-            // ReTeCe
-            // 
-            this.ReTeCe.Location = new System.Drawing.Point(473, 131);
-            this.ReTeCe.Name = "ReTeCe";
-            this.ReTeCe.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 18F);
-            this.ReTeCe.Properties.Appearance.Options.UseFont = true;
-            this.ReTeCe.Properties.Caption = "نتائج التحاليل";
-            this.ReTeCe.Size = new System.Drawing.Size(180, 48);
-            this.ReTeCe.TabIndex = 5;
-            this.ReTeCe.CheckedChanged += new System.EventHandler(this.checkEdit6_CheckedChanged);
+            this.rjButton9.Click += new System.EventHandler(this.rjButton9_Click_2);
             // 
             // UsersFrm
             // 
@@ -521,8 +462,6 @@ namespace LIMS_Demo.View
             this.ClientSize = new System.Drawing.Size(998, 859);
             this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
@@ -535,16 +474,15 @@ namespace LIMS_Demo.View
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ReTeCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DisCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SeCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ReCe.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.InCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TeCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RaCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaCe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ReTeCe.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -557,8 +495,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.GroupBox groupBox2;
-        private CustomControls.RJControls.RJButton rjButton1;
-        private CustomControls.RJControls.RJButton AddBtn;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label UserLb;
@@ -567,13 +503,11 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Label PassLb;
         private DevExpress.XtraEditors.CheckEdit SeCe;
         private DevExpress.XtraEditors.CheckEdit ReCe;
-        private DevExpress.XtraEditors.CheckEdit InCe;
         private DevExpress.XtraEditors.CheckEdit TeCe;
         private DevExpress.XtraEditors.CheckEdit RaCe;
         private DevExpress.XtraEditors.CheckEdit PaCe;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private CustomControls.RJControls.RJButton rjButton9;
         private DevExpress.XtraGrid.Columns.GridColumn colUser_ID;
         private DevExpress.XtraGrid.Columns.GridColumn colUserName;
         private DevExpress.XtraGrid.Columns.GridColumn colPassword;
@@ -581,5 +515,6 @@ namespace LIMS_Demo.View
         private DevExpress.XtraGrid.Columns.GridColumn colAddress;
         private DevExpress.XtraEditors.CheckEdit DisCe;
         private DevExpress.XtraEditors.CheckEdit ReTeCe;
+        private CustomControls.RJControls.RJButton rjButton9;
     }
 }

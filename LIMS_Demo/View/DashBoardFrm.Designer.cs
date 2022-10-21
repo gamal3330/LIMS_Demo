@@ -31,25 +31,23 @@ namespace LIMS_Demo.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardFrm));
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.delEnqBtn = new CustomControls.RJControls.RJButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DashPan = new System.Windows.Forms.Panel();
-            this.delEnqBtn = new CustomControls.RJControls.RJButton();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSettings = new CustomControls.RJControls.RJButton();
-            this.btnInvoice = new CustomControls.RJControls.RJButton();
             this.btnRays = new CustomControls.RJControls.RJButton();
             this.btnReport = new CustomControls.RJControls.RJButton();
             this.btnResultTst = new CustomControls.RJControls.RJButton();
             this.btnTest = new CustomControls.RJControls.RJButton();
             this.btnPatient = new CustomControls.RJControls.RJButton();
+            this.DashPan = new System.Windows.Forms.Panel();
             this.rjButton9 = new CustomControls.RJControls.RJButton();
             this.sidePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -57,12 +55,12 @@ namespace LIMS_Demo.View
             // 
             // sidePanel1
             // 
+            this.sidePanel1.AllowSnap = false;
             this.sidePanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.sidePanel1.Appearance.Options.UseBackColor = true;
             this.sidePanel1.Controls.Add(this.delEnqBtn);
             this.sidePanel1.Controls.Add(this.pictureBox1);
             this.sidePanel1.Controls.Add(this.panel7);
-            this.sidePanel1.Controls.Add(this.panel6);
             this.sidePanel1.Controls.Add(this.panel5);
             this.sidePanel1.Controls.Add(this.panel4);
             this.sidePanel1.Controls.Add(this.panel3);
@@ -71,7 +69,6 @@ namespace LIMS_Demo.View
             this.sidePanel1.Controls.Add(this.rjButton7);
             this.sidePanel1.Controls.Add(this.label1);
             this.sidePanel1.Controls.Add(this.btnSettings);
-            this.sidePanel1.Controls.Add(this.btnInvoice);
             this.sidePanel1.Controls.Add(this.btnRays);
             this.sidePanel1.Controls.Add(this.btnReport);
             this.sidePanel1.Controls.Add(this.btnResultTst);
@@ -83,91 +80,6 @@ namespace LIMS_Demo.View
             this.sidePanel1.Size = new System.Drawing.Size(263, 900);
             this.sidePanel1.TabIndex = 30;
             this.sidePanel1.Text = "sidePanel1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 78);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Control;
-            this.panel7.Location = new System.Drawing.Point(242, 739);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(21, 57);
-            this.panel7.TabIndex = 35;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.Control;
-            this.panel6.Location = new System.Drawing.Point(242, 649);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(21, 57);
-            this.panel6.TabIndex = 34;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.Control;
-            this.panel5.Location = new System.Drawing.Point(242, 556);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(21, 57);
-            this.panel5.TabIndex = 32;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
-            this.panel4.Location = new System.Drawing.Point(242, 463);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(21, 57);
-            this.panel4.TabIndex = 33;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Location = new System.Drawing.Point(242, 372);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(21, 57);
-            this.panel3.TabIndex = 32;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
-            this.panel2.Location = new System.Drawing.Point(242, 284);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 57);
-            this.panel2.TabIndex = 32;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Location = new System.Drawing.Point(242, 202);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(21, 57);
-            this.panel1.TabIndex = 31;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Janna LT", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(75, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 55);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "القائمة";
-            // 
-            // DashPan
-            // 
-            this.DashPan.Location = new System.Drawing.Point(1, 53);
-            this.DashPan.Name = "DashPan";
-            this.DashPan.Size = new System.Drawing.Size(934, 847);
-            this.DashPan.TabIndex = 31;
             // 
             // delEnqBtn
             // 
@@ -188,6 +100,65 @@ namespace LIMS_Demo.View
             this.delEnqBtn.UseVisualStyleBackColor = false;
             this.delEnqBtn.Click += new System.EventHandler(this.delEnqBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(85, 78);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Control;
+            this.panel7.Location = new System.Drawing.Point(242, 674);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(21, 57);
+            this.panel7.TabIndex = 35;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.Control;
+            this.panel5.Location = new System.Drawing.Point(242, 585);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(21, 57);
+            this.panel5.TabIndex = 32;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Location = new System.Drawing.Point(242, 490);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(21, 57);
+            this.panel4.TabIndex = 33;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Location = new System.Drawing.Point(242, 396);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(21, 57);
+            this.panel3.TabIndex = 32;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Location = new System.Drawing.Point(242, 310);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(21, 57);
+            this.panel2.TabIndex = 32;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Location = new System.Drawing.Point(242, 212);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(21, 57);
+            this.panel1.TabIndex = 31;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // rjButton7
             // 
             this.rjButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -207,6 +178,17 @@ namespace LIMS_Demo.View
             this.rjButton7.UseVisualStyleBackColor = false;
             this.rjButton7.Click += new System.EventHandler(this.rjButton7_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Janna LT", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(75, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 55);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "القائمة";
+            // 
             // btnSettings
             // 
             this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
@@ -218,7 +200,7 @@ namespace LIMS_Demo.View
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnSettings.Location = new System.Drawing.Point(0, 739);
+            this.btnSettings.Location = new System.Drawing.Point(0, 674);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Size = new System.Drawing.Size(263, 57);
             this.btnSettings.TabIndex = 0;
@@ -226,26 +208,6 @@ namespace LIMS_Demo.View
             this.btnSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.rjButton6_Click);
-            // 
-            // btnInvoice
-            // 
-            this.btnInvoice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnInvoice.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.btnInvoice.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnInvoice.BorderRadius = 0;
-            this.btnInvoice.BorderSize = 0;
-            this.btnInvoice.FlatAppearance.BorderSize = 0;
-            this.btnInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInvoice.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInvoice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnInvoice.Location = new System.Drawing.Point(0, 649);
-            this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.Size = new System.Drawing.Size(263, 57);
-            this.btnInvoice.TabIndex = 0;
-            this.btnInvoice.Text = "الفواتير";
-            this.btnInvoice.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnInvoice.UseVisualStyleBackColor = false;
-            this.btnInvoice.Click += new System.EventHandler(this.rjButton5_Click);
             // 
             // btnRays
             // 
@@ -258,7 +220,7 @@ namespace LIMS_Demo.View
             this.btnRays.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRays.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRays.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnRays.Location = new System.Drawing.Point(0, 556);
+            this.btnRays.Location = new System.Drawing.Point(0, 585);
             this.btnRays.Name = "btnRays";
             this.btnRays.Size = new System.Drawing.Size(263, 57);
             this.btnRays.TabIndex = 0;
@@ -278,7 +240,7 @@ namespace LIMS_Demo.View
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnReport.Location = new System.Drawing.Point(0, 463);
+            this.btnReport.Location = new System.Drawing.Point(0, 490);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(263, 57);
             this.btnReport.TabIndex = 0;
@@ -298,7 +260,7 @@ namespace LIMS_Demo.View
             this.btnResultTst.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResultTst.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResultTst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnResultTst.Location = new System.Drawing.Point(0, 372);
+            this.btnResultTst.Location = new System.Drawing.Point(0, 396);
             this.btnResultTst.Name = "btnResultTst";
             this.btnResultTst.Size = new System.Drawing.Size(263, 57);
             this.btnResultTst.TabIndex = 0;
@@ -318,7 +280,7 @@ namespace LIMS_Demo.View
             this.btnTest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTest.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnTest.Location = new System.Drawing.Point(0, 284);
+            this.btnTest.Location = new System.Drawing.Point(0, 310);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(263, 57);
             this.btnTest.TabIndex = 0;
@@ -338,7 +300,7 @@ namespace LIMS_Demo.View
             this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPatient.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.btnPatient.Location = new System.Drawing.Point(0, 202);
+            this.btnPatient.Location = new System.Drawing.Point(0, 212);
             this.btnPatient.Name = "btnPatient";
             this.btnPatient.Size = new System.Drawing.Size(263, 57);
             this.btnPatient.TabIndex = 0;
@@ -346,6 +308,13 @@ namespace LIMS_Demo.View
             this.btnPatient.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnPatient.UseVisualStyleBackColor = false;
             this.btnPatient.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // DashPan
+            // 
+            this.DashPan.Location = new System.Drawing.Point(1, 53);
+            this.DashPan.Name = "DashPan";
+            this.DashPan.Size = new System.Drawing.Size(934, 847);
+            this.DashPan.TabIndex = 31;
             // 
             // rjButton9
             // 
@@ -395,7 +364,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJButton rjButton7;
         public System.Windows.Forms.Panel panel7;
-        public System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.Panel panel5;
         public System.Windows.Forms.Panel panel4;
         public System.Windows.Forms.Panel panel2;
@@ -403,7 +371,6 @@ namespace LIMS_Demo.View
         public System.Windows.Forms.Panel DashPan;
         private System.Windows.Forms.PictureBox pictureBox1;
         public CustomControls.RJControls.RJButton btnSettings;
-        public CustomControls.RJControls.RJButton btnInvoice;
         public CustomControls.RJControls.RJButton btnRays;
         public CustomControls.RJControls.RJButton btnReport;
         public CustomControls.RJControls.RJButton btnTest;

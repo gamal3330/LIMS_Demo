@@ -28,10 +28,10 @@ namespace LIMS_Demo
         LIMS db = new LIMS();
         Login_Logout_Traking login = new Login_Logout_Traking();
         public LoginFrm()
-        {
-            
+        {            
             InitializeComponent();
         }
+
         int mousex = 0;
         int mousey = 0;
         bool mouseDown;
@@ -112,6 +112,9 @@ namespace LIMS_Demo
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
+
+
+
             try
             {
                 if (txtUser.Text == Properties.Settings.Default["user"].ToString() && txtPass.Text == Properties.Settings.Default["pass"].ToString())
@@ -180,6 +183,15 @@ namespace LIMS_Demo
         private void rjButton9_Click_1(object sender, EventArgs e)
         {
             Environment.Exit(1);
+        }
+
+
+        private void txtPass_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Enterbtn.PerformClick();
+            }
         }
     }
 }

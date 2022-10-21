@@ -82,12 +82,15 @@ namespace LIMS_Demo.Reports.Tests
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell4 = new DevExpress.XtraReports.UI.XRTableCell();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
             this.sqlDataSource5 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.viewDataSource1 = new DevExpress.Persistent.Base.ReportsV2.ViewDataSource();
             this.invo = new DevExpress.XtraReports.Parameters.Parameter();
+            this.pageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrLabel14 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel15 = new DevExpress.XtraReports.UI.XRLabel();
+            this.pageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrLine2 = new DevExpress.XtraReports.UI.XRLine();
+            this.User = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this.tbl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataSource1)).BeginInit();
@@ -208,7 +211,7 @@ namespace LIMS_Demo.Reports.Tests
             this.PatientLb,
             this.DateLb,
             this.xrTable1});
-            this.ReportHeader.HeightF = 259.1667F;
+            this.ReportHeader.HeightF = 272.75F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrLabel7
@@ -253,13 +256,14 @@ namespace LIMS_Demo.Reports.Tests
             // 
             // Code
             // 
+            this.Code.AutoModule = true;
             this.Code.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?inv_id")});
-            this.Code.LocationFloat = new DevExpress.Utils.PointFloat(270.8333F, 138.5834F);
+            this.Code.LocationFloat = new DevExpress.Utils.PointFloat(253.125F, 138.5834F);
             this.Code.Name = "Code";
             this.Code.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.Code.ShowText = false;
-            this.Code.SizeF = new System.Drawing.SizeF(112.5F, 73.00002F);
+            this.Code.SizeF = new System.Drawing.SizeF(130.2083F, 73.00003F);
             this.Code.StylePriority.UseTextAlignment = false;
             this.Code.Symbology = code128Generator1;
             this.Code.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -304,8 +308,10 @@ namespace LIMS_Demo.Reports.Tests
             this.PatinetIdLb.Multiline = true;
             this.PatinetIdLb.Name = "PatinetIdLb";
             this.PatinetIdLb.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.PatinetIdLb.SizeF = new System.Drawing.SizeF(51.04163F, 23F);
+            this.PatinetIdLb.SizeF = new System.Drawing.SizeF(169.7916F, 23F);
             this.PatinetIdLb.StylePriority.UseFont = false;
+            this.PatinetIdLb.StylePriority.UseTextAlignment = false;
+            this.PatinetIdLb.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // PhoneLb
             // 
@@ -338,14 +344,16 @@ namespace LIMS_Demo.Reports.Tests
             this.AgeLb.Multiline = true;
             this.AgeLb.Name = "AgeLb";
             this.AgeLb.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.AgeLb.SizeF = new System.Drawing.SizeF(51.04163F, 23F);
+            this.AgeLb.SizeF = new System.Drawing.SizeF(169.7916F, 23F);
             this.AgeLb.StylePriority.UseFont = false;
+            this.AgeLb.StylePriority.UseTextAlignment = false;
+            this.AgeLb.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // xrLabel6
             // 
-            this.xrLabel6.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 22F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 18F, System.Drawing.FontStyle.Bold);
             this.xrLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(270.8333F, 102.0418F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(270.8333F, 91.62505F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -359,11 +367,11 @@ namespace LIMS_Demo.Reports.Tests
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(26.66667F, 0F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(126.0417F, 101.875F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(216.0417F, 81.20839F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             this.xrLabel2.Text = "MyLab\r\nFor Medical Labortoary\r\n";
@@ -372,7 +380,7 @@ namespace LIMS_Demo.Reports.Tests
             // xrPictureBox1
             // 
             this.xrPictureBox1.ImageUrl = "C:\\Users\\Badheeb\\Downloads\\blood-test.png";
-            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(270.8333F, 1.875003F);
+            this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(270.8333F, 0F);
             this.xrPictureBox1.Name = "xrPictureBox1";
             this.xrPictureBox1.SizeF = new System.Drawing.SizeF(100F, 79.33339F);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.ZoomImage;
@@ -380,11 +388,11 @@ namespace LIMS_Demo.Reports.Tests
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(503.125F, 1.875003F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(446.875F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(126.0417F, 101.875F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(203.125F, 79.33337F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "مختبري\r\n للتحاليل الطبية و الأشعة";
@@ -417,7 +425,7 @@ namespace LIMS_Demo.Reports.Tests
             // 
             // xrTable1
             // 
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 234.1667F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 247.75F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -497,46 +505,13 @@ namespace LIMS_Demo.Reports.Tests
             // PageFooter
             // 
             this.PageFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrPageInfo2,
-            this.xrPageInfo1,
-            this.xrLabel10});
+            this.pageInfo2,
+            this.xrLabel14,
+            this.xrLabel15,
+            this.pageInfo1,
+            this.xrLine2});
             this.PageFooter.HeightF = 62.58329F;
             this.PageFooter.Name = "PageFooter";
-            // 
-            // xrPageInfo2
-            // 
-            this.xrPageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.xrPageInfo2.Name = "xrPageInfo2";
-            this.xrPageInfo2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrPageInfo2.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.xrPageInfo2.SizeF = new System.Drawing.SizeF(164.5833F, 62.08331F);
-            this.xrPageInfo2.StylePriority.UseTextAlignment = false;
-            this.xrPageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.xrPageInfo2.TextFormatString = "{0:dddd, dd MMMM, yyyy}";
-            // 
-            // xrPageInfo1
-            // 
-            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(550F, 0F);
-            this.xrPageInfo1.Name = "xrPageInfo1";
-            this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(100F, 62.08331F);
-            this.xrPageInfo1.StylePriority.UseTextAlignment = false;
-            this.xrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            // 
-            // xrLabel10
-            // 
-            this.xrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.xrLabel10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(222.2917F, 0F);
-            this.xrLabel10.Multiline = true;
-            this.xrLabel10.Name = "xrLabel10";
-            this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel10.SizeF = new System.Drawing.SizeF(238.125F, 62.08331F);
-            this.xrLabel10.StylePriority.UseBorders = false;
-            this.xrLabel10.StylePriority.UseFont = false;
-            this.xrLabel10.StylePriority.UseTextAlignment = false;
-            this.xrLabel10.Text = "          Phone : 009888888888";
-            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // sqlDataSource5
             // 
@@ -596,6 +571,67 @@ namespace LIMS_Demo.Reports.Tests
             this.invo.ValueSourceSettings = staticListLookUpSettings1;
             this.invo.Visible = false;
             // 
+            // pageInfo2
+            // 
+            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(484.6639F, 39.58329F);
+            this.pageInfo2.Name = "pageInfo2";
+            this.pageInfo2.SizeF = new System.Drawing.SizeF(163.2526F, 23F);
+            this.pageInfo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.pageInfo2.TextFormatString = "Page {0} of {1}";
+            // 
+            // xrLabel14
+            // 
+            this.xrLabel14.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(342.6685F, 39.58329F);
+            this.xrLabel14.Multiline = true;
+            this.xrLabel14.Name = "xrLabel14";
+            this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel14.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrLabel14.SizeF = new System.Drawing.SizeF(51.33051F, 23F);
+            this.xrLabel14.StylePriority.UseFont = false;
+            this.xrLabel14.StylePriority.UseTextAlignment = false;
+            this.xrLabel14.Text = "الموظف :";
+            this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrLabel14.TextFormatString = "{0:dd/MM/yyyy}";
+            // 
+            // xrLabel15
+            // 
+            this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?User")});
+            this.xrLabel15.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(256.534F, 39.58329F);
+            this.xrLabel15.Multiline = true;
+            this.xrLabel15.Name = "xrLabel15";
+            this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel15.RightToLeft = DevExpress.XtraReports.UI.RightToLeft.Yes;
+            this.xrLabel15.SizeF = new System.Drawing.SizeF(85.99438F, 23F);
+            this.xrLabel15.StylePriority.UseFont = false;
+            this.xrLabel15.StylePriority.UseTextAlignment = false;
+            this.xrLabel15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrLabel15.TextFormatString = "{0:dd/MM/yyyy}";
+            // 
+            // pageInfo1
+            // 
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(3.205628E-05F, 39.58329F);
+            this.pageInfo1.Name = "pageInfo1";
+            this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.pageInfo1.SizeF = new System.Drawing.SizeF(164.2858F, 23F);
+            this.pageInfo1.TextFormatString = "{0:dd/MM/yyyy hh:mm tt}";
+            // 
+            // xrLine2
+            // 
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.58333F);
+            this.xrLine2.Name = "xrLine2";
+            this.xrLine2.SizeF = new System.Drawing.SizeF(650F, 23F);
+            // 
+            // User
+            // 
+            this.User.AllowNull = true;
+            this.User.Description = "user";
+            this.User.MultiValue = true;
+            this.User.Name = "User";
+            this.User.Visible = false;
+            // 
             // Test_Result
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -612,8 +648,11 @@ namespace LIMS_Demo.Reports.Tests
             this.Font = new System.Drawing.Font("Arial", 9.75F);
             this.Margins = new System.Drawing.Printing.Margins(100, 100, 51, 282);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
-            this.invo});
+            this.invo,
+            this.User});
             this.Version = "21.2";
+            this.Watermark.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Test_Result.Watermark.ImageSource"));
+            this.Watermark.ImageTransparency = 223;
             ((System.ComponentModel.ISupportInitialize)(this.tbl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewDataSource1)).EndInit();
@@ -637,9 +676,6 @@ namespace LIMS_Demo.Reports.Tests
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell4;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel10;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo2;
-        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
         public DevExpress.XtraReports.UI.XRLabel PatientLb;
         public DevExpress.XtraReports.UI.XRLabel DateLb;
         public DevExpress.XtraReports.UI.XRLabel PhoneLb;
@@ -663,5 +699,11 @@ namespace LIMS_Demo.Reports.Tests
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource5;
         private DevExpress.Persistent.Base.ReportsV2.ViewDataSource viewDataSource1;
         private DevExpress.XtraReports.Parameters.Parameter invo;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel14;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel15;
+        private DevExpress.XtraReports.UI.XRPageInfo pageInfo1;
+        private DevExpress.XtraReports.UI.XRLine xrLine2;
+        private DevExpress.XtraReports.Parameters.Parameter User;
     }
 }

@@ -16,15 +16,9 @@ namespace LIMS_Demo.View
         public static string testFrm { get; set; }
         public static string reportFrm { get; set; }
         public static string raysFrm { get; set; }
-        public static string invoiceFrm { get; set; }
         public static string settingsFrm { get; set; }
-
         public static string resultFrm { get; set; }
-
         public static string disCountPer{ get; set; }
-
-
-
         public static int userID { get; set; }
 
 
@@ -40,7 +34,6 @@ namespace LIMS_Demo.View
             testFrm      =    x.TestFrm      ;
             reportFrm    =    x.ReportFrm    ;
             raysFrm      =    x.RaysFrm      ;
-            invoiceFrm   =    x.InvoiceFrm   ;
             settingsFrm  =    x.SettingsFrm  ;
             resultFrm    =    x.ResultFrm    ;
             disCountPer  =    x.DisCountPer  ;

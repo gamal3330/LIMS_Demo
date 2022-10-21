@@ -125,7 +125,7 @@ namespace LIMS_Demo
             this.txtUser.Name = "txtUser";
             this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtUser.Size = new System.Drawing.Size(361, 50);
-            this.txtUser.TabIndex = 1;
+            this.txtUser.TabIndex = 0;
             this.txtUser.Text = "admin";
             this.txtUser.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtUser.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -142,9 +142,10 @@ namespace LIMS_Demo
             this.txtPass.PasswordChar = '•';
             this.txtPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPass.Size = new System.Drawing.Size(361, 50);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.TabIndex = 1;
             this.txtPass.Text = "000";
             this.txtPass.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             this.txtPass.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // panel2
@@ -191,7 +192,7 @@ namespace LIMS_Demo
             this.Enterbtn.Location = new System.Drawing.Point(291, 391);
             this.Enterbtn.Name = "Enterbtn";
             this.Enterbtn.Size = new System.Drawing.Size(159, 48);
-            this.Enterbtn.TabIndex = 3;
+            this.Enterbtn.TabIndex = 2;
             this.Enterbtn.Text = "دخول";
             this.Enterbtn.TextColor = System.Drawing.Color.White;
             this.Enterbtn.UseVisualStyleBackColor = false;

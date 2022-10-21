@@ -147,7 +147,6 @@
           <Property Name="TestFrm" Type="char" MaxLength="10" />
           <Property Name="ReportFrm" Type="char" MaxLength="10" />
           <Property Name="RaysFrm" Type="char" MaxLength="10" />
-          <Property Name="InvoiceFrm" Type="char" MaxLength="10" />
           <Property Name="SettingsFrm" Type="char" MaxLength="10" />
           <Property Name="DisCountPer" Type="char" MaxLength="10" />
           <Property Name="ResultFrm" Type="char" MaxLength="10" />
@@ -466,7 +465,6 @@
           <Property Name="TestFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="ReportFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="RaysFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="InvoiceFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="SettingsFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="DisCountPer" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="ResultFrm" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
@@ -785,7 +783,6 @@
                 <ScalarProperty Name="TestFrm" ColumnName="TestFrm" />
                 <ScalarProperty Name="ReportFrm" ColumnName="ReportFrm" />
                 <ScalarProperty Name="RaysFrm" ColumnName="RaysFrm" />
-                <ScalarProperty Name="InvoiceFrm" ColumnName="InvoiceFrm" />
                 <ScalarProperty Name="SettingsFrm" ColumnName="SettingsFrm" />
                 <ScalarProperty Name="DisCountPer" ColumnName="DisCountPer" />
                 <ScalarProperty Name="ResultFrm" ColumnName="ResultFrm" />

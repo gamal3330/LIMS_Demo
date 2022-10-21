@@ -4,14 +4,13 @@ using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace LIMS_Demo.Reports.Tests
+namespace LIMS_Demo.Reports.System_Report
 {
-    public partial class Daily_Report_Financial : DevExpress.XtraReports.UI.XtraReport
+    public partial class Login_LogOut_Report : DevExpress.XtraReports.UI.XtraReport
     {
-        public Daily_Report_Financial()
+        public Login_LogOut_Report()
         {
             InitializeComponent();
-
         }
 
     }

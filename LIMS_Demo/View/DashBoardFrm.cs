@@ -31,7 +31,6 @@ namespace LIMS_Demo.View
             btnTest.Enabled = Convert.ToBoolean(   View.Permision.testFrm);
             btnReport.Enabled = Convert.ToBoolean( View.Permision.reportFrm);
             btnRays.Enabled = Convert.ToBoolean(   View.Permision.raysFrm);
-            btnInvoice.Enabled = Convert.ToBoolean(View.Permision.invoiceFrm);
             btnResultTst.Enabled = Convert.ToBoolean(View.Permision.resultFrm);
             btnSettings.Enabled = Convert.ToBoolean(View.Permision.settingsFrm);
 
@@ -74,7 +73,6 @@ namespace LIMS_Demo.View
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
 
         }
@@ -89,7 +87,6 @@ namespace LIMS_Demo.View
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
 
         }
@@ -104,7 +101,6 @@ namespace LIMS_Demo.View
             panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -118,7 +114,6 @@ namespace LIMS_Demo.View
             panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -132,7 +127,6 @@ namespace LIMS_Demo.View
             panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
         }
 
@@ -141,7 +135,6 @@ namespace LIMS_Demo.View
             View.InvoiceFrm invoice= new View.InvoiceFrm();
             DashPan.Controls.Clear();
             DashPan.Controls.Add(invoice.InvoicePan);
-            panel6.BackColor = Color.FromArgb(255, 228, 77, 68);
             panel1.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel2.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
@@ -162,7 +155,6 @@ namespace LIMS_Demo.View
             panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
-            panel6.BackColor = Color.FromArgb(255, 238, 238, 238);
 
         }
 

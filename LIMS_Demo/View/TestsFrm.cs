@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrinting.BarCode;
+
 namespace LIMS_Demo.View
 {
     public partial class TestsFrm : Form
@@ -209,7 +210,6 @@ namespace LIMS_Demo.View
                     if (!smpleTesttxt.Text.Contains("-"))
                     {
                         smpl();
-                        db.SaveChanges();
                     }
 
                     enquiry.enquriyMethod(
@@ -222,7 +222,7 @@ namespace LIMS_Demo.View
 
                     barcodepnl.Visible = false;
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
-                    MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("تم الحفظ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
                     nametxt.Text = "";
                     Idtxt.Text = "";
@@ -301,10 +301,9 @@ namespace LIMS_Demo.View
                         barcode.Dispose();
                     }
 
-                    if (smpleTesttxt.Text.Contains("-") == true)
+                    if (!smpleTesttxt.Text.Contains("-"))
                     {
                         smpl();
-                        db.SaveChanges();
                     }
 
                     enquiry.enquriyMethod(
@@ -315,6 +314,7 @@ namespace LIMS_Demo.View
                     date: DateTime.Now);
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
                     barcodepnl.Visible = false;
+
                     MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
                     category.Clear();
@@ -515,7 +515,6 @@ namespace LIMS_Demo.View
 
         private void smpl ()
         {
-            
                 string smplStr;
                 string test;
                 int smplInt;
@@ -536,8 +535,7 @@ namespace LIMS_Demo.View
 
                     selectedtest.smpleAvalible = smplInt.ToString();
                     test = string.Empty;
-
-
+                    db.SaveChanges();
                 }
             
 

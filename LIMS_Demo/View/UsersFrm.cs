@@ -86,7 +86,6 @@ namespace LIMS_Demo.View
                     users.TestFrm = TeCe.Checked.ToString();
                     users.ReportFrm = ReCe.Checked.ToString();
                     users.RaysFrm = RaCe.Checked.ToString();
-                    users.InvoiceFrm = InCe.Checked.ToString();
                     users.SettingsFrm = SeCe.Checked.ToString();
                     users.ResultFrm = ReTeCe.Checked.ToString();
                     users.DisCountPer = DisCe.Checked.ToString();
@@ -139,7 +138,6 @@ namespace LIMS_Demo.View
                 selectedRow.TestFrm = TeCe.Checked.ToString();
                 selectedRow.ReportFrm = ReCe.Checked.ToString();
                 selectedRow.RaysFrm = RaCe.Checked.ToString();
-                selectedRow.InvoiceFrm = InCe.Checked.ToString();
                 selectedRow.ResultFrm = ReTeCe.Checked.ToString();
                 selectedRow.SettingsFrm = SeCe.Checked.ToString();
                 selectedRow.DisCountPer = DisCe.Checked.ToString();
@@ -165,7 +163,6 @@ namespace LIMS_Demo.View
             TeCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "TestFrm"));
             ReCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ReportFrm"));
             RaCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "RaysFrm"));
-            InCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "InvoiceFrm"));
             ReTeCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "ResultFrm"));
             SeCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "SettingsFrm"));
             DisCe.Checked = Convert.ToBoolean(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "DisCountPer"));
@@ -176,6 +173,12 @@ namespace LIMS_Demo.View
         private void UsersFrm_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void rjButton9_Click_2(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

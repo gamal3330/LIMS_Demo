@@ -97,6 +97,7 @@ namespace LIMS_Demo.View
                 Reports.Financial.Custom_Patient_Report custom_Patient_Report = new Reports.Financial.Custom_Patient_Report();
                 custom_Patient_Report.RequestParameters = false;
                 custom_Patient_Report.Parameters["patId"].Value = id;
+                custom_Patient_Report.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
                 custom_Patient_Report.ShowPreviewDialog();
             }else
             {

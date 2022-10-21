@@ -38,7 +38,17 @@ namespace LIMS_Demo.View
             table.Columns.Add("التحليل");
             table.Columns.Add("النتيجة");
             dvgResult.DataSource = table;
-            resulttxt.Focus();
+            printBtn.Enabled = false;
+            txtBarcode.Select();
+
+
+        }
+
+         private  void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPort sp = (SerialPort)sender;
+            string indata = sp.ReadExisting();
+            txtBarcode.Text = indata;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -52,12 +62,12 @@ namespace LIMS_Demo.View
                 int parsedValue;
                 if (txtBarcode.Text == "")
                 {
-                    MessageBox.Show("يرجى تعبئة الحقول");
+                    MessageBox.Show("يرجى تعبئة الحقول" , "" , MessageBoxButtons.OK , MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                     return;
                 }
                 if (!int.TryParse(txtBarcode.Text, out parsedValue))
                 {
-                    MessageBox.Show("يرجى إدخال قيمة عددية فقط");
+                    MessageBox.Show("يرجى إدخال قيمة عددية فقط", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                     return;
                 }
                 else
@@ -81,11 +91,13 @@ namespace LIMS_Demo.View
                             row[2] = itemT.result_value;
                             table.Rows.Add(row);
                         }
+                        resulttxt.Focus();
+
                         //rowIndex = dvgResult.CurrentRow.Index;
                     }
                     else
                     {
-                        MessageBox.Show("عذراً , لا يوجد هذا الفحص !");
+                        MessageBox.Show("عذراً , لا يوجد هذا الفحص !", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                     }
                     for (int i = 0; i < dvgResult.Rows.Count; i++)
                     {
@@ -93,9 +105,12 @@ namespace LIMS_Demo.View
                         {
                             saveBtn.Enabled = false;
                             btnAdd.Enabled  = false;
+                            printBtn.Enabled = true;
+
                         }
                         else
                         {
+                            printBtn.Enabled = false;
                             saveBtn.Enabled = true;
                             btnAdd.Enabled  = true;
                         }
@@ -113,10 +128,11 @@ namespace LIMS_Demo.View
             {
                 if (resulttxt.Text == "")
                 {
-                    MessageBox.Show("يرجى إدخال نتيجة", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("يرجى إدخال نتيجة", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                 }
                 else
                 {
+
                     dvgResult.Rows[rowIndex].Cells[2].Value = resulttxt.Text;
                     resulttxt.Text = string.Empty;
                     resulttxt.Focus();
@@ -127,16 +143,18 @@ namespace LIMS_Demo.View
                     }
                     else
                     {
-                        currrentrow += 1;
+                        rowIndex += 1;
                     }
-                    dvgResult.Rows[dvgResult.CurrentRow.Index].Selected = false;
-                    dvgResult.Rows[currrentrow].Selected = true;
-                    rowIndex += 1;
+                    
+                    dvgResult.Rows[rowIndex].Selected = true;
+                    dvgResult.Rows[rowIndex - 1].Selected = false;
+
+                    
                 }
             }
-            catch (Exception error)
+            catch (Exception)
             {
-                MessageBox.Show(error.Message);
+                MessageBox.Show("تم إدخال جميع النتائج" , "" ,MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
             }
         }
 
@@ -146,6 +164,7 @@ namespace LIMS_Demo.View
 
             Test_Result test_Result = new Test_Result();
             test_Result.Parameters["invo"].Value = txtBarcode.Text;
+            test_Result.Parameters["User"].Value = db.Users.Where(x=>x.User_ID == Permision.userID).Select(x=>x.UserName).FirstOrDefault();
             test_Result.RequestParameters = false;
 
             //Header
@@ -174,7 +193,7 @@ namespace LIMS_Demo.View
             {
                 if (patientName == "")
                 {
-                    MessageBox.Show("يرجى إدخال باركود", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("يرجى إدخال باركود", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                     txtBarcode.Focus();
                 }
                 else
@@ -195,10 +214,20 @@ namespace LIMS_Demo.View
                         r.isReady = true;
                         db.SaveChanges();
                     }
-
-                    print();
-                    MessageBox.Show("تم الحفظ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                    
+                    
+                    var dilog = MessageBox.Show(
+                        "تم الحفظ \n هل تود طباعة النتيجة؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information , MessageBoxDefaultButton.Button1 , MessageBoxOptions.RightAlign);
+                    if (dilog == DialogResult.Yes)
+                    {
+                        print();
+                        Clear();
+                    }else 
+                    {
+                        Clear();
+                        return;
+                    }
+                    
                 }
             }
             catch (Exception error)
@@ -210,7 +239,6 @@ namespace LIMS_Demo.View
 
         private void Result_TestFrm_Activated(object sender, EventArgs e)
         {
-            this.ActiveControl = txtBarcode;
         }
 
 
@@ -239,6 +267,41 @@ namespace LIMS_Demo.View
         private void rjButton1_Click(object sender, EventArgs e)
         {
             print();
+            Clear();
+        }
+
+        private void Result_TestFrm_Load(object sender, EventArgs e)
+        {
+            txtBarcode.Focus();
+
+            SerialPort mySerialPort = new SerialPort("COM3");
+
+            mySerialPort.BaudRate = 9600;
+            mySerialPort.Parity = Parity.None;
+            mySerialPort.StopBits = StopBits.One;
+            mySerialPort.DataBits = 8;
+            mySerialPort.Handshake = Handshake.None;
+
+            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+
+            mySerialPort.Open();
+            mySerialPort.Close();
+        }
+
+        private void resulttxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAdd.PerformClick();
+            }
+        }
+
+        private void txtBarcode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchBtn.PerformClick();
+            }
         }
     }
 }

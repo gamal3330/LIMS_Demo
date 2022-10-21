@@ -30,7 +30,6 @@ namespace LIMS_Demo.DB
         public string TestFrm { get; set; }
         public string ReportFrm { get; set; }
         public string RaysFrm { get; set; }
-        public string InvoiceFrm { get; set; }
         public string SettingsFrm { get; set; }
         public string DisCountPer { get; set; }
         public string ResultFrm { get; set; }

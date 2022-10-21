@@ -34,6 +34,7 @@ namespace LIMS_Demo.View
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -97,11 +98,21 @@ namespace LIMS_Demo.View
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(472, 194);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "name";
+            // 
             // Select_Date
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 213);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label2);
@@ -124,5 +135,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private CustomControls.RJControls.RJButton rjButton1;
+        public System.Windows.Forms.Label label3;
     }
 }

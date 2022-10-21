@@ -39,7 +39,7 @@ namespace LIMS_Demo
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.InfoBtn = new CustomControls.RJControls.RJButton();
-            this.InvoiceBtn = new CustomControls.RJControls.RJButton();
+            this.EnquiryBtn = new CustomControls.RJControls.RJButton();
             this.SettingsBtn = new CustomControls.RJControls.RJButton();
             this.RayBtn = new CustomControls.RJControls.RJButton();
             this.ResultBtn = new CustomControls.RJControls.RJButton();
@@ -61,7 +61,7 @@ namespace LIMS_Demo
             this.MainPan.Controls.Add(this.pictureBox1);
             this.MainPan.Controls.Add(this.rjButton7);
             this.MainPan.Controls.Add(this.InfoBtn);
-            this.MainPan.Controls.Add(this.InvoiceBtn);
+            this.MainPan.Controls.Add(this.EnquiryBtn);
             this.MainPan.Controls.Add(this.SettingsBtn);
             this.MainPan.Controls.Add(this.RayBtn);
             this.MainPan.Controls.Add(this.ResultBtn);
@@ -166,7 +166,7 @@ namespace LIMS_Demo
             this.rjButton7.ForeColor = System.Drawing.Color.White;
             this.rjButton7.Image = ((System.Drawing.Image)(resources.GetObject("rjButton7.Image")));
             this.rjButton7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton7.Location = new System.Drawing.Point(494, 464);
+            this.rjButton7.Location = new System.Drawing.Point(494, 454);
             this.rjButton7.Name = "rjButton7";
             this.rjButton7.Size = new System.Drawing.Size(200, 115);
             this.rjButton7.TabIndex = 26;
@@ -190,7 +190,7 @@ namespace LIMS_Demo
             this.InfoBtn.ForeColor = System.Drawing.Color.White;
             this.InfoBtn.Image = ((System.Drawing.Image)(resources.GetObject("InfoBtn.Image")));
             this.InfoBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.InfoBtn.Location = new System.Drawing.Point(735, 464);
+            this.InfoBtn.Location = new System.Drawing.Point(735, 454);
             this.InfoBtn.Name = "InfoBtn";
             this.InfoBtn.Size = new System.Drawing.Size(200, 115);
             this.InfoBtn.TabIndex = 25;
@@ -200,29 +200,29 @@ namespace LIMS_Demo
             this.InfoBtn.UseVisualStyleBackColor = false;
             this.InfoBtn.Click += new System.EventHandler(this.InfoBtn_Click);
             // 
-            // InvoiceBtn
+            // EnquiryBtn
             // 
-            this.InvoiceBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.InvoiceBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.InvoiceBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.InvoiceBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.InvoiceBtn.BorderRadius = 20;
-            this.InvoiceBtn.BorderSize = 0;
-            this.InvoiceBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.InvoiceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.InvoiceBtn.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InvoiceBtn.ForeColor = System.Drawing.Color.White;
-            this.InvoiceBtn.Image = ((System.Drawing.Image)(resources.GetObject("InvoiceBtn.Image")));
-            this.InvoiceBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.InvoiceBtn.Location = new System.Drawing.Point(735, 305);
-            this.InvoiceBtn.Name = "InvoiceBtn";
-            this.InvoiceBtn.Size = new System.Drawing.Size(200, 115);
-            this.InvoiceBtn.TabIndex = 24;
-            this.InvoiceBtn.Text = "الفواتير";
-            this.InvoiceBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.InvoiceBtn.TextColor = System.Drawing.Color.White;
-            this.InvoiceBtn.UseVisualStyleBackColor = false;
-            this.InvoiceBtn.Click += new System.EventHandler(this.rjButton4_Click);
+            this.EnquiryBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.EnquiryBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.EnquiryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.EnquiryBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.EnquiryBtn.BorderRadius = 20;
+            this.EnquiryBtn.BorderSize = 0;
+            this.EnquiryBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.EnquiryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnquiryBtn.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnquiryBtn.ForeColor = System.Drawing.Color.White;
+            this.EnquiryBtn.Image = ((System.Drawing.Image)(resources.GetObject("EnquiryBtn.Image")));
+            this.EnquiryBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.EnquiryBtn.Location = new System.Drawing.Point(970, 454);
+            this.EnquiryBtn.Name = "EnquiryBtn";
+            this.EnquiryBtn.Size = new System.Drawing.Size(200, 115);
+            this.EnquiryBtn.TabIndex = 24;
+            this.EnquiryBtn.Text = "إستعلامات";
+            this.EnquiryBtn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.EnquiryBtn.TextColor = System.Drawing.Color.White;
+            this.EnquiryBtn.UseVisualStyleBackColor = false;
+            this.EnquiryBtn.Click += new System.EventHandler(this.rjButton4_Click);
             // 
             // SettingsBtn
             // 
@@ -334,7 +334,7 @@ namespace LIMS_Demo
             this.ReportBtn.ForeColor = System.Drawing.Color.White;
             this.ReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("ReportBtn.Image")));
             this.ReportBtn.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.ReportBtn.Location = new System.Drawing.Point(970, 464);
+            this.ReportBtn.Location = new System.Drawing.Point(735, 305);
             this.ReportBtn.Name = "ReportBtn";
             this.ReportBtn.Size = new System.Drawing.Size(200, 115);
             this.ReportBtn.TabIndex = 20;
@@ -416,7 +416,7 @@ namespace LIMS_Demo
         public System.Windows.Forms.Label UserLb;
         public CustomControls.RJControls.RJButton rjButton7;
         public CustomControls.RJControls.RJButton InfoBtn;
-        public CustomControls.RJControls.RJButton InvoiceBtn;
+        public CustomControls.RJControls.RJButton EnquiryBtn;
         public CustomControls.RJControls.RJButton SettingsBtn;
         public CustomControls.RJControls.RJButton RayBtn;
         public CustomControls.RJControls.RJButton Testbtn;
