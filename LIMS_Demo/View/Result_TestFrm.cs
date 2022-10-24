@@ -27,6 +27,10 @@ namespace LIMS_Demo.View
         int rowIndex;
         int barcode;
 
+        public delegate void AddDataDelegate(String mysting);
+        public AddDataDelegate myDelegate;
+        public AddDataDelegate dele;
+
         invoice_details inv_Details = new invoice_details();
         DataTable table = new DataTable();
 
@@ -39,16 +43,52 @@ namespace LIMS_Demo.View
             table.Columns.Add("النتيجة");
             dvgResult.DataSource = table;
             printBtn.Enabled = false;
-            txtBarcode.Select();
 
 
+            try
+            {
+                SerialPort mySerialPort = new SerialPort("COM3");
+
+                mySerialPort.BaudRate = 9600;
+                mySerialPort.Parity = Parity.None;
+                mySerialPort.StopBits = StopBits.One;
+                mySerialPort.DataBits = 8;
+                mySerialPort.Handshake = Handshake.None;
+
+                mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+
+                mySerialPort.Open();
+
+                this.myDelegate = new AddDataDelegate(AddDataMethod);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("لم يتم توصيل\n COM3", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+            }
+
+        }
+
+        public void AddDataMethod(String mystring)
+        {
+            txtBarcode.AppendText(mystring);
         }
 
          private  void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-            SerialPort sp = (SerialPort)sender;
-            string indata = sp.ReadExisting();
-            txtBarcode.Text = indata;
+
+            try
+            {
+                SerialPort sp = (SerialPort)sender;
+                string indata = sp.ReadExisting();
+                txtBarcode.Invoke(this.myDelegate, new object[] { indata });
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
+            }
+           
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -272,20 +312,9 @@ namespace LIMS_Demo.View
 
         private void Result_TestFrm_Load(object sender, EventArgs e)
         {
-            txtBarcode.Focus();
+            
 
-            SerialPort mySerialPort = new SerialPort("COM3");
-
-            mySerialPort.BaudRate = 9600;
-            mySerialPort.Parity = Parity.None;
-            mySerialPort.StopBits = StopBits.One;
-            mySerialPort.DataBits = 8;
-            mySerialPort.Handshake = Handshake.None;
-
-            mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
-
-            mySerialPort.Open();
-            mySerialPort.Close();
+            
         }
 
         private void resulttxt_KeyDown(object sender, KeyEventArgs e)

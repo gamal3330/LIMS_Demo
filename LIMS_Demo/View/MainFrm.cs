@@ -27,6 +27,7 @@ namespace LIMS_Demo
         LIMS db = new LIMS();
         Users u = new Users();
         Login_Logout_Traking Login_Logout = new Login_Logout_Traking();
+
         public MainFrm()
         {
             InitializeComponent();

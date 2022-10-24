@@ -93,8 +93,7 @@ namespace LIMS_Demo.View
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            
-
+          
             int userid = View.Permision.userID;
             try
             {
@@ -171,11 +170,19 @@ namespace LIMS_Demo.View
 
         private void rjButton1_Click_1(object sender, EventArgs e)
         {
-            OpenFileDialog opnfd = new OpenFileDialog();
-            opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
-            if (opnfd.ShowDialog() == DialogResult.OK)
+            try
             {
-                pictureBox1.Image = new Bitmap(opnfd.FileName);
+                OpenFileDialog opnfd = new OpenFileDialog();
+                opnfd.Filter = "Image Files (*.jpg;*.jpeg;.*.gif;)|*.jpg;*.jpeg;.*.gif";
+                if (opnfd.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = new Bitmap(opnfd.FileName);
+                }
+            }
+            catch (Exception error)
+            {
+
+                MessageBox.Show(error.Message);
             }
         }
 
@@ -183,6 +190,10 @@ namespace LIMS_Demo.View
         {
             ClearField();
         }
-       
+
+        private void rjButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

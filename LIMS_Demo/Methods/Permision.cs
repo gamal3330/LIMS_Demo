@@ -21,8 +21,9 @@ namespace LIMS_Demo.View
         public static string disCountPer{ get; set; }
         public static int userID { get; set; }
 
+        public static int chkNum { get; set; }
 
-       public void checkPermision(String s) 
+        public void checkPermision(String s) 
         {
             MainFrm main = new MainFrm();
             View.DashBoardFrm dashBoardFrm = new DashBoardFrm();
@@ -49,6 +50,11 @@ namespace LIMS_Demo.View
         public void GetUserId (string user)
         {
             userID =  db.Users.Where(x => x.UserName == user.ToString()).Select(y => y.User_ID).FirstOrDefault();
+        }
+
+        public void Splsh ()
+        {
+            chkNum = 1;
         }
 
         

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraPrinting.BarCode;
+using LIMS_Demo.Reports.Financial;
 
 namespace LIMS_Demo.View
 {
@@ -213,10 +214,14 @@ namespace LIMS_Demo.View
                         isDrawed: true,
                         date : DateTime.Now
                         );
+                    var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (res == DialogResult.Yes)
+                    {
+                        Rcipt_print();
+                    }
 
                     barcodepnl.Visible = false;
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
-                    MessageBox.Show("تم الحفظ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
                     nametxt.Text = "";
                     Idtxt.Text = "";
@@ -307,9 +312,12 @@ namespace LIMS_Demo.View
                     isDrawed: true,
                     date: DateTime.Now);
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
+                    var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (res == DialogResult.Yes)
+                    {
+                        Rcipt_print();
+                    }
                     barcodepnl.Visible = false;
-
-                    MessageBox.Show("تم الحفظ ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ClearFields();
                     category.Clear();
                     notes = string.Empty;
@@ -507,6 +515,18 @@ namespace LIMS_Demo.View
             }
         }
 
+        private void Rcipt_print()
+        {
+            Receipt_Report receipt_Report = new Receipt_Report();
+            receipt_Report.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
+            receipt_Report.Parameters["inv"].Value = maxId;
+            receipt_Report.Parameters["PatientName"].Value = nametxt.Text;
+            receipt_Report.code.Text = maxId.ToString();
+            receipt_Report.ShowPreviewDialog();
+
+
+        }
+
         private void smpl ()
         {
                 string smplStr;
@@ -547,6 +567,7 @@ namespace LIMS_Demo.View
             
             
         }
+
     }
 }
 

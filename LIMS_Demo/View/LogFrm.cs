@@ -12,7 +12,7 @@ using DevExpress.Utils;
 
 namespace LIMS_Demo.View
 {
-    public partial class LogFrm : Form
+    public partial class LoginFrm : Form
     {
         protected override CreateParams CreateParams
         {
@@ -24,7 +24,7 @@ namespace LIMS_Demo.View
                 return cp;
             }
         }
-        public LogFrm()
+        public LoginFrm()
         {
             InitializeComponent();
 

@@ -62,13 +62,13 @@ namespace LIMS_Demo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(259, 550);
+            this.label3.Location = new System.Drawing.Point(258, 562);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 41);
+            this.label3.Size = new System.Drawing.Size(62, 30);
             this.label3.TabIndex = 2;
-            this.label3.Text = "v 1.0";
+            this.label3.Text = "v 1.0.0";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2

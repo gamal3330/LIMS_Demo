@@ -49,7 +49,6 @@ namespace LIMS_Demo.View
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
-            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.SettingsPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -59,7 +58,6 @@ namespace LIMS_Demo.View
             this.xtraTabPage3.SuspendLayout();
             this.xtraTabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.xtraTabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -104,8 +102,7 @@ namespace LIMS_Demo.View
             this.xtraTabPage1,
             this.xtraTabPage2,
             this.xtraTabPage3,
-            this.xtraTabPage4,
-            this.xtraTabPage5});
+            this.xtraTabPage4});
             // 
             // xtraTabPage1
             // 
@@ -217,6 +214,7 @@ namespace LIMS_Demo.View
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.rjButton8);
             this.xtraTabPage3.Controls.Add(this.rjButton3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(932, 718);
@@ -239,7 +237,7 @@ namespace LIMS_Demo.View
             this.rjButton3.Name = "rjButton3";
             this.rjButton3.Size = new System.Drawing.Size(235, 117);
             this.rjButton3.TabIndex = 40;
-            this.rjButton3.Text = "تعديل التقرير";
+            this.rjButton3.Text = "تعديل تقرير النتيجة";
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
@@ -354,13 +352,6 @@ namespace LIMS_Demo.View
             this.rjButton5.UseVisualStyleBackColor = false;
             this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click_1);
             // 
-            // xtraTabPage5
-            // 
-            this.xtraTabPage5.Controls.Add(this.rjButton8);
-            this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(932, 718);
-            this.xtraTabPage5.Text = "الباركود";
-            // 
             // rjButton8
             // 
             this.rjButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -374,15 +365,14 @@ namespace LIMS_Demo.View
             this.rjButton8.ForeColor = System.Drawing.Color.White;
             this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
             this.rjButton8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton8.Location = new System.Drawing.Point(600, 85);
+            this.rjButton8.Location = new System.Drawing.Point(87, 85);
             this.rjButton8.Name = "rjButton8";
             this.rjButton8.Size = new System.Drawing.Size(235, 117);
-            this.rjButton8.TabIndex = 41;
-            this.rjButton8.Text = "تعديل الباركود";
+            this.rjButton8.TabIndex = 42;
+            this.rjButton8.Text = "تعديل شكل الباركود";
             this.rjButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.rjButton8.TextColor = System.Drawing.Color.White;
             this.rjButton8.UseVisualStyleBackColor = false;
-            this.rjButton8.Click += new System.EventHandler(this.rjButton8_Click);
             // 
             // SettingsFrm
             // 
@@ -404,7 +394,6 @@ namespace LIMS_Demo.View
             this.xtraTabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.xtraTabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -425,12 +414,11 @@ namespace LIMS_Demo.View
         private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
         private CustomControls.RJControls.RJButton rjButton7;
         private CustomControls.RJControls.RJButton rjButton5;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
-        private CustomControls.RJControls.RJButton rjButton8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private CustomControls.RJControls.RJButton rjButton8;
     }
 }

@@ -45,7 +45,6 @@ namespace LIMS_Demo.View
             this.label8 = new System.Windows.Forms.Label();
             this.Idtxt = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.saveBtn = new CustomControls.RJControls.RJButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
@@ -79,7 +78,6 @@ namespace LIMS_Demo.View
             this.RaysPan.Controls.Add(this.rjButton5);
             this.RaysPan.Controls.Add(this.groupBox7);
             this.RaysPan.Controls.Add(this.groupBox5);
-            this.RaysPan.Controls.Add(this.rjButton3);
             this.RaysPan.Controls.Add(this.saveBtn);
             this.RaysPan.Controls.Add(this.groupBox2);
             this.RaysPan.Controls.Add(this.label1);
@@ -102,7 +100,7 @@ namespace LIMS_Demo.View
             this.rjButton5.ForeColor = System.Drawing.Color.White;
             this.rjButton5.Image = ((System.Drawing.Image)(resources.GetObject("rjButton5.Image")));
             this.rjButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton5.Location = new System.Drawing.Point(61, 749);
+            this.rjButton5.Location = new System.Drawing.Point(214, 775);
             this.rjButton5.Name = "rjButton5";
             this.rjButton5.Size = new System.Drawing.Size(180, 60);
             this.rjButton5.TabIndex = 35;
@@ -217,11 +215,14 @@ namespace LIMS_Demo.View
             this.addPatientBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addPatientBtn.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.addPatientBtn.ForeColor = System.Drawing.Color.White;
+            this.addPatientBtn.Image = ((System.Drawing.Image)(resources.GetObject("addPatientBtn.Image")));
+            this.addPatientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addPatientBtn.Location = new System.Drawing.Point(18, 58);
             this.addPatientBtn.Name = "addPatientBtn";
-            this.addPatientBtn.Size = new System.Drawing.Size(152, 53);
+            this.addPatientBtn.Size = new System.Drawing.Size(169, 60);
             this.addPatientBtn.TabIndex = 12;
             this.addPatientBtn.Text = "اختيار مريض";
+            this.addPatientBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addPatientBtn.TextColor = System.Drawing.Color.White;
             this.addPatientBtn.UseVisualStyleBackColor = false;
             this.addPatientBtn.Click += new System.EventHandler(this.addPatientBtn_Click);
@@ -274,28 +275,6 @@ namespace LIMS_Demo.View
             this.label2.TabIndex = 8;
             this.label2.Text = "ID";
             // 
-            // rjButton3
-            // 
-            this.rjButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton3.BorderRadius = 15;
-            this.rjButton3.BorderSize = 0;
-            this.rjButton3.FlatAppearance.BorderSize = 0;
-            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.rjButton3.ForeColor = System.Drawing.Color.White;
-            this.rjButton3.Image = ((System.Drawing.Image)(resources.GetObject("rjButton3.Image")));
-            this.rjButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rjButton3.Location = new System.Drawing.Point(347, 750);
-            this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(180, 60);
-            this.rjButton3.TabIndex = 31;
-            this.rjButton3.Text = "حفظ وطباعة";
-            this.rjButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rjButton3.TextColor = System.Drawing.Color.White;
-            this.rjButton3.UseVisualStyleBackColor = false;
-            // 
             // saveBtn
             // 
             this.saveBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -309,7 +288,7 @@ namespace LIMS_Demo.View
             this.saveBtn.ForeColor = System.Drawing.Color.White;
             this.saveBtn.Image = ((System.Drawing.Image)(resources.GetObject("saveBtn.Image")));
             this.saveBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.saveBtn.Location = new System.Drawing.Point(665, 750);
+            this.saveBtn.Location = new System.Drawing.Point(523, 775);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.saveBtn.Size = new System.Drawing.Size(180, 60);
@@ -497,7 +476,6 @@ namespace LIMS_Demo.View
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJButton saveBtn;
         public System.Windows.Forms.Panel RaysPan;
         private System.Windows.Forms.GroupBox groupBox5;

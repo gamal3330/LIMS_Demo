@@ -63,48 +63,6 @@ namespace LIMS_Demo.View
             ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(200, 168, 168, 168), ButtonBorderStyle.Solid);
         }
 
-        private void rjButton2_Click(object sender, EventArgs e)
-        {
-
-            //add
-            if(txtUser.Text == "" && txtPass.Text == "") 
-            {
-                MessageBox.Show("الرجاء تعبئة الحقول ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                UserLb.ForeColor = Color.Red;
-                PassLb.ForeColor = Color.Red;
-                
-            }            
-            else 
-            {
-                if (id == 0)
-                {
-                    users.UserName = txtUser.Text;
-                    users.Password = txtPass.Text;
-                    users.Phone = txtPhone.Text;
-                    users.Address = txtAddress.Text;
-                    users.PatientFrm = PaCe.Checked.ToString();
-                    users.TestFrm = TeCe.Checked.ToString();
-                    users.ReportFrm = ReCe.Checked.ToString();
-                    users.RaysFrm = RaCe.Checked.ToString();
-                    users.SettingsFrm = SeCe.Checked.ToString();
-                    users.ResultFrm = ReTeCe.Checked.ToString();
-                    users.DisCountPer = DisCe.Checked.ToString();
-                    UserLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
-                    PassLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
-                    db.Users.Add(users);
-                    db.SaveChanges();
-                    log.LogSystem(Permision.userID, "إضافة مستخدم جديد", DateTime.Now, txtUser.Text);
-                    MessageBox.Show("تمت إضافة المستخدم بنجاح" , "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    updateData();
-                }
-                else
-                {
-                    MessageBox.Show("هذا المستخدم موجود مسبقاً" , "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                }
-            }
-            
-            }
 
     
 
@@ -128,25 +86,6 @@ namespace LIMS_Demo.View
         }
         private void rjButton1_Click(object sender, EventArgs e)
         {
-                id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "User_ID"));
-                var selectedRow = db.Users.SingleOrDefault(x => x.User_ID == id);
-
-                selectedRow.Password = txtPass.Text;
-                selectedRow.Phone = txtPhone.Text;
-                selectedRow.Address = txtAddress.Text;
-                selectedRow.PatientFrm = PaCe.Checked.ToString();
-                selectedRow.TestFrm = TeCe.Checked.ToString();
-                selectedRow.ReportFrm = ReCe.Checked.ToString();
-                selectedRow.RaysFrm = RaCe.Checked.ToString();
-                selectedRow.ResultFrm = ReTeCe.Checked.ToString();
-                selectedRow.SettingsFrm = SeCe.Checked.ToString();
-                selectedRow.DisCountPer = DisCe.Checked.ToString();
-                db.SaveChanges();
-                log.LogSystem(Permision.userID, "تعديل مستخدم محدد", DateTime.Now, txtUser.Text);
-                MessageBox.Show("تم تعديل بيانات المستخدم بنجاح"  , "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                updateData();
- 
-
 
         }
         private void rjButton9_Click_1(object sender, EventArgs e)
@@ -179,6 +118,88 @@ namespace LIMS_Demo.View
         {
             this.Close();
 
+        }
+
+        private void addbtn_Click(object sender, EventArgs e)
+        {
+
+            //add
+            if (txtUser.Text == "" && txtPass.Text == "")
+            {
+                MessageBox.Show("الرجاء تعبئة الحقول ", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                UserLb.ForeColor = Color.Red;
+                PassLb.ForeColor = Color.Red;
+
+            }
+            else
+            {
+                if (id == 0)
+                {
+                    users.UserName = txtUser.Text;
+                    users.Password = txtPass.Text;
+                    users.Phone = txtPhone.Text;
+                    users.Address = txtAddress.Text;
+                    users.PatientFrm = PaCe.Checked.ToString();
+                    users.TestFrm = TeCe.Checked.ToString();
+                    users.ReportFrm = ReCe.Checked.ToString();
+                    users.RaysFrm = RaCe.Checked.ToString();
+                    users.SettingsFrm = SeCe.Checked.ToString();
+                    users.ResultFrm = ReTeCe.Checked.ToString();
+                    users.DisCountPer = DisCe.Checked.ToString();
+                    UserLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
+                    PassLb.ForeColor = Color.FromArgb(255, 25, 113, 176);
+                    db.Users.Add(users);
+                    db.SaveChanges();
+                    log.LogSystem(Permision.userID, "إضافة مستخدم جديد", DateTime.Now, txtUser.Text);
+                    MessageBox.Show("تمت إضافة المستخدم بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updateData();
+                }
+                else
+                {
+                    MessageBox.Show("هذا المستخدم موجود مسبقاً", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+            }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            var dialog = MessageBox.Show("هل أنت متأكد من تعديل هذا المستخدم ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+            {
+                try
+                {
+                    id = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "User_ID"));
+
+                    var selectedRow = db.Users.SingleOrDefault(x => x.User_ID== id);
+
+                    selectedRow.UserName = txtUser.Text;
+                    selectedRow.Password = txtPass.Text;
+                    selectedRow.Phone    = txtPhone.Text;
+                    selectedRow.Address  = txtAddress.Text;
+                    selectedRow.PatientFrm = PaCe.Checked.ToString();
+                    selectedRow.TestFrm = TeCe.Checked.ToString();
+                    selectedRow.ResultFrm = ReTeCe.Checked.ToString();
+                    selectedRow.RaysFrm = RaCe.Checked.ToString();
+                    selectedRow.ReportFrm = ReCe.Checked.ToString();
+                    selectedRow.SettingsFrm = SeCe.Checked.ToString();
+                    selectedRow.DisCountPer = DisCe.Checked.ToString();
+
+
+                    db.SaveChanges();
+                    log.LogSystem(Permision.userID, "تعديل بيانات مستخدم ", DateTime.Now, txtUser.Text);
+                    MessageBox.Show("تمت تعديل المستخدم بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    updateData();
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }

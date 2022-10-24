@@ -29,7 +29,7 @@ namespace LIMS_Demo
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraPrinting.BarCode.UPCSupplemental5Generator upcSupplemental5Generator1 = new DevExpress.XtraPrinting.BarCode.UPCSupplemental5Generator();
+            DevExpress.XtraPrinting.BarCode.Code128Generator code128Generator1 = new DevExpress.XtraPrinting.BarCode.Code128Generator();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
@@ -106,7 +106,7 @@ namespace LIMS_Demo
             this.code.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.code.SizeF = new System.Drawing.SizeF(136.9791F, 57.29167F);
             this.code.StylePriority.UseTextAlignment = false;
-            this.code.Symbology = upcSupplemental5Generator1;
+            this.code.Symbology = code128Generator1;
             this.code.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // Barcode

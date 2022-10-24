@@ -1,4 +1,6 @@
-﻿using LIMS_Demo.DB;
+﻿using DevExpress.XtraSplashScreen;
+using LIMS_Demo.DB;
+using LIMS_Demo.Properties;
 using LIMS_Demo.View;
 using System;
 using System.Collections.Generic;
@@ -7,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +17,7 @@ namespace LIMS_Demo
 {
     public partial class LoginFrm : Form
     {
+        
         protected override CreateParams CreateParams
         {
             get
@@ -28,8 +32,22 @@ namespace LIMS_Demo
         LIMS db = new LIMS();
         Login_Logout_Traking login = new Login_Logout_Traking();
         public LoginFrm()
-        {            
-            InitializeComponent();
+        {
+            
+            if (Permision.chkNum== 0)
+            {
+                SplashScreenManager.ShowFluentSplashScreen(title: "Laboratory information management system", "مرحباً بك");
+                Thread.Sleep(5000);
+                InitializeComponent();
+                DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
+            }
+            if (Permision.chkNum == 1)
+            {
+                InitializeComponent();
+
+            }
+
+
         }
 
         int mousex = 0;
@@ -135,6 +153,7 @@ namespace LIMS_Demo
                         permision.checkPermision(user);
                         UserPer = "مرحباً " + txtUser.Text;
                         permision.GetUserId(txtUser.Text);
+                        permision.Splsh();
                         login.Login(Permision.userID, DateTime.Now);
                         main.UserLb.Text = UserPer;
                         main.Show();

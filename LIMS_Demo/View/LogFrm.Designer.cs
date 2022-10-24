@@ -1,7 +1,7 @@
 ﻿
 namespace LIMS_Demo.View
 {
-    partial class LogFrm
+    partial class LoginFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace LIMS_Demo.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.dvgTrakingSystem = new DevExpress.XtraGrid.GridControl();
             this.gvTest = new DevExpress.XtraGrid.Views.Grid.GridView();

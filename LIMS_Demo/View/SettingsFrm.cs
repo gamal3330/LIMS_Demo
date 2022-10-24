@@ -56,7 +56,7 @@ namespace LIMS_Demo.View
 
         private void rjButton5_Click_1(object sender, EventArgs e)
         {
-            View.LogFrm logFrm = new LogFrm();
+            View.LoginFrm logFrm = new LoginFrm();
             logFrm.ShowDialog();
         }
 

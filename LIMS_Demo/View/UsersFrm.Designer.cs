@@ -56,6 +56,8 @@ namespace LIMS_Demo.View
             this.colPhone = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.rjButton9 = new CustomControls.RJControls.RJButton();
+            this.editBtn = new CustomControls.RJControls.RJButton();
+            this.addbtn = new CustomControls.RJControls.RJButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ReTeCe.Properties)).BeginInit();
@@ -455,11 +457,62 @@ namespace LIMS_Demo.View
             this.rjButton9.UseVisualStyleBackColor = false;
             this.rjButton9.Click += new System.EventHandler(this.rjButton9_Click_2);
             // 
+            // editBtn
+            // 
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.editBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.editBtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.editBtn.BorderRadius = 15;
+            this.editBtn.BorderSize = 0;
+            this.editBtn.FlatAppearance.BorderSize = 0;
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editBtn.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
+            this.editBtn.ForeColor = System.Drawing.Color.White;
+            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
+            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editBtn.Location = new System.Drawing.Point(240, 787);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.editBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.editBtn.Size = new System.Drawing.Size(156, 60);
+            this.editBtn.TabIndex = 39;
+            this.editBtn.Text = "تعديل";
+            this.editBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.editBtn.TextColor = System.Drawing.Color.White;
+            this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // addbtn
+            // 
+            this.addbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.addbtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.addbtn.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.addbtn.BorderRadius = 15;
+            this.addbtn.BorderSize = 0;
+            this.addbtn.FlatAppearance.BorderSize = 0;
+            this.addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbtn.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
+            this.addbtn.ForeColor = System.Drawing.Color.White;
+            this.addbtn.Image = ((System.Drawing.Image)(resources.GetObject("addbtn.Image")));
+            this.addbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addbtn.Location = new System.Drawing.Point(561, 787);
+            this.addbtn.Name = "addbtn";
+            this.addbtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.addbtn.Size = new System.Drawing.Size(156, 60);
+            this.addbtn.TabIndex = 38;
+            this.addbtn.Text = "إضافة";
+            this.addbtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.addbtn.TextColor = System.Drawing.Color.White;
+            this.addbtn.UseVisualStyleBackColor = false;
+            this.addbtn.Click += new System.EventHandler(this.addbtn_Click);
+            // 
             // UsersFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 859);
+            this.Controls.Add(this.editBtn);
+            this.Controls.Add(this.addbtn);
             this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupBox2);
@@ -516,5 +569,7 @@ namespace LIMS_Demo.View
         private DevExpress.XtraEditors.CheckEdit DisCe;
         private DevExpress.XtraEditors.CheckEdit ReTeCe;
         private CustomControls.RJControls.RJButton rjButton9;
+        private CustomControls.RJControls.RJButton editBtn;
+        private CustomControls.RJControls.RJButton addbtn;
     }
 }
