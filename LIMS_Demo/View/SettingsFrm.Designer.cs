@@ -40,6 +40,7 @@ namespace LIMS_Demo.View
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.rjButton6 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,7 +50,7 @@ namespace LIMS_Demo.View
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
-            this.rjButton8 = new CustomControls.RJControls.RJButton();
+            this.rjButton9 = new CustomControls.RJControls.RJButton();
             this.SettingsPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -214,11 +215,35 @@ namespace LIMS_Demo.View
             // 
             // xtraTabPage3
             // 
+            this.xtraTabPage3.Controls.Add(this.rjButton9);
             this.xtraTabPage3.Controls.Add(this.rjButton8);
             this.xtraTabPage3.Controls.Add(this.rjButton3);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(932, 718);
             this.xtraTabPage3.Text = "التقارير";
+            // 
+            // rjButton8
+            // 
+            this.rjButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton8.BorderRadius = 20;
+            this.rjButton8.BorderSize = 0;
+            this.rjButton8.FlatAppearance.BorderSize = 0;
+            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjButton8.ForeColor = System.Drawing.Color.White;
+            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
+            this.rjButton8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton8.Location = new System.Drawing.Point(87, 85);
+            this.rjButton8.Name = "rjButton8";
+            this.rjButton8.Size = new System.Drawing.Size(235, 117);
+            this.rjButton8.TabIndex = 42;
+            this.rjButton8.Text = "تعديل شكل الباركود";
+            this.rjButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rjButton8.TextColor = System.Drawing.Color.White;
+            this.rjButton8.UseVisualStyleBackColor = false;
+            this.rjButton8.Click += new System.EventHandler(this.rjButton8_Click_1);
             // 
             // rjButton3
             // 
@@ -352,27 +377,28 @@ namespace LIMS_Demo.View
             this.rjButton5.UseVisualStyleBackColor = false;
             this.rjButton5.Click += new System.EventHandler(this.rjButton5_Click_1);
             // 
-            // rjButton8
+            // rjButton9
             // 
-            this.rjButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton8.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton8.BorderRadius = 20;
-            this.rjButton8.BorderSize = 0;
-            this.rjButton8.FlatAppearance.BorderSize = 0;
-            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjButton8.ForeColor = System.Drawing.Color.White;
-            this.rjButton8.Image = ((System.Drawing.Image)(resources.GetObject("rjButton8.Image")));
-            this.rjButton8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.rjButton8.Location = new System.Drawing.Point(87, 85);
-            this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(235, 117);
-            this.rjButton8.TabIndex = 42;
-            this.rjButton8.Text = "تعديل شكل الباركود";
-            this.rjButton8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.rjButton8.TextColor = System.Drawing.Color.White;
-            this.rjButton8.UseVisualStyleBackColor = false;
+            this.rjButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton9.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton9.BorderRadius = 20;
+            this.rjButton9.BorderSize = 0;
+            this.rjButton9.FlatAppearance.BorderSize = 0;
+            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton9.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.rjButton9.ForeColor = System.Drawing.Color.White;
+            this.rjButton9.Image = ((System.Drawing.Image)(resources.GetObject("rjButton9.Image")));
+            this.rjButton9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.rjButton9.Location = new System.Drawing.Point(600, 296);
+            this.rjButton9.Name = "rjButton9";
+            this.rjButton9.Size = new System.Drawing.Size(235, 117);
+            this.rjButton9.TabIndex = 43;
+            this.rjButton9.Text = "تعديل الإيصال";
+            this.rjButton9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.rjButton9.TextColor = System.Drawing.Color.White;
+            this.rjButton9.UseVisualStyleBackColor = false;
+            this.rjButton9.Click += new System.EventHandler(this.rjButton9_Click);
             // 
             // SettingsFrm
             // 
@@ -420,5 +446,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private CustomControls.RJControls.RJButton rjButton8;
+        private CustomControls.RJControls.RJButton rjButton9;
     }
 }

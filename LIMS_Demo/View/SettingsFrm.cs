@@ -25,11 +25,7 @@ namespace LIMS_Demo.View
 
 
 
-        private void rjButton3_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void rjButton1_Click_1(object sender, EventArgs e)
         {
             View.Add_Tests_Frm add_Tests_Frm = new Add_Tests_Frm();
@@ -66,12 +62,7 @@ namespace LIMS_Demo.View
             enquiryFrm.ShowDialog();
         }
 
-        private void rjButton8_Click(object sender, EventArgs e)
-        {
-            Barcode barcode = new Barcode();
-            barcode.ShowDesigner();
-
-        }
+  
 
         private void rjButton3_Click_1(object sender, EventArgs e)
         {
@@ -85,6 +76,35 @@ namespace LIMS_Demo.View
                 return;
             }
             
+        }
+
+        private void rjButton9_Click(object sender, EventArgs e)
+        {
+            Reports.Financial.Receipt_Report receipt_Report = new Reports.Financial.Receipt_Report();
+            var dialog = MessageBox.Show("هل أنت متأكد من هذا الإجراء؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+            {
+                receipt_Report.ShowDesigner();
+            }
+            else
+            {
+                return;
+            }
+
+        }
+
+        private void rjButton8_Click_1(object sender, EventArgs e)
+        {
+            Barcode barcode = new Barcode();
+            var dialog = MessageBox.Show("هل أنت متأكد من هذا الإجراء؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialog == DialogResult.Yes)
+            {
+                barcode.ShowDesigner();
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
