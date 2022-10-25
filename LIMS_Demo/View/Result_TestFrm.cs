@@ -45,26 +45,29 @@ namespace LIMS_Demo.View
             printBtn.Enabled = false;
 
 
-            try
+            if (Properties.Settings.Default["COM"].ToString() == "True")
             {
-                SerialPort mySerialPort = new SerialPort("COM3");
+                try
+                {
+                    SerialPort mySerialPort = new SerialPort(Properties.Settings.Default["COM_Name"].ToString());
 
-                mySerialPort.BaudRate = 9600;
-                mySerialPort.Parity = Parity.None;
-                mySerialPort.StopBits = StopBits.One;
-                mySerialPort.DataBits = 8;
-                mySerialPort.Handshake = Handshake.None;
+                    mySerialPort.BaudRate = 9600;
+                    mySerialPort.Parity = Parity.None;
+                    mySerialPort.StopBits = StopBits.One;
+                    mySerialPort.DataBits = 8;
+                    mySerialPort.Handshake = Handshake.None;
 
-                mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
+                    mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
 
-                mySerialPort.Open();
+                    mySerialPort.Open();
 
-                this.myDelegate = new AddDataDelegate(AddDataMethod);
-            }
-            catch (Exception)
-            {
+                    this.myDelegate = new AddDataDelegate(AddDataMethod);
+                }
+                catch (Exception)
+                {
 
-                MessageBox.Show("لم يتم توصيل\n COM3", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                    MessageBox.Show(Properties.Settings.Default["COM_Name"].ToString()+ " Not Connected", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                }
             }
 
         }

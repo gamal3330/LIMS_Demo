@@ -219,6 +219,7 @@ namespace LIMS_Demo.View
             this.addPatientBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addPatientBtn.Location = new System.Drawing.Point(18, 58);
             this.addPatientBtn.Name = "addPatientBtn";
+            this.addPatientBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.addPatientBtn.Size = new System.Drawing.Size(169, 60);
             this.addPatientBtn.TabIndex = 12;
             this.addPatientBtn.Text = "اختيار مريض";

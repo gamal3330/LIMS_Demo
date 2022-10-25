@@ -58,6 +58,8 @@ namespace LIMS_Demo.View
             this.sidePanel1.AllowSnap = false;
             this.sidePanel1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.sidePanel1.Appearance.Options.UseBackColor = true;
+            this.sidePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.sidePanel1.BorderThickness = 0;
             this.sidePanel1.Controls.Add(this.delEnqBtn);
             this.sidePanel1.Controls.Add(this.pictureBox1);
             this.sidePanel1.Controls.Add(this.panel7);
@@ -75,9 +77,9 @@ namespace LIMS_Demo.View
             this.sidePanel1.Controls.Add(this.btnTest);
             this.sidePanel1.Controls.Add(this.btnPatient);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.sidePanel1.Location = new System.Drawing.Point(937, 0);
+            this.sidePanel1.Location = new System.Drawing.Point(935, 0);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(263, 900);
+            this.sidePanel1.Size = new System.Drawing.Size(265, 900);
             this.sidePanel1.TabIndex = 30;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -183,7 +185,7 @@ namespace LIMS_Demo.View
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Janna LT", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(75, 9);
+            this.label1.Location = new System.Drawing.Point(74, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 55);
             this.label1.TabIndex = 31;

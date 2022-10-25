@@ -33,21 +33,75 @@ namespace LIMS_Demo.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("info")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string user {
             get {
                 return ((string)(this["user"]));
             }
+            set {
+                this["user"] = value;
+            }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string pass {
             get {
                 return ((string)(this["pass"]));
+            }
+            set {
+                this["pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string print_receipt {
+            get {
+                return ((string)(this["print_receipt"]));
+            }
+            set {
+                this["print_receipt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string print_barcode {
+            get {
+                return ((string)(this["print_barcode"]));
+            }
+            set {
+                this["print_barcode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string COM {
+            get {
+                return ((string)(this["COM"]));
+            }
+            set {
+                this["COM"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string COM_Name {
+            get {
+                return ((string)(this["COM_Name"]));
+            }
+            set {
+                this["COM_Name"] = value;
             }
         }
     }

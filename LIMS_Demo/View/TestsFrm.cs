@@ -77,6 +77,10 @@ namespace LIMS_Demo.View
             table.Clear();
             maxId = 0;
             discountxt.Enabled = false;
+            checkEdit2.Checked = false;
+            checkEdit1.Checked = false;
+            checkEdit4.Checked = false;
+            checkEdit3.Checked = false;
         }
 
 
@@ -189,17 +193,20 @@ namespace LIMS_Demo.View
                     }
                     db.Entry(inv_Details).State = EntityState.Added;
                     db.SaveChanges();
-                    //barcode
-                    for (int i = 0; i < dvgTest.Rows.Count; i++)
+                    if (Properties.Settings.Default["print_barcode"].ToString() == "True")
                     {
-                        Barcode barcode = new Barcode();
-                        barcode.patientName.Text = patientName;
-                        barcode.TestName.Text = dvgTest.Rows[i].Cells[1].Value.ToString();
-                        barcode.code.Text = maxId.ToString();
-                        barcode.date.Text = DateTime.Now.ToString();
-                        barcodes.Add(barcode);
-                        barcodes[i].ShowPreviewDialog();
-                        barcode.Dispose();
+                        //barcode
+                        for (int i = 0; i < dvgTest.Rows.Count; i++)
+                        {
+                            Barcode barcode = new Barcode();
+                            barcode.patientName.Text = patientName;
+                            barcode.TestName.Text = dvgTest.Rows[i].Cells[1].Value.ToString();
+                            barcode.code.Text = maxId.ToString();
+                            barcode.date.Text = DateTime.Now.ToString();
+                            barcodes.Add(barcode);
+                            barcodes[i].ShowPreviewDialog();
+                            barcode.Dispose();
+                        }
                     }
 
                     if (!smpleTesttxt.Text.Contains("-"))
@@ -214,11 +221,15 @@ namespace LIMS_Demo.View
                         isDrawed: true,
                         date : DateTime.Now
                         );
-                    var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (res == DialogResult.Yes)
+                    if (Properties.Settings.Default["print_receipt"].ToString() == "True")
                     {
-                        Rcipt_print();
+                        var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (res == DialogResult.Yes)
+                        {
+                            Rcipt_print();
+                        }
                     }
+                    
 
                     barcodepnl.Visible = false;
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
@@ -278,26 +289,29 @@ namespace LIMS_Demo.View
                         db.SaveChanges();
                         db.Entry(inv_Details).State = EntityState.Detached;
                     }
-                    
-                    List<string> lists = new List<string>();
-                    for (int i = 0; i < dvgTest.Rows.Count; i++)
-                    {
-                        lists.Add(dvgTest.Rows[i].Cells[0].Value.ToString());
-                    }
-                    //After save to DB , give all test category from Invoice_detailesTB in List
-                    //var codes = db.invoice_details.Where(x => x.Invoice_ID == maxId).Select(x => x.Test_Category).ToList();
 
-                    //Make ForEach and remove dupilcate
-                    foreach (var item in lists.Distinct())
+                    if (Properties.Settings.Default["print_barcode"].ToString() == "True")
                     {
-                        //Create an object from Barcode in every loop
-                        Barcode barcode = new Barcode();
-                        barcode.patientName.Text = patientName;
-                        barcode.TestName.Text = item;
-                        barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
-                        barcode.date.Text = DateTime.Now.ToString();
-                        barcode.ShowPreviewDialog();
-                        barcode.Dispose();
+                        List<string> lists = new List<string>();
+                        for (int i = 0; i < dvgTest.Rows.Count; i++)
+                        {
+                            lists.Add(dvgTest.Rows[i].Cells[0].Value.ToString());
+                        }
+                        //After save to DB , give all test category from Invoice_detailesTB in List
+                        //var codes = db.invoice_details.Where(x => x.Invoice_ID == maxId).Select(x => x.Test_Category).ToList();
+
+                        //Make ForEach and remove dupilcate
+                        foreach (var item in lists.Distinct())
+                        {
+                            //Create an object from Barcode in every loop
+                            Barcode barcode = new Barcode();
+                            barcode.patientName.Text = patientName;
+                            barcode.TestName.Text = item;
+                            barcode.code.Text = db.Invoice.Max(x => x.Invoice_ID).ToString();
+                            barcode.date.Text = DateTime.Now.ToString();
+                            barcode.ShowPreviewDialog();
+                            barcode.Dispose();
+                        }
                     }
 
                     if (!smpleTesttxt.Text.Contains("-"))
@@ -312,10 +326,14 @@ namespace LIMS_Demo.View
                     isDrawed: true,
                     date: DateTime.Now);
                     log.LogSystem(Permision.userID, "حفظ تحليل", DateTime.Now, patientId);
-                    var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                    if (res == DialogResult.Yes)
+
+                    if (Properties.Settings.Default["print_receipt"].ToString() == "True")
                     {
-                        Rcipt_print();
+                        var res = MessageBox.Show("هل تود طباعة إيصال ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (res == DialogResult.Yes)
+                        {
+                            Rcipt_print();
+                        }
                     }
                     barcodepnl.Visible = false;
                     ClearFields();
@@ -562,12 +580,9 @@ namespace LIMS_Demo.View
                 }
                     
                 }
-            
-
-            
-            
         }
 
     }
 }
+
 

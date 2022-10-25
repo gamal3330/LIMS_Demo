@@ -40,7 +40,12 @@ namespace LIMS_Demo.Reports.Financial
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression2 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Column column3 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression3 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Receipt_Report));
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
@@ -76,6 +81,7 @@ namespace LIMS_Demo.Reports.Financial
             this.inv = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.PatientName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -153,7 +159,7 @@ namespace LIMS_Demo.Reports.Financial
             // code
             // 
             this.code.AutoModule = true;
-            this.code.LocationFloat = new DevExpress.Utils.PointFloat(375F, 57.34794F);
+            this.code.LocationFloat = new DevExpress.Utils.PointFloat(369F, 57.34794F);
             this.code.Name = "code";
             this.code.Padding = new DevExpress.XtraPrinting.PaddingInfo(10, 10, 0, 0, 100F);
             this.code.SizeF = new System.Drawing.SizeF(121.2073F, 75F);
@@ -219,11 +225,11 @@ namespace LIMS_Demo.Reports.Financial
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 18F);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(375F, 0F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(382F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(100F, 45.91667F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(90.625F, 45.91667F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.StylePriority.UseTextAlignment = false;
             this.xrLabel1.Text = "إيصال";
@@ -232,6 +238,7 @@ namespace LIMS_Demo.Reports.Financial
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel5,
             this.xrLabel13,
             this.Total,
             this.xrLine1,
@@ -432,7 +439,7 @@ namespace LIMS_Demo.Reports.Financial
             this.sqlDataSource1.ConnectionName = "LIMS_Demo.Properties.Settings.LIMSConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
             columnExpression1.ColumnName = "Invoice_ID";
-            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"288\" />";
+            table1.MetaSerializable = "<Meta X=\"30\" Y=\"30\" Width=\"125\" Height=\"283\" />";
             table1.Name = "invoice_details";
             columnExpression1.Table = table1;
             column1.Expression = columnExpression1;
@@ -442,9 +449,15 @@ namespace LIMS_Demo.Reports.Financial
             columnExpression3.ColumnName = "price";
             columnExpression3.Table = table1;
             column3.Expression = columnExpression3;
+            columnExpression4.ColumnName = "Notes";
+            table2.MetaSerializable = "<Meta X=\"185\" Y=\"30\" Width=\"125\" Height=\"203\" />";
+            table2.Name = "Invoice";
+            columnExpression4.Table = table2;
+            column4.Expression = columnExpression4;
             selectQuery1.Columns.Add(column1);
             selectQuery1.Columns.Add(column2);
             selectQuery1.Columns.Add(column3);
+            selectQuery1.Columns.Add(column4);
             selectQuery1.FilterString = "[invoice_details.Invoice_ID] = ?inv";
             selectQuery1.GroupFilterString = "";
             selectQuery1.Name = "invoice_details_1";
@@ -453,7 +466,14 @@ namespace LIMS_Demo.Reports.Financial
             queryParameter1.Value = new DevExpress.DataAccess.Expression("?inv", typeof(int));
             selectQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter1});
+            relationColumnInfo1.NestedKeyColumn = "Invoice_ID";
+            relationColumnInfo1.ParentKeyColumn = "Invoice_ID";
+            join1.KeyColumns.Add(relationColumnInfo1);
+            join1.Nested = table2;
+            join1.Parent = table1;
+            selectQuery1.Relations.Add(join1);
             selectQuery1.Tables.Add(table1);
+            selectQuery1.Tables.Add(table2);
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             selectQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
@@ -466,6 +486,21 @@ namespace LIMS_Demo.Reports.Financial
             this.PatientName.MultiValue = true;
             this.PatientName.Name = "PatientName";
             this.PatientName.Visible = false;
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.AutoWidth = true;
+            this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Notes]")});
+            this.xrLabel5.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 8F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1.000055F, 25.00006F);
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(225F, 23F);
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
+            this.xrLabel5.Text = "xrLabel5";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // Receipt_Report
             // 
@@ -535,5 +570,6 @@ namespace LIMS_Demo.Reports.Financial
         private DevExpress.XtraReports.Parameters.Parameter inv;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraReports.Parameters.Parameter PatientName;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
     }
 }

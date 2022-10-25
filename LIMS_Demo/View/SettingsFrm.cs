@@ -20,6 +20,17 @@ namespace LIMS_Demo.View
             InitializeComponent();
             textBox1.Text = Properties.Settings.Default["user"].ToString();
             textBox2.Text = Properties.Settings.Default["pass"].ToString();
+
+            var print_receipts  = Properties.Settings.Default["print_receipt"].ToString();
+            print_receipt.Checked = Convert.ToBoolean(print_receipts);
+
+            var print_barcodes = Properties.Settings.Default["print_barcode"].ToString();
+            print_barcode.Checked = Convert.ToBoolean(print_barcodes);
+
+            var COM = Properties.Settings.Default["COM"].ToString();
+            com_port.Checked = Convert.ToBoolean(COM);
+
+            txtPort.Text = Properties.Settings.Default["COM_Name"].ToString();
         }
 
 
@@ -104,6 +115,66 @@ namespace LIMS_Demo.View
             else
             {
                 return;
+            }
+        }
+
+        private void rjButton10_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" && textBox1.Text == "")
+            {
+                MessageBox.Show("يرجى تعبئة الحقول", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Properties.Settings.Default["user"] = textBox1.Text;
+                Properties.Settings.Default["pass"] = textBox2.Text;
+                Properties.Settings.Default.Save();
+                MessageBox.Show("تم تغيير أسم المستخدم وكلمة المرور بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void print_receipt_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default["print_receipt"] = print_receipt.Checked.ToString();
+
+            Properties.Settings.Default.Save();
+
+             
+        }
+
+        private void print_barcode_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default["print_barcode"] = print_barcode.Checked.ToString();
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void COM_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default["COM"] = com_port.Checked.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void rjButton11_Click(object sender, EventArgs e)
+        {
+
+            int chk;
+            if (txtPort.Text == "")
+            {
+                MessageBox.Show("يرجى تعبئة الحقول", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            if (!int.TryParse(txtPort.Text ,out chk))
+            {
+                MessageBox.Show("يجب كتابة رقم فقط", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                Properties.Settings.Default["COM_Name"] = "COM" + txtPort.Text;
+                Properties.Settings.Default.Save();
+                MessageBox.Show("تم تغيير رقم البورت", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
             }
         }
     }
