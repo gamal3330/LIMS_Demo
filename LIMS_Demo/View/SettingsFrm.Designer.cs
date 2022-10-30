@@ -53,6 +53,9 @@ namespace LIMS_Demo.View
             this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rjButton12 = new CustomControls.RJControls.RJButton();
+            this.LabName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rjButton11 = new CustomControls.RJControls.RJButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,6 +74,7 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.print_barcode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.print_receipt.Properties)).BeginInit();
             this.xtraTabPage4.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.com_port.Properties)).BeginInit();
             this.SuspendLayout();
@@ -184,7 +188,7 @@ namespace LIMS_Demo.View
             this.xtraTabPage2.Controls.Add(this.rjButton4);
             this.xtraTabPage2.Controls.Add(this.rjButton6);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(930, 716);
+            this.xtraTabPage2.Size = new System.Drawing.Size(932, 718);
             this.xtraTabPage2.Text = "المستخدمين";
             // 
             // groupBox1
@@ -318,7 +322,7 @@ namespace LIMS_Demo.View
             this.xtraTabPage3.Controls.Add(this.rjButton8);
             this.xtraTabPage3.Controls.Add(this.rjButton3);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(930, 716);
+            this.xtraTabPage3.Size = new System.Drawing.Size(932, 718);
             this.xtraTabPage3.Text = "التقارير";
             // 
             // groupBox2
@@ -327,7 +331,7 @@ namespace LIMS_Demo.View
             this.groupBox2.Controls.Add(this.print_receipt);
             this.groupBox2.Font = new System.Drawing.Font("Janna LT", 16F);
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.groupBox2.Location = new System.Drawing.Point(11, 458);
+            this.groupBox2.Location = new System.Drawing.Point(11, 477);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(910, 181);
             this.groupBox2.TabIndex = 44;
@@ -336,7 +340,7 @@ namespace LIMS_Demo.View
             // 
             // print_barcode
             // 
-            this.print_barcode.Location = new System.Drawing.Point(478, 81);
+            this.print_barcode.Location = new System.Drawing.Point(505, 89);
             this.print_barcode.Name = "print_barcode";
             this.print_barcode.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 14F);
             this.print_barcode.Properties.Appearance.Options.UseFont = true;
@@ -347,7 +351,7 @@ namespace LIMS_Demo.View
             // 
             // print_receipt
             // 
-            this.print_receipt.Location = new System.Drawing.Point(706, 81);
+            this.print_receipt.Location = new System.Drawing.Point(243, 89);
             this.print_receipt.Name = "print_receipt";
             this.print_receipt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 14F);
             this.print_receipt.Properties.Appearance.Options.UseFont = true;
@@ -427,12 +431,55 @@ namespace LIMS_Demo.View
             // 
             // xtraTabPage4
             // 
+            this.xtraTabPage4.Controls.Add(this.groupBox4);
             this.xtraTabPage4.Controls.Add(this.groupBox3);
             this.xtraTabPage4.Controls.Add(this.rjButton7);
             this.xtraTabPage4.Controls.Add(this.rjButton5);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(930, 716);
+            this.xtraTabPage4.Size = new System.Drawing.Size(932, 718);
             this.xtraTabPage4.Text = "النظام";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rjButton12);
+            this.groupBox4.Controls.Add(this.LabName);
+            this.groupBox4.Font = new System.Drawing.Font("Janna LT", 16F);
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.groupBox4.Location = new System.Drawing.Point(11, 240);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(422, 192);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "اسم المختبر";
+            // 
+            // rjButton12
+            // 
+            this.rjButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton12.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton12.BorderColor = System.Drawing.Color.Black;
+            this.rjButton12.BorderRadius = 15;
+            this.rjButton12.BorderSize = 0;
+            this.rjButton12.FlatAppearance.BorderSize = 0;
+            this.rjButton12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton12.ForeColor = System.Drawing.Color.White;
+            this.rjButton12.Image = ((System.Drawing.Image)(resources.GetObject("rjButton12.Image")));
+            this.rjButton12.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rjButton12.Location = new System.Drawing.Point(51, 60);
+            this.rjButton12.Name = "rjButton12";
+            this.rjButton12.Size = new System.Drawing.Size(64, 58);
+            this.rjButton12.TabIndex = 42;
+            this.rjButton12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rjButton12.TextColor = System.Drawing.Color.White;
+            this.rjButton12.UseVisualStyleBackColor = false;
+            this.rjButton12.Click += new System.EventHandler(this.rjButton12_Click);
+            // 
+            // LabName
+            // 
+            this.LabName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LabName.Location = new System.Drawing.Point(163, 64);
+            this.LabName.Name = "LabName";
+            this.LabName.Size = new System.Drawing.Size(193, 47);
+            this.LabName.TabIndex = 41;
             // 
             // groupBox3
             // 
@@ -442,9 +489,9 @@ namespace LIMS_Demo.View
             this.groupBox3.Controls.Add(this.com_port);
             this.groupBox3.Font = new System.Drawing.Font("Janna LT", 16F);
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.groupBox3.Location = new System.Drawing.Point(11, 240);
+            this.groupBox3.Location = new System.Drawing.Point(463, 240);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(910, 212);
+            this.groupBox3.Size = new System.Drawing.Size(458, 192);
             this.groupBox3.TabIndex = 41;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "إعداد البورت";
@@ -461,45 +508,44 @@ namespace LIMS_Demo.View
             this.rjButton11.ForeColor = System.Drawing.Color.White;
             this.rjButton11.Image = ((System.Drawing.Image)(resources.GetObject("rjButton11.Image")));
             this.rjButton11.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rjButton11.Location = new System.Drawing.Point(361, 138);
+            this.rjButton11.Location = new System.Drawing.Point(29, 50);
             this.rjButton11.Name = "rjButton11";
-            this.rjButton11.Size = new System.Drawing.Size(130, 58);
-            this.rjButton11.TabIndex = 36;
-            this.rjButton11.Text = "تغيير";
+            this.rjButton11.Size = new System.Drawing.Size(64, 58);
+            this.rjButton11.TabIndex = 40;
             this.rjButton11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rjButton11.TextColor = System.Drawing.Color.White;
             this.rjButton11.UseVisualStyleBackColor = false;
-            this.rjButton11.Click += new System.EventHandler(this.rjButton11_Click);
+            this.rjButton11.Click += new System.EventHandler(this.rjButton11_Click_1);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.label4.Location = new System.Drawing.Point(751, 70);
+            this.label4.Location = new System.Drawing.Point(326, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 35);
-            this.label4.TabIndex = 35;
+            this.label4.TabIndex = 39;
             this.label4.Text = "رقم البورت";
             // 
             // txtPort
             // 
             this.txtPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPort.Location = new System.Drawing.Point(540, 64);
+            this.txtPort.Location = new System.Drawing.Point(115, 56);
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(193, 47);
-            this.txtPort.TabIndex = 34;
+            this.txtPort.TabIndex = 38;
             // 
             // com_port
             // 
-            this.com_port.Location = new System.Drawing.Point(122, 65);
+            this.com_port.Location = new System.Drawing.Point(131, 127);
             this.com_port.Name = "com_port";
             this.com_port.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 14F);
             this.com_port.Properties.Appearance.Options.UseFont = true;
             this.com_port.Properties.Caption = "توصيل COM";
             this.com_port.Size = new System.Drawing.Size(177, 44);
-            this.com_port.TabIndex = 0;
-            this.com_port.CheckedChanged += new System.EventHandler(this.COM_CheckedChanged);
+            this.com_port.TabIndex = 37;
+            this.com_port.CheckedChanged += new System.EventHandler(this.com_port_CheckedChanged);
             // 
             // rjButton7
             // 
@@ -571,6 +617,8 @@ namespace LIMS_Demo.View
             ((System.ComponentModel.ISupportInitialize)(this.print_barcode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.print_receipt.Properties)).EndInit();
             this.xtraTabPage4.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.com_port.Properties)).EndInit();
@@ -606,9 +654,12 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.TextBox textBox1;
         private DevExpress.XtraEditors.CheckEdit print_barcode;
         private System.Windows.Forms.GroupBox groupBox3;
-        private DevExpress.XtraEditors.CheckEdit com_port;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private CustomControls.RJControls.RJButton rjButton12;
+        private System.Windows.Forms.TextBox LabName;
         private CustomControls.RJControls.RJButton rjButton11;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPort;
+        private DevExpress.XtraEditors.CheckEdit com_port;
     }
 }

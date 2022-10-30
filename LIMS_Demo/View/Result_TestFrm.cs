@@ -74,12 +74,13 @@ namespace LIMS_Demo.View
 
         public void AddDataMethod(String mystring)
         {
+            txtBarcode.Text = string.Empty;
             txtBarcode.AppendText(mystring);
+            searchBtn.PerformClick();
         }
 
          private  void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-
             try
             {
                 SerialPort sp = (SerialPort)sender;
@@ -90,8 +91,7 @@ namespace LIMS_Demo.View
             {
 
                 MessageBox.Show(error.Message);
-            }
-           
+            }  
         }
 
         private void searchBtn_Click(object sender, EventArgs e)

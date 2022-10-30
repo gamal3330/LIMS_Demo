@@ -204,7 +204,7 @@ namespace LIMS_Demo.View
             this.btnSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnSettings.Location = new System.Drawing.Point(0, 674);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(263, 57);
+            this.btnSettings.Size = new System.Drawing.Size(265, 57);
             this.btnSettings.TabIndex = 0;
             this.btnSettings.Text = "الإعدادات";
             this.btnSettings.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -224,7 +224,7 @@ namespace LIMS_Demo.View
             this.btnRays.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnRays.Location = new System.Drawing.Point(0, 585);
             this.btnRays.Name = "btnRays";
-            this.btnRays.Size = new System.Drawing.Size(263, 57);
+            this.btnRays.Size = new System.Drawing.Size(265, 57);
             this.btnRays.TabIndex = 0;
             this.btnRays.Text = "الأشعة";
             this.btnRays.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -244,7 +244,7 @@ namespace LIMS_Demo.View
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnReport.Location = new System.Drawing.Point(0, 490);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(263, 57);
+            this.btnReport.Size = new System.Drawing.Size(265, 57);
             this.btnReport.TabIndex = 0;
             this.btnReport.Text = "التقارير";
             this.btnReport.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -264,7 +264,7 @@ namespace LIMS_Demo.View
             this.btnResultTst.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnResultTst.Location = new System.Drawing.Point(0, 396);
             this.btnResultTst.Name = "btnResultTst";
-            this.btnResultTst.Size = new System.Drawing.Size(263, 57);
+            this.btnResultTst.Size = new System.Drawing.Size(265, 57);
             this.btnResultTst.TabIndex = 0;
             this.btnResultTst.Text = "نتائج التحاليل";
             this.btnResultTst.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -284,7 +284,7 @@ namespace LIMS_Demo.View
             this.btnTest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnTest.Location = new System.Drawing.Point(0, 310);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(263, 57);
+            this.btnTest.Size = new System.Drawing.Size(265, 57);
             this.btnTest.TabIndex = 0;
             this.btnTest.Text = "التحاليل";
             this.btnTest.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
@@ -304,7 +304,7 @@ namespace LIMS_Demo.View
             this.btnPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.btnPatient.Location = new System.Drawing.Point(0, 212);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(263, 57);
+            this.btnPatient.Size = new System.Drawing.Size(265, 57);
             this.btnPatient.TabIndex = 0;
             this.btnPatient.Text = "المرضى";
             this.btnPatient.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));

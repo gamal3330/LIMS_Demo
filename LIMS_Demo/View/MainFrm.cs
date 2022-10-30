@@ -1,4 +1,5 @@
 ﻿using LIMS_Demo.DB;
+using LIMS_Demo.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,19 +65,30 @@ namespace LIMS_Demo
 
         private void rjButton9_Click(object sender, EventArgs e)
         {
-            Environment.Exit(1);
+            Login_Logout_Traking login_Logout = new Login_Logout_Traking();
+            var di = MessageBox.Show("هل تود الخروج من النظام ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (di == DialogResult.Yes)
+            {
+                login_Logout.Logout(DateTime.Now);
+                Application.Exit();
+            }
         }
 
         private void rjButton10_Click_1(object sender, EventArgs e)
         {
             LoginFrm login = new LoginFrm();
             Login_Logout.Logout(DateTime.Now);
+            Permision permision = new Permision();
+            permision.outSystem();
             this.Close();
             login.Show();
         }
 
         private void rjButton1_Click_1(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.PatientsFrm patients = new View.PatientsFrm();
             this.Hide();
@@ -88,10 +100,16 @@ namespace LIMS_Demo
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton3_Click_1(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.TestsFrm tests = new View.TestsFrm();
             this.Hide();
@@ -103,10 +121,16 @@ namespace LIMS_Demo
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void ResultBtn_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.Result_TestFrm result = new View.Result_TestFrm();
             this.Hide();
@@ -118,10 +142,16 @@ namespace LIMS_Demo
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton2_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.ReportsFrm reports = new View.ReportsFrm();
             this.Hide();
@@ -133,10 +163,16 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton6_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.RaysFrm rays = new View.RaysFrm();
             this.Hide();
@@ -148,16 +184,27 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel7.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton4_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.EnquiryFrm enquiryFrm = new View.EnquiryFrm();
             enquiryFrm.ShowDialog();
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton5_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             View.DashBoardFrm dashBoardFrm = new View.DashBoardFrm();
             View.SettingsFrm settings = new View.SettingsFrm();
             this.Hide();
@@ -170,12 +217,21 @@ namespace LIMS_Demo
             dashBoardFrm.panel3.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel4.BackColor = Color.FromArgb(255, 238, 238, 238);
             dashBoardFrm.panel5.BackColor = Color.FromArgb(255, 238, 238, 238);
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void rjButton7_Click(object sender, EventArgs e)
         {
+            LoginFrm loginFrm = new LoginFrm();
+            loginFrm.splashScreenManager1.ShowWaitForm();
+
             System.Diagnostics.Process p = System.Diagnostics.Process.Start("calc.exe");
             p.WaitForInputIdle();
+
+            loginFrm.splashScreenManager1.CloseWaitForm();
+
         }
 
         private void label1_Click(object sender, EventArgs e)

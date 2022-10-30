@@ -28,5 +28,8 @@
     <Setting Name="COM_Name" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="LabName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">مختبري</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

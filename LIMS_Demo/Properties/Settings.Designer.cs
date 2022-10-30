@@ -104,5 +104,17 @@ namespace LIMS_Demo.Properties {
                 this["COM_Name"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("مختبري")]
+        public string LabName {
+            get {
+                return ((string)(this["LabName"]));
+            }
+            set {
+                this["LabName"] = value;
+            }
+        }
     }
 }

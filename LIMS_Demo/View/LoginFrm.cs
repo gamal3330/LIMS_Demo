@@ -1,23 +1,21 @@
 ﻿using DevExpress.XtraSplashScreen;
 using LIMS_Demo.DB;
-using LIMS_Demo.Properties;
 using LIMS_Demo.View;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LIMS_Demo
 {
     public partial class LoginFrm : Form
     {
-        
         protected override CreateParams CreateParams
         {
             get
@@ -31,6 +29,7 @@ namespace LIMS_Demo
 
         LIMS db = new LIMS();
         Login_Logout_Traking login = new Login_Logout_Traking();
+     
         public LoginFrm()
         {
             
@@ -39,48 +38,32 @@ namespace LIMS_Demo
                 SplashScreenManager.ShowFluentSplashScreen(title: "Laboratory information management system", "مرحباً بك");
                 Thread.Sleep(5000);
                 InitializeComponent();
+                lb_Name.Text = Properties.Settings.Default["LabName"].ToString();
                 DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
             }
             if (Permision.chkNum == 1)
             {
                 InitializeComponent();
+                lb_Name.Text = Properties.Settings.Default["LabName"].ToString();
 
             }
-
-
         }
 
         int mousex = 0;
         int mousey = 0;
         bool mouseDown;
         static public String UserPer;
-        
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
             label3.ForeColor = Color.FromArgb(0, 255, 255, 255);
-
         }
 
-        private void bunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.ActiveControl = label1;
-        }
-
-  
-       
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            MaximizeBox = false;
 
         }
 
@@ -122,17 +105,10 @@ namespace LIMS_Demo
             }
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(200, 168, 168, 168), ButtonBorderStyle.Solid);
-
-        }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-
-
-
+            splashScreenManager1.ShowWaitForm();
             try
             {
                 if (txtUser.Text == Properties.Settings.Default["user"].ToString() && txtPass.Text == Properties.Settings.Default["pass"].ToString())
@@ -154,8 +130,10 @@ namespace LIMS_Demo
                         UserPer = "مرحباً " + txtUser.Text;
                         permision.GetUserId(txtUser.Text);
                         permision.Splsh();
+                        permision.inSystem();
                         login.Login(Permision.userID, DateTime.Now);
                         main.UserLb.Text = UserPer;
+                        splashScreenManager1.CloseWaitForm();
                         main.Show();
                         this.Hide();
 
@@ -163,6 +141,8 @@ namespace LIMS_Demo
                     else
                     {
                         MessageBox.Show("أسم المستخدم أو كلمة المرور خاطئة");
+                        splashScreenManager1.CloseWaitForm();
+
                     }
                 }
             }
@@ -211,6 +191,12 @@ namespace LIMS_Demo
             {
                 Enterbtn.PerformClick();
             }
+        }
+
+        private void LoginFrm_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, ClientRectangle, Color.FromArgb(200, 168, 168, 168), ButtonBorderStyle.Solid);
+
         }
     }
 }

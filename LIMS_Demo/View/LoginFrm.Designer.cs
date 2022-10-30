@@ -32,7 +32,7 @@ namespace LIMS_Demo
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lb_Name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,6 +41,7 @@ namespace LIMS_Demo
             this.panel2 = new System.Windows.Forms.Panel();
             this.rjButton9 = new CustomControls.RJControls.RJButton();
             this.Enterbtn = new CustomControls.RJControls.RJButton();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::LIMS_Demo.View.WaitForm1), true, true);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -50,7 +51,7 @@ namespace LIMS_Demo
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lb_Name);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -71,16 +72,15 @@ namespace LIMS_Demo
             this.label3.Text = "v 1.0.0";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label2
+            // lb_Name
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Janna LT", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(94, 325);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 85);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "مختبري";
+            this.lb_Name.AutoSize = true;
+            this.lb_Name.Font = new System.Drawing.Font("Janna LT", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Name.ForeColor = System.Drawing.Color.White;
+            this.lb_Name.Location = new System.Drawing.Point(94, 325);
+            this.lb_Name.Name = "lb_Name";
+            this.lb_Name.Size = new System.Drawing.Size(0, 85);
+            this.lb_Name.TabIndex = 0;
             // 
             // label1
             // 
@@ -92,7 +92,6 @@ namespace LIMS_Demo
             this.label1.Size = new System.Drawing.Size(281, 85);
             this.label1.TabIndex = 1;
             this.label1.Text = "مرحباً بك في";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -126,8 +125,7 @@ namespace LIMS_Demo
             this.txtUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtUser.Size = new System.Drawing.Size(361, 50);
             this.txtUser.TabIndex = 0;
-            this.txtUser.Text = "admin";
-            this.txtUser.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtUser.Text = "أسم المستخدم";
             this.txtUser.Enter += new System.EventHandler(this.textBox1_Enter);
             this.txtUser.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
@@ -143,7 +141,7 @@ namespace LIMS_Demo
             this.txtPass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPass.Size = new System.Drawing.Size(361, 50);
             this.txtPass.TabIndex = 1;
-            this.txtPass.Text = "000";
+            this.txtPass.Text = "كلمة المرور";
             this.txtPass.Enter += new System.EventHandler(this.textBox2_Enter);
             this.txtPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPass_KeyDown);
             this.txtPass.Leave += new System.EventHandler(this.textBox2_Leave);
@@ -198,6 +196,10 @@ namespace LIMS_Demo
             this.Enterbtn.UseVisualStyleBackColor = false;
             this.Enterbtn.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
+            // 
             // LoginFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,9 +216,9 @@ namespace LIMS_Demo
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "s";
+            this.Text = "تسجيل الدخول";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginFrm_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -232,13 +234,14 @@ namespace LIMS_Demo
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lb_Name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPass;
         private CustomControls.RJControls.RJButton Enterbtn;
         private System.Windows.Forms.Panel panel2;
         private CustomControls.RJControls.RJButton rjButton9;
         public System.Windows.Forms.TextBox txtUser;
+        public DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }
 

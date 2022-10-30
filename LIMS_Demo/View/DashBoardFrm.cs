@@ -43,7 +43,13 @@ namespace LIMS_Demo.View
 
         private void rjButton9_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Login_Logout_Traking login_Logout = new Login_Logout_Traking();
+            var di = MessageBox.Show("هل تود الخروج من النظام ؟", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (di == DialogResult.Yes)
+            {
+                login_Logout.Logout(DateTime.Now);
+                Application.Exit();
+            }
         }
 
         private void DashBoardFrm_Paint(object sender, PaintEventArgs e)

@@ -17,23 +17,16 @@ namespace LIMS_Demo
         {
             login.FK_Employee_ID = emp_id;
             login.Login = login_time;
-            login.logout = login_out;
             db.Login_Logout.Add(login);
             db.SaveChanges();
-
         }
 
         public void Logout(DateTime logout)
         {
             int id = db.Login_Logout.Max(x => x.ID);
-
-            var lastlogin = db.Login_Logout.Where(x => x.ID == id).FirstOrDefault();
-
+            var lastlogin = db.Login_Logout.Where(x => x.ID == id).SingleOrDefault();
             lastlogin.logout = logout;
             db.SaveChanges();
-
-
-
         }
     }
 }

@@ -510,6 +510,14 @@ namespace LIMS_Demo.View
             barcodepnl.Visible = false;
         }
 
+        private void cmbtst_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                rjButton7.PerformClick();
+            }
+        }
+
         //save from fields and datagridview to DB
 
         private void rjButton3_Click(object sender, EventArgs e)

@@ -433,7 +433,7 @@ namespace LIMS_Demo.View
             // totaltxt
             // 
             this.totaltxt.EditValue = "";
-            this.totaltxt.Location = new System.Drawing.Point(101, 104);
+            this.totaltxt.Location = new System.Drawing.Point(6, 104);
             this.totaltxt.Name = "totaltxt";
             this.totaltxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.Properties.Appearance.Options.UseBorderColor = true;
@@ -441,7 +441,7 @@ namespace LIMS_Demo.View
             this.totaltxt.Properties.AutoHeight = false;
             this.totaltxt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.totaltxt.Properties.ReadOnly = true;
-            this.totaltxt.Size = new System.Drawing.Size(85, 37);
+            this.totaltxt.Size = new System.Drawing.Size(285, 37);
             this.totaltxt.TabIndex = 17;
             // 
             // discountxt
@@ -462,7 +462,7 @@ namespace LIMS_Demo.View
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.label20.Location = new System.Drawing.Point(207, 102);
+            this.label20.Location = new System.Drawing.Point(300, 100);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(109, 41);
             this.label20.TabIndex = 15;
@@ -674,9 +674,10 @@ namespace LIMS_Demo.View
             // 
             // cmbtst
             // 
+            this.cmbtst.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbtst.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbtst.DataSource = this.testsBindingSource;
             this.cmbtst.DisplayMember = "TestName";
-            this.cmbtst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbtst.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbtst.FormattingEnabled = true;
             this.cmbtst.Location = new System.Drawing.Point(233, 115);
@@ -685,6 +686,7 @@ namespace LIMS_Demo.View
             this.cmbtst.TabIndex = 10;
             this.cmbtst.ValueMember = "Test_ID";
             this.cmbtst.SelectedIndexChanged += new System.EventHandler(this.cmbtst_SelectedIndexChanged);
+            this.cmbtst.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbtst_KeyDown);
             // 
             // testsBindingSource
             // 
@@ -738,9 +740,10 @@ namespace LIMS_Demo.View
             // 
             // cmbCategory
             // 
+            this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.DataSource = this.testCatBindingSource;
             this.cmbCategory.DisplayMember = "Cat_Name";
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(234, 47);

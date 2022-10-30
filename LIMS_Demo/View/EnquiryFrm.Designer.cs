@@ -35,8 +35,8 @@ namespace LIMS_Demo.View
             this.colInvoice_ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPatient = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colisDrawed = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colisReady = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colisReady = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgEnquirys)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -167,6 +167,11 @@ namespace LIMS_Demo.View
             this.colisDrawed.Visible = true;
             this.colisDrawed.VisibleIndex = 2;
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // colisReady
             // 
             this.colisReady.AppearanceCell.Options.UseTextOptions = true;
@@ -198,11 +203,6 @@ namespace LIMS_Demo.View
             this.colisReady.Visible = true;
             this.colisReady.VisibleIndex = 3;
             // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // repositoryItemCheckEdit2
             // 
             this.repositoryItemCheckEdit2.AutoHeight = false;
@@ -214,11 +214,13 @@ namespace LIMS_Demo.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 758);
             this.Controls.Add(this.dvgEnquirys);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnquiryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الإستعلامات";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EnquiryFrm_FormClosing);
             this.Load += new System.EventHandler(this.EnquiryFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dvgEnquirys)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

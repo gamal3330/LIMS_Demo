@@ -23,6 +23,8 @@ namespace LIMS_Demo.View
 
         public static int chkNum { get; set; }
 
+        public static bool inSys { get; set; }
+
         public void checkPermision(String s) 
         {
             MainFrm main = new MainFrm();
@@ -39,12 +41,6 @@ namespace LIMS_Demo.View
             resultFrm    =    x.ResultFrm    ;
             disCountPer  =    x.DisCountPer  ;
 
-            
-
-           
-
-            
-
         }
 
         public void GetUserId (string user)
@@ -57,6 +53,16 @@ namespace LIMS_Demo.View
             chkNum = 1;
         }
 
-        
+        public void inSystem ()
+        {
+            inSys = true;
+        }
+
+        public void outSystem ()
+        {
+            inSys = false;
+
+        }
+
     }
 }

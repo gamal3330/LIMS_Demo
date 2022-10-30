@@ -31,6 +31,7 @@ namespace LIMS_Demo.View
             com_port.Checked = Convert.ToBoolean(COM);
 
             txtPort.Text = Properties.Settings.Default["COM_Name"].ToString();
+            LabName.Text = Properties.Settings.Default["LabName"].ToString();
         }
 
 
@@ -139,7 +140,6 @@ namespace LIMS_Demo.View
 
             Properties.Settings.Default.Save();
 
-             
         }
 
         private void print_barcode_CheckedChanged(object sender, EventArgs e)
@@ -149,22 +149,17 @@ namespace LIMS_Demo.View
             Properties.Settings.Default.Save();
         }
 
-        private void COM_CheckedChanged(object sender, EventArgs e)
-        {
-            Properties.Settings.Default["COM"] = com_port.Checked.ToString();
-            Properties.Settings.Default.Save();
-        }
+     
 
-        private void rjButton11_Click(object sender, EventArgs e)
+        private void rjButton11_Click_1(object sender, EventArgs e)
         {
-
             int chk;
             if (txtPort.Text == "")
             {
                 MessageBox.Show("يرجى تعبئة الحقول", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
-            if (!int.TryParse(txtPort.Text ,out chk))
+            if (!int.TryParse(txtPort.Text, out chk))
             {
                 MessageBox.Show("يجب كتابة رقم فقط", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -173,6 +168,30 @@ namespace LIMS_Demo.View
                 Properties.Settings.Default["COM_Name"] = "COM" + txtPort.Text;
                 Properties.Settings.Default.Save();
                 MessageBox.Show("تم تغيير رقم البورت", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+        }
+
+        private void com_port_CheckedChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default["COM"] = com_port.Checked.ToString();
+            Properties.Settings.Default.Save();
+        }
+
+        private void rjButton12_Click(object sender, EventArgs e)
+        {
+            
+            if (LabName.Text == "")
+            {
+                MessageBox.Show("يرجى تعبئة الحقول", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                Properties.Settings.Default["LabName"] =LabName.Text;
+                Properties.Settings.Default.Save();
+                MessageBox.Show("تم تغييراسم المختبر", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
             }
