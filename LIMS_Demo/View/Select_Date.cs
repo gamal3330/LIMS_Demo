@@ -73,9 +73,11 @@ namespace LIMS_Demo.View
                 custom_Report.ShowPreviewDialog();
                 this.Hide();
             }
-            
+        }
 
-
+        private void rjButton9_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

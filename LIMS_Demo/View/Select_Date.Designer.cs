@@ -29,12 +29,14 @@ namespace LIMS_Demo.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Select_Date));
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.rjButton9 = new CustomControls.RJControls.RJButton();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -108,11 +110,31 @@ namespace LIMS_Demo.View
             this.label3.Text = "name";
             this.label3.Visible = false;
             // 
+            // rjButton9
+            // 
+            this.rjButton9.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton9.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton9.BorderRadius = 0;
+            this.rjButton9.BorderSize = 0;
+            this.rjButton9.FlatAppearance.BorderSize = 0;
+            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton9.ForeColor = System.Drawing.Color.Transparent;
+            this.rjButton9.Image = ((System.Drawing.Image)(resources.GetObject("rjButton9.Image")));
+            this.rjButton9.Location = new System.Drawing.Point(1, 1);
+            this.rjButton9.Name = "rjButton9";
+            this.rjButton9.Size = new System.Drawing.Size(57, 46);
+            this.rjButton9.TabIndex = 16;
+            this.rjButton9.TextColor = System.Drawing.Color.Transparent;
+            this.rjButton9.UseVisualStyleBackColor = false;
+            this.rjButton9.Click += new System.EventHandler(this.rjButton9_Click);
+            // 
             // Select_Date
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(516, 213);
+            this.Controls.Add(this.rjButton9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rjButton1);
             this.Controls.Add(this.dateTimePicker2);
@@ -137,5 +159,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private CustomControls.RJControls.RJButton rjButton1;
         public System.Windows.Forms.Label label3;
+        private CustomControls.RJControls.RJButton rjButton9;
     }
 }

@@ -424,7 +424,7 @@ namespace LIMS_Demo.View
             this.cmbdiscount.Items.AddRange(new object[] {
             "-",
             "%"});
-            this.cmbdiscount.Location = new System.Drawing.Point(6, 50);
+            this.cmbdiscount.Location = new System.Drawing.Point(6, 43);
             this.cmbdiscount.Name = "cmbdiscount";
             this.cmbdiscount.Size = new System.Drawing.Size(50, 28);
             this.cmbdiscount.TabIndex = 19;
@@ -435,7 +435,7 @@ namespace LIMS_Demo.View
             this.totaltxt.EditValue = "";
             this.totaltxt.Location = new System.Drawing.Point(6, 104);
             this.totaltxt.Name = "totaltxt";
-            this.totaltxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totaltxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totaltxt.Properties.Appearance.Options.UseBorderColor = true;
             this.totaltxt.Properties.Appearance.Options.UseFont = true;
             this.totaltxt.Properties.AutoHeight = false;
@@ -447,9 +447,9 @@ namespace LIMS_Demo.View
             // discountxt
             // 
             this.discountxt.EditValue = "";
-            this.discountxt.Location = new System.Drawing.Point(63, 44);
+            this.discountxt.Location = new System.Drawing.Point(63, 39);
             this.discountxt.Name = "discountxt";
-            this.discountxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discountxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discountxt.Properties.Appearance.Options.UseBorderColor = true;
             this.discountxt.Properties.Appearance.Options.UseFont = true;
             this.discountxt.Properties.AutoHeight = false;
@@ -471,9 +471,9 @@ namespace LIMS_Demo.View
             // pricetxt
             // 
             this.pricetxt.EditValue = "";
-            this.pricetxt.Location = new System.Drawing.Point(242, 43);
+            this.pricetxt.Location = new System.Drawing.Point(242, 39);
             this.pricetxt.Name = "pricetxt";
-            this.pricetxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pricetxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pricetxt.Properties.Appearance.Options.UseBorderColor = true;
             this.pricetxt.Properties.Appearance.Options.UseFont = true;
             this.pricetxt.Properties.AutoHeight = false;
@@ -486,7 +486,7 @@ namespace LIMS_Demo.View
             // 
             this.DisCountLb.AutoSize = true;
             this.DisCountLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.DisCountLb.Location = new System.Drawing.Point(150, 40);
+            this.DisCountLb.Location = new System.Drawing.Point(150, 37);
             this.DisCountLb.Name = "DisCountLb";
             this.DisCountLb.Size = new System.Drawing.Size(89, 41);
             this.DisCountLb.TabIndex = 15;
@@ -496,7 +496,7 @@ namespace LIMS_Demo.View
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(326, 40);
+            this.label19.Location = new System.Drawing.Point(326, 37);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(85, 41);
             this.label19.TabIndex = 16;
@@ -633,9 +633,9 @@ namespace LIMS_Demo.View
             // smpleTesttxt
             // 
             this.smpleTesttxt.EditValue = "";
-            this.smpleTesttxt.Location = new System.Drawing.Point(112, 215);
+            this.smpleTesttxt.Location = new System.Drawing.Point(112, 214);
             this.smpleTesttxt.Name = "smpleTesttxt";
-            this.smpleTesttxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.smpleTesttxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smpleTesttxt.Properties.Appearance.Options.UseBorderColor = true;
             this.smpleTesttxt.Properties.Appearance.Options.UseFont = true;
             this.smpleTesttxt.Properties.AutoHeight = false;
@@ -647,9 +647,9 @@ namespace LIMS_Demo.View
             // sampletxt
             // 
             this.sampletxt.EditValue = "";
-            this.sampletxt.Location = new System.Drawing.Point(13, 115);
+            this.sampletxt.Location = new System.Drawing.Point(13, 121);
             this.sampletxt.Name = "sampletxt";
-            this.sampletxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sampletxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sampletxt.Properties.Appearance.Options.UseBorderColor = true;
             this.sampletxt.Properties.Appearance.Options.UseFont = true;
             this.sampletxt.Properties.AutoHeight = false;
@@ -663,7 +663,7 @@ namespace LIMS_Demo.View
             this.unittxt.EditValue = "";
             this.unittxt.Location = new System.Drawing.Point(13, 47);
             this.unittxt.Name = "unittxt";
-            this.unittxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.unittxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.unittxt.Properties.Appearance.Options.UseBorderColor = true;
             this.unittxt.Properties.Appearance.Options.UseFont = true;
             this.unittxt.Properties.AutoHeight = false;
@@ -678,11 +678,11 @@ namespace LIMS_Demo.View
             this.cmbtst.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbtst.DataSource = this.testsBindingSource;
             this.cmbtst.DisplayMember = "TestName";
-            this.cmbtst.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbtst.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbtst.FormattingEnabled = true;
-            this.cmbtst.Location = new System.Drawing.Point(233, 115);
+            this.cmbtst.Location = new System.Drawing.Point(233, 124);
             this.cmbtst.Name = "cmbtst";
-            this.cmbtst.Size = new System.Drawing.Size(121, 38);
+            this.cmbtst.Size = new System.Drawing.Size(121, 32);
             this.cmbtst.TabIndex = 10;
             this.cmbtst.ValueMember = "Test_ID";
             this.cmbtst.SelectedIndexChanged += new System.EventHandler(this.cmbtst_SelectedIndexChanged);
@@ -702,7 +702,7 @@ namespace LIMS_Demo.View
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.label16.Location = new System.Drawing.Point(141, 114);
+            this.label16.Location = new System.Drawing.Point(141, 120);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(82, 41);
             this.label16.TabIndex = 9;
@@ -712,7 +712,7 @@ namespace LIMS_Demo.View
             // 
             this.testL.AutoSize = true;
             this.testL.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.testL.Location = new System.Drawing.Point(366, 114);
+            this.testL.Location = new System.Drawing.Point(366, 120);
             this.testL.Name = "testL";
             this.testL.Size = new System.Drawing.Size(93, 41);
             this.testL.TabIndex = 9;
@@ -744,11 +744,11 @@ namespace LIMS_Demo.View
             this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.DataSource = this.testCatBindingSource;
             this.cmbCategory.DisplayMember = "Cat_Name";
-            this.cmbCategory.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCategory.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(234, 47);
+            this.cmbCategory.Location = new System.Drawing.Point(234, 50);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 38);
+            this.cmbCategory.Size = new System.Drawing.Size(121, 32);
             this.cmbCategory.TabIndex = 0;
             this.cmbCategory.ValueMember = "Cat_ID";
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);

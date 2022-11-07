@@ -78,6 +78,7 @@ namespace LIMS_Demo.View
                             log.LogSystem(Permision.userID, "حفظ مريض", DateTime.Now , txtPatName.Text);
                             MessageBox.Show("تمت إضافة المريض بنجاح" , "" , MessageBoxButtons.OK , MessageBoxIcon.Information);
                             updateDate();
+                            ClearTexts();
                         }
                 }
         }
@@ -108,11 +109,23 @@ namespace LIMS_Demo.View
                     log.LogSystem(Permision.userID, "تعديل مريض", DateTime.Now, txtPatName.Text);
                     MessageBox.Show("تم تعديل بيانات المريض بنجاح", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     updateDate();
+                    ClearTexts();
                 }
             }else
             {
                 return;
             }
+        }
+        private void ClearTexts()
+        {
+            txtPatName.Text = "";
+            txtPatAge.Text = "";
+            txtPatGender.SelectedIndex = -1;
+            txtPatAddress.Text = "";
+            txtPatPhone.Text = "";
+            txtPatNotes.Text = "";
+            
+            
         }
     }
 }

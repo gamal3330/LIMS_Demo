@@ -136,12 +136,13 @@ namespace LIMS_Demo
                         splashScreenManager1.CloseWaitForm();
                         main.Show();
                         this.Hide();
-
+                        result.Clear();
                     }
                     else
                     {
-                        MessageBox.Show("أسم المستخدم أو كلمة المرور خاطئة");
                         splashScreenManager1.CloseWaitForm();
+                        MessageBox.Show("أسم المستخدم أو كلمة المرور خاطئة" , "" , MessageBoxButtons.OK , MessageBoxIcon.Warning);
+                        
 
                     }
                 }
@@ -151,7 +152,6 @@ namespace LIMS_Demo
 
                 throw;
             }
-                      
         }
 
         private void rjButton9_Click(object sender, EventArgs e)

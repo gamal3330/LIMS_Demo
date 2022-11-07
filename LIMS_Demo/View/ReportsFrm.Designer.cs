@@ -31,6 +31,9 @@ namespace LIMS_Demo.View
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsFrm));
             this.ReportPan = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
@@ -40,13 +43,11 @@ namespace LIMS_Demo.View
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
             this.ReportPan.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReportPan
@@ -60,6 +61,46 @@ namespace LIMS_Demo.View
             this.ReportPan.Name = "ReportPan";
             this.ReportPan.Size = new System.Drawing.Size(934, 847);
             this.ReportPan.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.linkLabel8);
+            this.groupBox3.Controls.Add(this.linkLabel7);
+            this.groupBox3.Font = new System.Drawing.Font("Janna LT", 22F, System.Drawing.FontStyle.Bold);
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.groupBox3.Location = new System.Drawing.Point(13, 399);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.groupBox3.Size = new System.Drawing.Size(909, 201);
+            this.groupBox3.TabIndex = 8;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "تقارير النظام";
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.linkLabel8.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.linkLabel8.Location = new System.Drawing.Point(189, 96);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(248, 44);
+            this.linkLabel8.TabIndex = 1;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "تقرير حركة المستخدمين";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.linkLabel7.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.linkLabel7.Location = new System.Drawing.Point(670, 96);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(190, 44);
+            this.linkLabel7.TabIndex = 0;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "تقرير حركة النظام";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // groupBox2
             // 
@@ -117,6 +158,7 @@ namespace LIMS_Demo.View
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.linkLabel9);
             this.groupBox1.Controls.Add(this.linkLabel3);
             this.groupBox1.Controls.Add(this.linkLabel2);
             this.groupBox1.Controls.Add(this.linkLabel1);
@@ -135,7 +177,7 @@ namespace LIMS_Demo.View
             this.linkLabel3.AutoSize = true;
             this.linkLabel3.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
             this.linkLabel3.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel3.Location = new System.Drawing.Point(40, 80);
+            this.linkLabel3.Location = new System.Drawing.Point(64, 80);
             this.linkLabel3.Name = "linkLabel3";
             this.linkLabel3.Size = new System.Drawing.Size(159, 44);
             this.linkLabel3.TabIndex = 2;
@@ -148,7 +190,7 @@ namespace LIMS_Demo.View
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel2.Location = new System.Drawing.Point(312, 161);
+            this.linkLabel2.Location = new System.Drawing.Point(324, 161);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(89, 44);
             this.linkLabel2.TabIndex = 1;
@@ -161,7 +203,7 @@ namespace LIMS_Demo.View
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel1.Location = new System.Drawing.Point(284, 80);
+            this.linkLabel1.Location = new System.Drawing.Point(307, 80);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(117, 44);
             this.linkLabel1.TabIndex = 0;
@@ -180,45 +222,18 @@ namespace LIMS_Demo.View
             this.label1.TabIndex = 5;
             this.label1.Text = "التقارير";
             // 
-            // groupBox3
+            // linkLabel9
             // 
-            this.groupBox3.Controls.Add(this.linkLabel8);
-            this.groupBox3.Controls.Add(this.linkLabel7);
-            this.groupBox3.Font = new System.Drawing.Font("Janna LT", 22F, System.Drawing.FontStyle.Bold);
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.groupBox3.Location = new System.Drawing.Point(13, 399);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox3.Size = new System.Drawing.Size(909, 201);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "تقارير النظام";
-            // 
-            // linkLabel7
-            // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
-            this.linkLabel7.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel7.Location = new System.Drawing.Point(670, 96);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(190, 44);
-            this.linkLabel7.TabIndex = 0;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "تقرير حركة النظام";
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
-            // 
-            // linkLabel8
-            // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
-            this.linkLabel8.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.linkLabel8.Location = new System.Drawing.Point(189, 96);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(248, 44);
-            this.linkLabel8.TabIndex = 1;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "تقرير حركة المستخدمين";
-            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
+            this.linkLabel9.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.linkLabel9.Location = new System.Drawing.Point(15, 161);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(208, 44);
+            this.linkLabel9.TabIndex = 3;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "عدد العينات المتاحة";
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
             // 
             // ReportsFrm
             // 
@@ -232,12 +247,12 @@ namespace LIMS_Demo.View
             this.Text = "Reports";
             this.ReportPan.ResumeLayout(false);
             this.ReportPan.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +272,6 @@ namespace LIMS_Demo.View
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.LinkLabel linkLabel7;
         public System.Windows.Forms.LinkLabel linkLabel8;
+        private System.Windows.Forms.LinkLabel linkLabel9;
     }
 }

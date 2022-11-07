@@ -112,9 +112,9 @@ namespace LIMS_Demo.View
             this.textBoxDescription.Size = new System.Drawing.Size(271, 126);
             this.textBoxDescription.TabIndex = 23;
             this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = "بإشراف من د.علي بلعيد\r\nتم تطوير هذا النظام من قبل :\r\nعبدالله زيد عبدالقوي\r\nعلي مح" +
-    "مد البيتي \r\nجمال جلال محمد احمد\r\nمحمد عماد محفوظ\r\nاسامة محمد علي\r\nسالم عبدالرقيب" +
-    " السعدي\r\n";
+            this.textBoxDescription.Text = "بإشراف من د.علي بلعيد\r\nتم تطوير هذا النظام من قبل :\r\nاسامة محمد علي\r\nجمال جلال مح" +
+    "مد احمد\r\nسالم عبدالرقيب السعدي\r\nعبدالله زيد عبدالقوي\r\nعلي محمد البيتي \r\nمحمد عما" +
+    "د محفوظ\r\n";
             // 
             // okButton
             // 

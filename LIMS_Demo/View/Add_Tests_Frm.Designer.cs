@@ -43,6 +43,7 @@ namespace LIMS_Demo.View
             this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbCat = new System.Windows.Forms.ComboBox();
             this.testCatBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.smplTest = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@ namespace LIMS_Demo.View
             this.unitsTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.UnitsTableAdapter();
             this.testsTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.TestsTableAdapter();
             this.samplesTableAdapter = new LIMS_Demo.LIMSDataSetTableAdapters.SamplesTableAdapter();
-            this.smplTest = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.samplesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lIMSDataSet)).BeginInit();
@@ -109,7 +109,7 @@ namespace LIMS_Demo.View
             this.groupBox2.Location = new System.Drawing.Point(15, 68);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox2.Size = new System.Drawing.Size(894, 400);
+            this.groupBox2.Size = new System.Drawing.Size(981, 367);
             this.groupBox2.TabIndex = 16;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اختيار التحليل";
@@ -118,7 +118,7 @@ namespace LIMS_Demo.View
             // 
             this.ReffMale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ReffMale.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReffMale.Location = new System.Drawing.Point(320, 259);
+            this.ReffMale.Location = new System.Drawing.Point(341, 228);
             this.ReffMale.Multiline = true;
             this.ReffMale.Name = "ReffMale";
             this.ReffMale.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -129,7 +129,7 @@ namespace LIMS_Demo.View
             // 
             this.RefFfemale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.RefFfemale.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RefFfemale.Location = new System.Drawing.Point(627, 259);
+            this.RefFfemale.Location = new System.Drawing.Point(715, 228);
             this.RefFfemale.Multiline = true;
             this.RefFfemale.Name = "RefFfemale";
             this.RefFfemale.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -140,7 +140,7 @@ namespace LIMS_Demo.View
             // 
             this.maleLb.AutoSize = true;
             this.maleLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.maleLb.Location = new System.Drawing.Point(320, 221);
+            this.maleLb.Location = new System.Drawing.Point(341, 190);
             this.maleLb.Name = "maleLb";
             this.maleLb.Size = new System.Drawing.Size(124, 35);
             this.maleLb.TabIndex = 39;
@@ -150,7 +150,7 @@ namespace LIMS_Demo.View
             // 
             this.femalLb.AutoSize = true;
             this.femalLb.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.femalLb.Location = new System.Drawing.Point(625, 221);
+            this.femalLb.Location = new System.Drawing.Point(713, 190);
             this.femalLb.Name = "femalLb";
             this.femalLb.Size = new System.Drawing.Size(144, 35);
             this.femalLb.TabIndex = 40;
@@ -161,11 +161,11 @@ namespace LIMS_Demo.View
             this.cmbSample.DataSource = this.samplesBindingSource;
             this.cmbSample.DisplayMember = "Sample_Name";
             this.cmbSample.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSample.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
+            this.cmbSample.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
             this.cmbSample.FormattingEnabled = true;
-            this.cmbSample.Location = new System.Drawing.Point(272, 129);
+            this.cmbSample.Location = new System.Drawing.Point(341, 129);
             this.cmbSample.Name = "cmbSample";
-            this.cmbSample.Size = new System.Drawing.Size(136, 43);
+            this.cmbSample.Size = new System.Drawing.Size(136, 32);
             this.cmbSample.TabIndex = 38;
             this.cmbSample.ValueMember = "Sample_ID";
             // 
@@ -184,11 +184,11 @@ namespace LIMS_Demo.View
             this.cmbUnit.DataSource = this.unitsBindingSource;
             this.cmbUnit.DisplayMember = "Unit_Name";
             this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnit.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
+            this.cmbUnit.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
             this.cmbUnit.FormattingEnabled = true;
             this.cmbUnit.Location = new System.Drawing.Point(22, 51);
             this.cmbUnit.Name = "cmbUnit";
-            this.cmbUnit.Size = new System.Drawing.Size(121, 43);
+            this.cmbUnit.Size = new System.Drawing.Size(121, 32);
             this.cmbUnit.TabIndex = 37;
             this.cmbUnit.ValueMember = "Unit_ID";
             // 
@@ -202,11 +202,11 @@ namespace LIMS_Demo.View
             this.cmbCat.DataSource = this.testCatBindingSource;
             this.cmbCat.DisplayMember = "Cat_Name";
             this.cmbCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCat.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
+            this.cmbCat.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
             this.cmbCat.FormattingEnabled = true;
-            this.cmbCat.Location = new System.Drawing.Point(627, 51);
+            this.cmbCat.Location = new System.Drawing.Point(717, 51);
             this.cmbCat.Name = "cmbCat";
-            this.cmbCat.Size = new System.Drawing.Size(121, 43);
+            this.cmbCat.Size = new System.Drawing.Size(121, 32);
             this.cmbCat.TabIndex = 35;
             this.cmbCat.ValueMember = "Cat_ID";
             // 
@@ -215,34 +215,44 @@ namespace LIMS_Demo.View
             this.testCatBindingSource.DataMember = "Test_Cat";
             this.testCatBindingSource.DataSource = this.lIMSDataSet;
             // 
+            // smplTest
+            // 
+            this.smplTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.smplTest.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
+            this.smplTest.Location = new System.Drawing.Point(22, 255);
+            this.smplTest.Multiline = true;
+            this.smplTest.Name = "smplTest";
+            this.smplTest.Size = new System.Drawing.Size(96, 32);
+            this.smplTest.TabIndex = 34;
+            // 
             // txtPrice
             // 
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrice.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.txtPrice.Location = new System.Drawing.Point(22, 128);
+            this.txtPrice.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
+            this.txtPrice.Location = new System.Drawing.Point(22, 129);
             this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(121, 44);
+            this.txtPrice.Size = new System.Drawing.Size(121, 32);
             this.txtPrice.TabIndex = 34;
             // 
             // txtCode
             // 
             this.txtCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCode.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.txtCode.Location = new System.Drawing.Point(625, 128);
+            this.txtCode.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
+            this.txtCode.Location = new System.Drawing.Point(715, 129);
             this.txtCode.Multiline = true;
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(123, 44);
+            this.txtCode.Size = new System.Drawing.Size(123, 32);
             this.txtCode.TabIndex = 33;
             // 
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.txtName.Location = new System.Drawing.Point(272, 51);
+            this.txtName.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
+            this.txtName.Location = new System.Drawing.Point(341, 51);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(136, 44);
+            this.txtName.Size = new System.Drawing.Size(136, 32);
             this.txtName.TabIndex = 30;
             // 
             // rjButton2
@@ -257,7 +267,7 @@ namespace LIMS_Demo.View
             this.rjButton2.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold);
             this.rjButton2.ForeColor = System.Drawing.Color.White;
             this.rjButton2.Image = ((System.Drawing.Image)(resources.GetObject("rjButton2.Image")));
-            this.rjButton2.Location = new System.Drawing.Point(561, 47);
+            this.rjButton2.Location = new System.Drawing.Point(657, 42);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(50, 51);
             this.rjButton2.TabIndex = 29;
@@ -269,7 +279,7 @@ namespace LIMS_Demo.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(140, 278);
+            this.label1.Location = new System.Drawing.Point(140, 251);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 41);
             this.label1.TabIndex = 23;
@@ -289,7 +299,7 @@ namespace LIMS_Demo.View
             // 
             this.sampleLb.AutoSize = true;
             this.sampleLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.sampleLb.Location = new System.Drawing.Point(447, 125);
+            this.sampleLb.Location = new System.Drawing.Point(516, 125);
             this.sampleLb.Name = "sampleLb";
             this.sampleLb.Size = new System.Drawing.Size(69, 41);
             this.sampleLb.TabIndex = 19;
@@ -299,7 +309,7 @@ namespace LIMS_Demo.View
             // 
             this.codeLb.AutoSize = true;
             this.codeLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.codeLb.Location = new System.Drawing.Point(756, 125);
+            this.codeLb.Location = new System.Drawing.Point(846, 125);
             this.codeLb.Name = "codeLb";
             this.codeLb.Size = new System.Drawing.Size(118, 41);
             this.codeLb.TabIndex = 17;
@@ -309,7 +319,7 @@ namespace LIMS_Demo.View
             // 
             this.unitLb.AutoSize = true;
             this.unitLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.unitLb.Location = new System.Drawing.Point(149, 50);
+            this.unitLb.Location = new System.Drawing.Point(149, 47);
             this.unitLb.Name = "unitLb";
             this.unitLb.Size = new System.Drawing.Size(76, 41);
             this.unitLb.TabIndex = 15;
@@ -319,7 +329,7 @@ namespace LIMS_Demo.View
             // 
             this.nameLb.AutoSize = true;
             this.nameLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.nameLb.Location = new System.Drawing.Point(414, 50);
+            this.nameLb.Location = new System.Drawing.Point(483, 47);
             this.nameLb.Name = "nameLb";
             this.nameLb.Size = new System.Drawing.Size(129, 41);
             this.nameLb.TabIndex = 13;
@@ -329,7 +339,7 @@ namespace LIMS_Demo.View
             // 
             this.catLb.AutoSize = true;
             this.catLb.Font = new System.Drawing.Font("Janna LT", 16F, System.Drawing.FontStyle.Bold);
-            this.catLb.Location = new System.Drawing.Point(767, 50);
+            this.catLb.Location = new System.Drawing.Point(857, 47);
             this.catLb.Name = "catLb";
             this.catLb.Size = new System.Drawing.Size(102, 41);
             this.catLb.TabIndex = 9;
@@ -348,7 +358,7 @@ namespace LIMS_Demo.View
             this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
             this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editBtn.Location = new System.Drawing.Point(267, 864);
+            this.editBtn.Location = new System.Drawing.Point(267, 830);
             this.editBtn.Name = "editBtn";
             this.editBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.editBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -373,7 +383,7 @@ namespace LIMS_Demo.View
             this.addBtn.ForeColor = System.Drawing.Color.White;
             this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
             this.addBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addBtn.Location = new System.Drawing.Point(511, 864);
+            this.addBtn.Location = new System.Drawing.Point(511, 830);
             this.addBtn.Name = "addBtn";
             this.addBtn.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.addBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -390,7 +400,7 @@ namespace LIMS_Demo.View
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Janna LT", 26F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.label2.Location = new System.Drawing.Point(348, 1);
+            this.label2.Location = new System.Drawing.Point(397, 1);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 65);
             this.label2.TabIndex = 29;
@@ -418,10 +428,10 @@ namespace LIMS_Demo.View
             // gcTests
             // 
             this.gcTests.DataSource = typeof(LIMS_Demo.DB.Tests);
-            this.gcTests.Location = new System.Drawing.Point(15, 475);
+            this.gcTests.Location = new System.Drawing.Point(15, 441);
             this.gcTests.MainView = this.gvTest;
             this.gcTests.Name = "gcTests";
-            this.gcTests.Size = new System.Drawing.Size(894, 370);
+            this.gcTests.Size = new System.Drawing.Size(981, 370);
             this.gcTests.TabIndex = 30;
             this.gcTests.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvTest});
@@ -655,21 +665,11 @@ namespace LIMS_Demo.View
             // 
             this.samplesTableAdapter.ClearBeforeFill = true;
             // 
-            // smplTest
-            // 
-            this.smplTest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.smplTest.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.smplTest.Location = new System.Drawing.Point(22, 279);
-            this.smplTest.Multiline = true;
-            this.smplTest.Name = "smplTest";
-            this.smplTest.Size = new System.Drawing.Size(96, 44);
-            this.smplTest.TabIndex = 34;
-            // 
             // Add_Tests_Frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(957, 945);
+            this.ClientSize = new System.Drawing.Size(1008, 902);
             this.Controls.Add(this.gcTests);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);

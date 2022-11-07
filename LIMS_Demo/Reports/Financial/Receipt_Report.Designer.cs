@@ -43,6 +43,10 @@ namespace LIMS_Demo.Reports.Financial
             DevExpress.DataAccess.Sql.Column column4 = new DevExpress.DataAccess.Sql.Column();
             DevExpress.DataAccess.Sql.ColumnExpression columnExpression4 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.Table table2 = new DevExpress.DataAccess.Sql.Table();
+            DevExpress.DataAccess.Sql.Column column5 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression5 = new DevExpress.DataAccess.Sql.ColumnExpression();
+            DevExpress.DataAccess.Sql.Column column6 = new DevExpress.DataAccess.Sql.Column();
+            DevExpress.DataAccess.Sql.ColumnExpression columnExpression6 = new DevExpress.DataAccess.Sql.ColumnExpression();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.Join join1 = new DevExpress.DataAccess.Sql.Join();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
@@ -62,6 +66,7 @@ namespace LIMS_Demo.Reports.Financial
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel13 = new DevExpress.XtraReports.UI.XRLabel();
             this.Total = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
@@ -81,7 +86,8 @@ namespace LIMS_Demo.Reports.Financial
             this.inv = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.PatientName = new DevExpress.XtraReports.Parameters.Parameter();
-            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -93,7 +99,7 @@ namespace LIMS_Demo.Reports.Financial
             // 
             // BottomMargin
             // 
-            this.BottomMargin.HeightF = 2F;
+            this.BottomMargin.HeightF = 1.151911F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // Detail
@@ -238,6 +244,8 @@ namespace LIMS_Demo.Reports.Financial
             // ReportFooter
             // 
             this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel7,
+            this.xrLabel6,
             this.xrLabel5,
             this.xrLabel13,
             this.Total,
@@ -247,12 +255,28 @@ namespace LIMS_Demo.Reports.Financial
             this.xrLabel14,
             this.xrLabel15,
             this.pageInfo1});
+            this.ReportFooter.HeightF = 152.6241F;
             this.ReportFooter.Name = "ReportFooter";
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.AutoWidth = true;
+            this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Notes]")});
+            this.xrLabel5.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 8F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1.000055F, 81.62413F);
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(225F, 23F);
+            this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
+            this.xrLabel5.Text = "xrLabel5";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // xrLabel13
             // 
             this.xrLabel13.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(611.2182F, 25.00003F);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(618.2182F, 81.62413F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -265,9 +289,9 @@ namespace LIMS_Demo.Reports.Financial
             // Total
             // 
             this.Total.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Sum([price])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[total]")});
             this.Total.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold);
-            this.Total.LocationFloat = new DevExpress.Utils.PointFloat(703.9998F, 25F);
+            this.Total.LocationFloat = new DevExpress.Utils.PointFloat(710.9998F, 81.6241F);
             this.Total.Multiline = true;
             this.Total.Name = "Total";
             this.Total.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -286,13 +310,13 @@ namespace LIMS_Demo.Reports.Financial
             // xrLine2
             // 
             this.xrLine2.LineWidth = 2F;
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 48.00003F);
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 104.6241F);
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.SizeF = new System.Drawing.SizeF(820.9999F, 23F);
             // 
             // pageInfo2
             // 
-            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(698.664F, 76.99998F);
+            this.pageInfo2.LocationFloat = new DevExpress.Utils.PointFloat(698.664F, 127.6241F);
             this.pageInfo2.Name = "pageInfo2";
             this.pageInfo2.SizeF = new System.Drawing.SizeF(122.3361F, 23F);
             this.pageInfo2.StylePriority.UseTextAlignment = false;
@@ -302,7 +326,7 @@ namespace LIMS_Demo.Reports.Financial
             // xrLabel14
             // 
             this.xrLabel14.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(444.8768F, 76.99998F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(444.8768F, 127.6241F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -319,7 +343,7 @@ namespace LIMS_Demo.Reports.Financial
             this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?User")});
             this.xrLabel15.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(358.7423F, 76.99998F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(358.7423F, 127.6241F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -332,7 +356,7 @@ namespace LIMS_Demo.Reports.Financial
             // 
             // pageInfo1
             // 
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(3.205628E-05F, 76.99998F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(3.205628E-05F, 127.6241F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
             this.pageInfo1.SizeF = new System.Drawing.SizeF(164.2858F, 23F);
@@ -400,21 +424,21 @@ namespace LIMS_Demo.Reports.Financial
             // 
             this.xrCrossBandLine3.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
             this.xrCrossBandLine3.EndBand = this.ReportFooter;
-            this.xrCrossBandLine3.EndPointFloat = new DevExpress.Utils.PointFloat(686.2181F, 48.00002F);
+            this.xrCrossBandLine3.EndPointFloat = new DevExpress.Utils.PointFloat(693.2181F, 104.6241F);
             this.xrCrossBandLine3.Name = "xrCrossBandLine3";
             this.xrCrossBandLine3.StartBand = this.ReportFooter;
-            this.xrCrossBandLine3.StartPointFloat = new DevExpress.Utils.PointFloat(686.2181F, 25.00002F);
+            this.xrCrossBandLine3.StartPointFloat = new DevExpress.Utils.PointFloat(693.2181F, 81.62414F);
             this.xrCrossBandLine3.WidthF = 1F;
             // 
             // xrCrossBandLine5
             // 
             this.xrCrossBandLine5.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
             this.xrCrossBandLine5.EndBand = this.ReportFooter;
-            this.xrCrossBandLine5.EndPointFloat = new DevExpress.Utils.PointFloat(610.2181F, 48.00006F);
+            this.xrCrossBandLine5.EndPointFloat = new DevExpress.Utils.PointFloat(617.218F, 104.6242F);
             this.xrCrossBandLine5.Name = "xrCrossBandLine5";
             this.xrCrossBandLine5.StartBand = this.ReportFooter;
-            this.xrCrossBandLine5.StartPointFloat = new DevExpress.Utils.PointFloat(610.2181F, 25.00002F);
-            this.xrCrossBandLine5.WidthF = 1.000061F;
+            this.xrCrossBandLine5.StartPointFloat = new DevExpress.Utils.PointFloat(617.218F, 81.62414F);
+            this.xrCrossBandLine5.WidthF = 1.000122F;
             // 
             // User
             // 
@@ -454,10 +478,18 @@ namespace LIMS_Demo.Reports.Financial
             table2.Name = "Invoice";
             columnExpression4.Table = table2;
             column4.Expression = columnExpression4;
+            columnExpression5.ColumnName = "discount";
+            columnExpression5.Table = table2;
+            column5.Expression = columnExpression5;
+            columnExpression6.ColumnName = "total";
+            columnExpression6.Table = table2;
+            column6.Expression = columnExpression6;
             selectQuery1.Columns.Add(column1);
             selectQuery1.Columns.Add(column2);
             selectQuery1.Columns.Add(column3);
             selectQuery1.Columns.Add(column4);
+            selectQuery1.Columns.Add(column5);
+            selectQuery1.Columns.Add(column6);
             selectQuery1.FilterString = "[invoice_details.Invoice_ID] = ?inv";
             selectQuery1.GroupFilterString = "";
             selectQuery1.Name = "invoice_details_1";
@@ -487,20 +519,32 @@ namespace LIMS_Demo.Reports.Financial
             this.PatientName.Name = "PatientName";
             this.PatientName.Visible = false;
             // 
-            // xrLabel5
+            // xrLabel6
             // 
-            this.xrLabel5.AutoWidth = true;
-            this.xrLabel5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Notes]")});
-            this.xrLabel5.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 8F, System.Drawing.FontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(1.000055F, 25.00006F);
-            this.xrLabel5.Name = "xrLabel5";
-            this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(225F, 23F);
-            this.xrLabel5.StylePriority.UseFont = false;
-            this.xrLabel5.StylePriority.UseTextAlignment = false;
-            this.xrLabel5.Text = "xrLabel5";
-            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.xrLabel6.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(617.2181F, 48.2908F);
+            this.xrLabel6.Multiline = true;
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(74.99994F, 23F);
+            this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
+            this.xrLabel6.Text = "الخصم";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            // 
+            // xrLabel7
+            // 
+            this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[discount]")});
+            this.xrLabel7.Font = new System.Drawing.Font("Bahij TheSansArabic Bold", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(710.9998F, 48.2908F);
+            this.xrLabel7.Multiline = true;
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(100.0002F, 23F);
+            this.xrLabel7.StylePriority.UseFont = false;
+            this.xrLabel7.StylePriority.UseTextAlignment = false;
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
             // Receipt_Report
             // 
@@ -519,7 +563,7 @@ namespace LIMS_Demo.Reports.Financial
             this.DataMember = "invoice_details_1";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(1, 0, 4, 2);
+            this.Margins = new System.Drawing.Printing.Margins(1, 0, 4, 1);
             this.PageHeight = 1169;
             this.PageWidth = 827;
             this.PaperKind = System.Drawing.Printing.PaperKind.A4;
@@ -571,5 +615,7 @@ namespace LIMS_Demo.Reports.Financial
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
         private DevExpress.XtraReports.Parameters.Parameter PatientName;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
     }
 }

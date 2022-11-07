@@ -140,7 +140,7 @@ namespace LIMS_Demo.View
                     }
                     else
                     {
-                        MessageBox.Show("عذراً , لا يوجد هذا الفحص !", "", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+                        MessageBox.Show("عذراً , لا يوجد هذا الفحص", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
                     }
                     for (int i = 0; i < dvgResult.Rows.Count; i++)
                     {

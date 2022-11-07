@@ -78,5 +78,12 @@ namespace LIMS_Demo.View
             select_Date.label3.Text = "2";
             select_Date.ShowDialog();
         }
+
+        private void linkLabel9_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Avalible_Sample_Report avalible_Sample_Report = new Avalible_Sample_Report();
+            avalible_Sample_Report.Parameters["User"].Value = db.Users.Where(x => x.User_ID == Permision.userID).Select(x => x.UserName).FirstOrDefault();
+            avalible_Sample_Report.ShowPreviewDialog();
+        }
     }
 }

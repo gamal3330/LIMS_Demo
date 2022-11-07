@@ -90,17 +90,17 @@ namespace LIMS_Demo.View
             this.txtprice.EditValue = "";
             this.txtprice.Location = new System.Drawing.Point(41, 59);
             this.txtprice.Name = "txtprice";
-            this.txtprice.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtprice.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtprice.Properties.Appearance.Options.UseBorderColor = true;
             this.txtprice.Properties.Appearance.Options.UseFont = true;
             this.txtprice.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtprice.Size = new System.Drawing.Size(114, 52);
+            this.txtprice.Size = new System.Drawing.Size(114, 46);
             this.txtprice.TabIndex = 20;
             // 
             // priceLb
             // 
             this.priceLb.AutoSize = true;
-            this.priceLb.Location = new System.Drawing.Point(161, 63);
+            this.priceLb.Location = new System.Drawing.Point(161, 60);
             this.priceLb.Name = "priceLb";
             this.priceLb.Size = new System.Drawing.Size(91, 44);
             this.priceLb.TabIndex = 19;
@@ -112,17 +112,17 @@ namespace LIMS_Demo.View
             this.txtcode.EditValue = "";
             this.txtcode.Location = new System.Drawing.Point(307, 59);
             this.txtcode.Name = "txtcode";
-            this.txtcode.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcode.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcode.Properties.Appearance.Options.UseBorderColor = true;
             this.txtcode.Properties.Appearance.Options.UseFont = true;
             this.txtcode.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtcode.Size = new System.Drawing.Size(114, 52);
+            this.txtcode.Size = new System.Drawing.Size(114, 46);
             this.txtcode.TabIndex = 20;
             // 
             // codeLb
             // 
             this.codeLb.AutoSize = true;
-            this.codeLb.Location = new System.Drawing.Point(427, 63);
+            this.codeLb.Location = new System.Drawing.Point(427, 60);
             this.codeLb.Name = "codeLb";
             this.codeLb.Size = new System.Drawing.Size(132, 44);
             this.codeLb.TabIndex = 19;
@@ -133,17 +133,17 @@ namespace LIMS_Demo.View
             this.txtname.EditValue = "";
             this.txtname.Location = new System.Drawing.Point(610, 59);
             this.txtname.Name = "txtname";
-            this.txtname.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.Properties.Appearance.Options.UseBorderColor = true;
             this.txtname.Properties.Appearance.Options.UseFont = true;
             this.txtname.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.txtname.Size = new System.Drawing.Size(114, 52);
+            this.txtname.Size = new System.Drawing.Size(114, 46);
             this.txtname.TabIndex = 20;
             // 
             // nameLb
             // 
             this.nameLb.AutoSize = true;
-            this.nameLb.Location = new System.Drawing.Point(730, 63);
+            this.nameLb.Location = new System.Drawing.Point(730, 60);
             this.nameLb.Name = "nameLb";
             this.nameLb.Size = new System.Drawing.Size(141, 44);
             this.nameLb.TabIndex = 19;

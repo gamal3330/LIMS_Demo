@@ -332,6 +332,12 @@
     <Compile Include="Reports\Financial\Daily_Report_Financial.Designer.cs">
       <DependentUpon>Daily_Report_Financial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\Tests\Avalible_Sample_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Tests\Avalible_Sample_Report.Designer.cs">
+      <DependentUpon>Avalible_Sample_Report.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\Tests\Test_Result.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -506,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Financial\Daily_Report_Financial.resx">
       <DependentUpon>Daily_Report_Financial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Tests\Avalible_Sample_Report.resx">
+      <DependentUpon>Avalible_Sample_Report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Tests\Test_Result.resx">
       <DependentUpon>Test_Result.cs</DependentUpon>
