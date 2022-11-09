@@ -29,7 +29,7 @@ namespace LIMS_Demo.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Result_TestFrm));
             this.ResultPan = new System.Windows.Forms.Panel();
             this.dvgResult = new System.Windows.Forms.DataGridView();
@@ -51,6 +51,7 @@ namespace LIMS_Demo.View
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.btnAdd = new CustomControls.RJControls.RJButton();
             this.searchBtn = new CustomControls.RJControls.RJButton();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.ResultPan.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dvgResult)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,14 +88,14 @@ namespace LIMS_Demo.View
             this.dvgResult.AllowUserToResizeRows = false;
             this.dvgResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dvgResult.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dvgResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Janna LT", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dvgResult.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dvgResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgResult.Location = new System.Drawing.Point(23, 444);
             this.dvgResult.Name = "dvgResult";
@@ -123,21 +124,25 @@ namespace LIMS_Demo.View
             // 
             this.cmbResutlt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cmbResutlt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbResutlt.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold);
+            this.cmbResutlt.Font = new System.Drawing.Font("Janna LT", 12F);
+            this.cmbResutlt.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cmbResutlt.FormattingEnabled = true;
             this.cmbResutlt.Items.AddRange(new object[] {
             "Negative",
-            "Positive"});
-            this.cmbResutlt.Location = new System.Drawing.Point(18, 69);
+            "Positive",
+            "%"});
+            this.cmbResutlt.Location = new System.Drawing.Point(18, 56);
             this.cmbResutlt.Name = "cmbResutlt";
-            this.cmbResutlt.Size = new System.Drawing.Size(131, 38);
+            this.cmbResutlt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbResutlt.Size = new System.Drawing.Size(137, 38);
             this.cmbResutlt.TabIndex = 15;
+            this.cmbResutlt.Text = "إختر";
             this.cmbResutlt.SelectedIndexChanged += new System.EventHandler(this.cmbResutlt_SelectedIndexChanged);
             // 
             // resulttxt
             // 
             this.resulttxt.EditValue = "";
-            this.resulttxt.Location = new System.Drawing.Point(174, 71);
+            this.resulttxt.Location = new System.Drawing.Point(174, 58);
             this.resulttxt.Name = "resulttxt";
             this.resulttxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resulttxt.Properties.Appearance.Options.UseBorderColor = true;
@@ -152,24 +157,25 @@ namespace LIMS_Demo.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(331, 71);
+            this.label2.Location = new System.Drawing.Point(331, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 35);
+            this.label2.Size = new System.Drawing.Size(74, 35);
             this.label2.TabIndex = 12;
-            this.label2.Text = "النتيجة:";
+            this.label2.Text = "النتيجة :";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rjButton1);
             this.groupBox1.Controls.Add(this.phonetxt);
             this.groupBox1.Controls.Add(this.nametxt);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Font = new System.Drawing.Font("Janna LT", 18F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
-            this.groupBox1.Location = new System.Drawing.Point(496, 220);
+            this.groupBox1.Location = new System.Drawing.Point(473, 220);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.groupBox1.Size = new System.Drawing.Size(421, 198);
+            this.groupBox1.Size = new System.Drawing.Size(444, 198);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "بيانات المريض";
@@ -177,7 +183,7 @@ namespace LIMS_Demo.View
             // phonetxt
             // 
             this.phonetxt.EditValue = "";
-            this.phonetxt.Location = new System.Drawing.Point(53, 134);
+            this.phonetxt.Location = new System.Drawing.Point(83, 134);
             this.phonetxt.Name = "phonetxt";
             this.phonetxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.phonetxt.Properties.Appearance.Options.UseBorderColor = true;
@@ -191,7 +197,7 @@ namespace LIMS_Demo.View
             // nametxt
             // 
             this.nametxt.EditValue = "";
-            this.nametxt.Location = new System.Drawing.Point(53, 51);
+            this.nametxt.Location = new System.Drawing.Point(83, 56);
             this.nametxt.Name = "nametxt";
             this.nametxt.Properties.Appearance.Font = new System.Drawing.Font("Janna LT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nametxt.Properties.Appearance.Options.UseBorderColor = true;
@@ -199,28 +205,28 @@ namespace LIMS_Demo.View
             this.nametxt.Properties.AutoHeight = false;
             this.nametxt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.nametxt.Properties.ReadOnly = true;
-            this.nametxt.Size = new System.Drawing.Size(268, 37);
+            this.nametxt.Size = new System.Drawing.Size(230, 37);
             this.nametxt.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(289, 135);
+            this.label1.Location = new System.Drawing.Point(319, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 35);
+            this.label1.Size = new System.Drawing.Size(109, 35);
             this.label1.TabIndex = 9;
-            this.label1.Text = "رقم الهاتف:";
+            this.label1.Text = "رقم الهاتف :";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(324, 52);
+            this.label8.Location = new System.Drawing.Point(354, 57);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 35);
+            this.label8.Size = new System.Drawing.Size(74, 35);
             this.label8.TabIndex = 9;
-            this.label8.Text = "الإسم:";
+            this.label8.Text = "الإسم :";
             // 
             // groupBox5
             // 
@@ -354,9 +360,9 @@ namespace LIMS_Demo.View
             this.btnAdd.Font = new System.Drawing.Font("Janna LT", 14F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAdd.Location = new System.Drawing.Point(154, 137);
+            this.btnAdd.Location = new System.Drawing.Point(155, 137);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(92, 43);
+            this.btnAdd.Size = new System.Drawing.Size(132, 43);
             this.btnAdd.TabIndex = 14;
             this.btnAdd.Text = "إدخال";
             this.btnAdd.TextColor = System.Drawing.Color.White;
@@ -382,6 +388,25 @@ namespace LIMS_Demo.View
             this.searchBtn.TextColor = System.Drawing.Color.White;
             this.searchBtn.UseVisualStyleBackColor = false;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(113)))), ((int)(((byte)(176)))));
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 15;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Image = ((System.Drawing.Image)(resources.GetObject("rjButton1.Image")));
+            this.rjButton1.Location = new System.Drawing.Point(12, 56);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(56, 40);
+            this.rjButton1.TabIndex = 35;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click_1);
             // 
             // Result_TestFrm
             // 
@@ -433,5 +458,6 @@ namespace LIMS_Demo.View
         private CustomControls.RJControls.RJButton rjButton5;
         private System.Windows.Forms.ComboBox cmbResutlt;
         public DevExpress.XtraEditors.TextEdit txtBarcode;
+        private CustomControls.RJControls.RJButton rjButton1;
     }
 }

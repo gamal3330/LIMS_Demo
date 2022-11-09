@@ -335,5 +335,21 @@ namespace LIMS_Demo.View
                 searchBtn.PerformClick();
             }
         }
+
+        private void rjButton1_Click_1(object sender, EventArgs e)
+        {
+            if (nametxt.Text == "")
+            {
+                MessageBox.Show("يرجى إدخال باركود", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign);
+            }
+            else
+            {
+                int patId = int.Parse(patientId);
+                View_Notes view_Notes = new View_Notes();
+                View_Notes.patientNote = db.Patient.Where(x => x.FullName == patientName).Select(x => x.Notes).FirstOrDefault();
+                View_Notes.testNote = db.Invoice.Where(x => x.Invoice_ID == barcode).Select(x => x.Notes).FirstOrDefault();
+                view_Notes.ShowDialog();
+            }
+        }
     }
 }
